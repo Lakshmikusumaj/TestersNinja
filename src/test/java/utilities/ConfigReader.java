@@ -22,9 +22,11 @@ public class ConfigReader {
 
     // Get property value
     public static String getProperty(String key) {
+    	
         if (prop == null) {
             loadConfig();
         }
         return prop.getProperty(key);
     }
 }
+

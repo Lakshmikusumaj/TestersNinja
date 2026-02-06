@@ -1,32 +1,44 @@
 package factory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import utilities.ConfigReader;
 
 public class DriverFactory {
 
     private static WebDriver driver;
 
-    // Private constructor to prevent object creation
+    // Prevent object creation
     private DriverFactory() {}
 
-    // Get driver instance
     public static WebDriver getDriver() {
+
         if (driver == null) {
-            WebDriverManager.chromedriver().setup();
 
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
+            String browser = ConfigReader.getProperty("browser");
 
-            driver = new ChromeDriver(options);
+            switch (browser.toLowerCase()) {
+                case "firefox":
+                    driver = new FirefoxDriver();
+                    break;
+
+                case "chrome":
+                default:
+                    driver = new ChromeDriver();
+                    break;
+            }
+
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
+
         return driver;
     }
 
-    // Quit driver
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();

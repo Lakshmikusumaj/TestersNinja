@@ -6,7 +6,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import factory.DriverFactory;
+import factory.Driverfactory;
 import utilities.ConfigReader;
 
 public class Hooks {
@@ -16,8 +16,8 @@ public class Hooks {
     @Before
     public void setUp() {
         ConfigReader.loadConfig();
-        driver = DriverFactory.getDriver();
-        driver.manage().window().maximize();
+       driver =Driverfactory.getDriver();
+ //       driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("url"));
     }
 
@@ -30,6 +30,6 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
 
-        DriverFactory.quitDriver();
+        Driverfactory.quitDriver();
     }
 }

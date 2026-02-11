@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
                 "stepDefinitions",
                 "hooks"
         },
-        tags = "@Queue",
+        tags = "@Stack",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",

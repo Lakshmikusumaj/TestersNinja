@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.LoginPage;
 import pageObjects.QueuePage;
-import pageObjects.StackPage;
 import pageObjects.TryEditorPage;
 import utilities.ExcelReader;
 
@@ -109,7 +108,7 @@ public class QueueStepDefinitions {
          }
      }
     /*
-   /* ---------- Alert Handling ---------- */
+   /* ---------- Alert Handling ---------- 
 
     @Given("User is on error alert in try editor page of Queue")
     public void user_is_on_error_alert() {
@@ -125,6 +124,7 @@ public class QueueStepDefinitions {
     public void user_remains_on_try_editor_queue() {
         Assert.assertTrue(DriverFactory.getDriver().getTitle().contains("Assessment"));
     }
+    */
     
 
     /* ---------- Practice Questions ---------- */

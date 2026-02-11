@@ -26,23 +26,23 @@ public class StackStepDefinitions {
     // ---------------- Background ----------------
     @Given("User is logged in to the  DSAlgo portal and on stack page")
     public void user_logged_in_and_on_stack_page() {
-    	 driver = DriverFactory.getDriver();
-         loginPage = new LoginPage(driver);
-         
-         loginPage.openPortal();
-         loginPage.clickGetStarted();
-         loginPage.clickSignIn();
-         
-         if (loginTestData == null) {
-        	 loginTestData = ExcelReader.getDataForSheet("LoginData");
-         }
-        
-         String username = loginTestData.get(0).get("Username");
-         String password = loginTestData.get(0).get("Password");
-         loginPage.enterUsername(username);
-         loginPage.enterPassword(password);
-         loginPage.clickLogin();
-         stackPage.clickGetStartedStack();
+//    	// driver = DriverFactory.getDriver();
+//        // loginPage = new LoginPage(driver);
+//         
+//         loginPage.openPortal();
+//         loginPage.clickGetStarted();
+//         loginPage.clickSignIn();
+//         
+//         if (loginTestData == null) {
+//        	 loginTestData = ExcelReader.getDataForSheet("LoginData");
+//         }
+//        
+//         String username = loginTestData.get(0).get("Username");
+//         String password = loginTestData.get(0).get("Password");
+//         loginPage.enterUsername(username);
+//         loginPage.enterPassword(password);
+//         loginPage.clickLogin();
+        stackPage.clickGetStartedStack();
     }
 
     // ---------------- Stack_Test01 ----------------

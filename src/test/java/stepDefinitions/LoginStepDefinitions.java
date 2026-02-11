@@ -11,21 +11,23 @@ import java.util.List;
 import java.util.Map;
 
 public class LoginStepDefinitions {
+	
 
     WebDriver driver;
-    LoginPage loginPage;
+    
 
     // Excel related
     static List<Map<String, String>> testData;
+    LoginPage loginPage=new LoginPage();
 
     @Given("User launches the browser and navigates to the login page")
     public void user_launches_the_browser_and_navigates_to_the_login_page() {
-        driver = DriverFactory.getDriver();
-        loginPage = new LoginPage(driver);
+        //driver = DriverFactory.getDriver();
+       // loginPage = new LoginPage(driver);
         
-        loginPage.openPortal();
-        loginPage.clickGetStarted();
-        loginPage.clickSignIn();
+       // loginPage.openPortal();
+       // loginPage.clickGetStarted();
+       // loginPage.clickSignIn();
     }
 
     @Given("User is on the Login page")
@@ -52,5 +54,18 @@ public class LoginStepDefinitions {
         } else {
             Assert.assertTrue(loginPage.isLoginErrorDisplayed());
         }
+        
     }
+    @When("User enters username and password and clicks login button")
+    public void user_enters_username_and_password_and_clicks_login_button() {
+    	//loginPage.enterUsername("Test_01");
+       // loginPage.enterPassword("Sdet@2025");
+        loginPage.successfulLogin();
+    }
+
+    @Then("User should be successfully logged in")
+    public void user_should_be_successfully_logged_in() {
+    	Assert.assertTrue(loginPage.isLoginSuccessful());
+    }
+
 }

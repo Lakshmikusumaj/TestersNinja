@@ -3,13 +3,17 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import factory.DriverFactory;
+
 public class LoginPage {
 
     WebDriver driver;
 
     // Constructor
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    //public LoginPage(WebDriver driver) {
+    public LoginPage() {
+    	this.driver = DriverFactory.getDriver();
+       // this.driver = driver;
     }
 
     // Locators
@@ -69,4 +73,9 @@ public class LoginPage {
     public boolean isLoginErrorDisplayed() {
         return driver.findElements(errorMsg).size() > 0;
     }
+    public void successfulLogin() {
+    enterUsername("Test_01");
+    enterPassword("Sdet@2025");
+    clickLogin();
+}
 }

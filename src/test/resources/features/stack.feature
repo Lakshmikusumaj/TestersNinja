@@ -1,4 +1,4 @@
-@Stack
+@Stack @LaunchHome @ValidLogin
 Feature: Validation of Stack module
 
   Background: User navigates to the stack page

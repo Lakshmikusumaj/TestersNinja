@@ -2,7 +2,7 @@
 Feature: Validation of Stack module
 
   Background: User navigates to the stack page
-    Given User is logged in to the  DSAlgo portal and on stack page
+    Given User is on the stack page
     
   @Stack_Test01
   Scenario Outline: User navigates to different topic pages in Stack module

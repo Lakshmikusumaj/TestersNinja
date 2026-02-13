@@ -11,11 +11,12 @@ import io.cucumber.junit.CucumberOptions;
                 "stepDefinitions",
                 "hooks"
         },
-        tags = "@Stack",
+        tags = "@Login",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",
-                "json:target/cucumber-reports/cucumber.json"
+                "json:target/cucumber-reports/cucumber.json",
+                "tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
         publish = true

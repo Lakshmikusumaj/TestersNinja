@@ -24,8 +24,8 @@ public class StackStepDefinitions {
     List<Map<String, String>> stackTestData;
 
     // ---------------- Background ----------------
-    @Given("User is logged in to the  DSAlgo portal and on stack page")
-    public void user_logged_in_and_on_stack_page() {
+    @Given("User is on the stack page")
+    public void user_is_on_the_stack_page() {
 //    	// driver = DriverFactory.getDriver();
 //        // loginPage = new LoginPage(driver);
 //         
@@ -126,9 +126,6 @@ public class StackStepDefinitions {
     @Given("User is again on the Stack page")
     public void user_again_on_stack_page() {
     	stackPage.clickTopic("Implementation");
-    	stackPage.clickTryHere();
-    	
-        driver.navigate().back();
     }
 
     @When("User clicks Practice Questions button on stack page")

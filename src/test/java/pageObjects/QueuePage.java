@@ -13,19 +13,16 @@ public class QueuePage {
     }
 
     // ---------------- Locators ----------------
-    private By getStartedQueueBtn = By.xpath("//button[contains(text(),'Get Started') and contains(@onclick,'queue')]");
-    private By practiceQuestionsBtn = By.xpath("//a[contains(text(),'Practice Questions')]");
-    private By tryHereBtn = By.xpath("//button[contains(text(),'Try Here')]");
-    private By outputConsole = By.id("output"); // For JSExecutor
-    private By topicLink(String topic) {
-        return By.linkText(topic);
-    }
+    private By getStartedQueue = By.xpath("//a[@href='queue']");
+    private By practiceQuestionsBtn = By.linkText("Practice Questions");
+    private By tryHereBtn = By.linkText("Try here>>>");
+    
 
     // ---------------- Methods ----------------
 
     // Click Get Started on Queue module
     public void clickQueueGetStarted() {
-        driver.findElement(getStartedQueueBtn).click();
+        driver.findElement(getStartedQueue).click();
     }
 
     // Verify if on Queue page
@@ -34,8 +31,9 @@ public class QueuePage {
     }
 
     // Click on a topic link dynamically
-    public void clickTopic(String topicName) {
-        driver.findElement(topicLink(topicName)).click();
+    public void clickTopic(String topic) {
+    	By topicElement = By.linkText(topic);
+    	driver.findElement(topicElement).click();
     }
 
     // Verify if on a topic page (by page title or URL)

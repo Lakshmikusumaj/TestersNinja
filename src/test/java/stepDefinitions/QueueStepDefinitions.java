@@ -26,28 +26,28 @@ public class QueueStepDefinitions {
     
     /* ---------- Background ---------- */
 
-    @Given("User is logged in to the DSAlgo portal and on Queue page")
-    public void user_is_logged_in_and_on_queue_page() {
-    	driver = DriverFactory.getDriver();
-        loginPage = new LoginPage(driver);
-        
-        loginPage.openPortal();
-        loginPage.clickGetStarted();
-        loginPage.clickSignIn();
-        
-        if (loginTestData == null) {
-       	 loginTestData = ExcelReader.getDataForSheet("LoginData");
-        }
-       
-        String username = loginTestData.get(0).get("Username");
-        String password = loginTestData.get(0).get("Password");
-        loginPage.enterUsername(username);
-        loginPage.enterPassword(password);
-        loginPage.clickLogin();
+    @Given("User is on the Queue page")
+    public void user_is_on_the_queue_page() {
+//    	driver = DriverFactory.getDriver();
+//        loginPage = new LoginPage();
+//        
+//        loginPage.openPortal();
+//        loginPage.clickGetStarted();
+//        loginPage.clickSignIn();
+//        
+//        if (loginTestData == null) {
+//       	 loginTestData = ExcelReader.getDataForSheet("LoginData");
+//        }
+//       
+//        String username = loginTestData.get(0).get("Username");
+//        String password = loginTestData.get(0).get("Password");
+//        loginPage.enterUsername(username);
+//        loginPage.enterPassword(password);
+//        loginPage.clickLogin();
         queuePage.clickQueueGetStarted();
     }
 
-    /* ---------- Topic Navigation ---------- */
+    /* ---------- Queue_Test01 Topic Navigation ---------- */
 
     @When("User clicks {string} link in Queue page")
     public void user_clicks_topic_link(String topic) {
@@ -59,7 +59,7 @@ public class QueueStepDefinitions {
         Assert.assertTrue(driver.getTitle().toLowerCase().contains(destinationPage.toLowerCase()));
     }
 
-    /* ---------- Try Here Navigation ---------- */
+    /* ---------- Queue_Test02 Try Here Navigation ---------- */
 
     @Given("User is on {string} page in Queue module")
     public void user_is_on_topic_page(String topic) {
@@ -76,7 +76,7 @@ public class QueueStepDefinitions {
     	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
     }
 
-    /* ---------- Excel Driven TryEditor ---------- */
+    /* ---------- Queue_Test03 Excel Driven TryEditor ---------- */
 
     @Given("User is on TryEditor page of Queue module")
     public void user_is_on_try_editor_queue() {
@@ -86,7 +86,7 @@ public class QueueStepDefinitions {
     @When("User enters python code from row {int} and clicks Run in Queue module")
     public void user_enters_code_from_excel(Integer rowIndex) throws Exception {
 
-    	queuePage.clickTopic("Implementation");
+    	queuePage.clickTopic("Queue Operations");
     	queuePage.clickTryHere();
         
     	String pythonCode = queueTestData.get(rowIndex).get("PythonCode");
@@ -129,9 +129,9 @@ public class QueueStepDefinitions {
 
     /* ---------- Practice Questions ---------- */
 
-    @Given("User is again on the Queue page")
-    public void user_is_on_queue_page_again() {
-        queuePage = new QueuePage(DriverFactory.getDriver());
+    @Given("User is on any of the queue topic page")
+    public void user_is_on_any_of_the_queue_topic_page() {
+    	queuePage.clickTopic("Queue Operations");
     }
 
     @When("User clicks Practice Questions button on queue page")

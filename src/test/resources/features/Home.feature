@@ -26,7 +26,7 @@
     When user clicks on the array  "Arrays" 
     Then user should see "Alert" message
 
-  # -------------------- Sign In Link --------------------  
+  # -------------------- Sign In Link --------------------   
 
   Scenario: Verify Sign In link navigation 
     When user clicks on "Sign In" link

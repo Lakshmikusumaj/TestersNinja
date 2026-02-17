@@ -29,7 +29,7 @@ public class HomeSteps {
 	public void user_is_on_the_ds_portal_home_page() { 
 	//HomeDS.clickLaunchStartR();  
 	    
-		
+		 
 	}
                                                //----------------------------Register Link---------------------//
 	@When("user clicks on {string} link")
@@ -77,37 +77,31 @@ public class HomeSteps {
 
 
 	@Then("user should see {string} message")
-	public void user_should_see_message(String string) {
-    	
-	  HomeDS.clickAlertR();
-		
+	public void user_should_see_message(String string) {	
+	  HomeDS.clickAlertR();	
 	}   
 	                                 //------------------------SIGN IN LINK---------------------------------
 
 	@Then("user should be navigated to Login page")
 	public void user_should_be_navigated_to_login_page() {
-		HomeDS.clickSignInlinkR();
-	 
+		HomeDS.clickSignInlinkR(); 
 	}  
 
 	@When("user enters {string} and {string}")
-	public void user_enters_and(String username, String password) {
-		
+	public void user_enters_and(String username, String password) {	
 		HomeDS.clickSignInlinkR();
-			HomeDS.clickUserPassR(username,password);
+		HomeDS.clickUserPassR(username,password);
 	}
 
 	@When("user clicks on Login button") 
 	public void user_clicks_on_login_button() {
-	  HomeDS.ClickLoginR();
+	    HomeDS.ClickLoginR();
 	}
 
 	@Then("user should be logged in successfully")
 	public void user_should_be_logged_in_successfully() {
-       HomeDS.clickAlertR();
-		/*String expectedTitle = "NumpyNinja";
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(expectedTitle ,actualTitle);*/
+        HomeDS.clickAlertR();
+		
 	}
 
 	//@Then("user should see logout option")
@@ -125,81 +119,14 @@ public class HomeSteps {
 	@When("user clicks on {string} dropdown after sign in")
 	public void user_clicks_on_dropdown_after_sign_in(String topic) { 
         HomeDS.clickModule(topic);
-	 // HomeDS.clickArrayR();
-	 // HomeDS.clickLinkedlistR();
-	 // HomeDS.clickQueueR();
-	 // HomeDS.clickStackR();
-	  //HomeDS.clickTreeR();
+	
 	    
 	}
 	@Then("user should be navigated to {string} page")
 	public void user_should_be_navigated_to_page(String topic) {
-	   //Assert.assertTrue(driver.getTitle().contains(topic));
-	   // String expected = topic.toLowerCase().replace(" ", "-");
-        //Assert.assertTrue(driver.getCurrentUrl().contains(expected));
+	  
 
 	}
-
-
-
-
-	/*@Then("user should be navigated to {string} dropdown after sign in")
-	public void user_should_be_navigated_to_dropdown_after_sign_in(String string) {
-       // HomeDS.clickDSdropdwR();
-
-	   // HomeDS.clickArrayR(); 
-	}
-	                                
-                                
-	@When("user clicks on {string}")
-	public void user_clicks_on(String string) {
-		//HomeDS.clickDSdropdwR();
-		//HomeDS.clickUserPassR(string, string);
-		 HomeDS.clickArrayR();
-	}
-
-	@Then("user should be navigated to Arrays page")
-	public void user_should_be_navigated_to_arrays_page() {
-		String expectedTitle = "Array"; 
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(expectedTitle ,actualTitle);
-	}
-
-	@Then("user should be navigated to Linked List page")  
-	public void user_should_be_navigated_to_linked_list_page() {
-		//HomeDS.clickDSdropdwR();
-		HomeDS.clickLinkedlistR();
-       // Assert.assertTrue(driver.getTitle().contains("Linked List"));
-
-	}
-
-	@Then("user should be navigated to Stack page")
-	public void user_should_be_navigated_to_stack_page() {
-		//HomeDS.clickDSdropdwR();
-		HomeDS.clickStackR();
-        //Assert.assertTrue(driver.getTitle().contains("Stack"));
-
-	}
-
-	@Then("user should be navigated to Queue page")
-	public void user_should_be_navigated_to_queue_page() {
-		//HomeDS.clickDSdropdwR();
-		HomeDS.clickQueueR();
-	}
-
-	@Then("user should be navigated to Tree page")
-	public void user_should_be_navigated_to_tree_page() {
-		//HomeDS.clickDSdropdwR();
-		HomeDS.clickTreeR();
-	}
-
-	@Then("user should be navigated to Graph page")
-	public void user_should_be_navigated_to_graph_page() {
-		HomeDS.clickDSdropdwR();
-		//HomeDS.*/
-	
-
-
 
 	
 }

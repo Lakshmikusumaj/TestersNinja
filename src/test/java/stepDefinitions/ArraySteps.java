@@ -15,17 +15,13 @@ import pageObjects.ArrPage;
 import utilities.ExcelReader;
 
 	public class ArraySteps {
-		// WebDriver driver;
 		 ArrPage arraypage;
 		 WebDriver driver = DriverFactory.getDriver();
 		   List<Map<String, String>> ArrayTestData;
 
-		 //driver = DriverFactory.getDriver(); 
 		@Given("user clicks on Array from the home page")
 		public void user_clicks_on_array_from_the_home_page() {
-			//driver = DriverFactory.getDriver();   //  Get driver first
 	        arraypage = new ArrPage(driver);   
-	    	//System.out.println(driver.getTitle());
 	    
 	    	System.out.println(driver.getTitle());
 	    arraypage.clickGetStartesArr();
@@ -36,7 +32,6 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Arrays in Python button")
 		public void user_clicks_on_arrays_in_python_button() {
-		    //driver.findElement(arraysInPython ).click();
 			   arraypage.clickArraysInPython();
 		}
 
@@ -94,52 +89,10 @@ import utilities.ExcelReader;
 			
 		    
 		}
-//ArrayTRYEDITOR//
-		/*@When("user executes {string} from {string} sheet")
-			public void user_executes_from_sheet(
-			        String testCaseName,
-			        String sheetName) throws Exception {
-
-			    List<Map<String, String>> testData =
-			            ExcelReader.getDataForSheet("ArrayTryEditor");
-
-			    for (Map<String, String> row : testData) {
-
-			        String code = row.get("code");
-			        String expectedResult = row.get("result");
-
-			        arraypage.clickTryHere();
-			        arraypage.enterCodeInEditor(code);
-			        arraypage.clickRunButton();
-			    }}
-			       /* if (expectedResult.equalsIgnoreCase("output")) {
-			            Assert.assertTrue(arraypage.isOutputDisplayed());
-			        } else {
-			            Assert.assertTrue(arraypage.isErrorDisplayed());
-			        }
-			    }
-			} 
-		}
-
-		@Then("user should see expected result")
-		public void user_should_see_expected_result() {
-		    
-		}
-
-
-		/*@Given("user is on the Applications of Array page")
-		public void user_is_on_the_applications_of_array_page() {
-			System.out.println(driver.getTitle());
-
-		}
 
 		@When("user enters {string} in the Try Editor and clicks Run button")
 		public void user_enters_in_the_try_editor_and_clicks_run_button(String code) {
-	    	//ArrayTestData = ExcelReader.getDataForSheet("ArrayTryEditor");
-	    	//String pythonCode = stackTestData.get(rowIndex).get("PythonCode");
-	       // tryEditorPage.enterCode(pythonCode);
-	        //tryEditorPage.clickRun();
-	    
+	    	
 
 			List<Map<String, String>> testData =
 			        ExcelReader.getDataForSheet("ArrayTryEditor");
@@ -153,37 +106,7 @@ import utilities.ExcelReader;
 			    arraypage.enterCodeInEditor(code);
 			    arraypage.clickRunButton();
 			}
-			  /*  if (expectedResult.equalsIgnoreCase("output")) {
-			        Assert.assertTrue(arraypage.isOutputDisplayed());
-			    } else {
-			        Assert.assertTrue(arraypage.isErrorDisplayed());
-			    }
-			}
-
-
-	    	    List<Map<String, String>> []data = ExcelReader.getDataForSheet("ArrayTryEditor");
-
-	    	 for ( Map<String, String>data : testdata) {
-	    	        String code1 = row.get("code");
-
-	    	        String expectedResult = row.get("result");
-	    	     	arraypage.clickTryHere();
-	    	        arraypage.enterCodeInEditor(code);
-	    	        arraypage.clickRunButton();
-
-	    	       if(expectedResult.equalsIgnoreCase("output")) {
-	    	            Assert.assertTrue(arraypage.isOutputDisplayed());
-	    	        } else {
-	    	            Assert.assertTrue(arraypage.isErrorDisplayed());
-	    	        }*/
-	    	    
-	    	
-
-	    	//arraypage.clickTryHere();
-		     //arraypage.enterCodeInEditor(code);
-		        //arraypage.clickRunButton(); 
-		
-
+		}
 		@Then("user should see {string}")
 		public void user_should_see(String result) {
 			 String output = arraypage.getOutput();
@@ -252,16 +175,10 @@ import utilities.ExcelReader;
 		//------TryEditor--------//
 		@Given("user is on the Applications of Array page")
 		public void user_is_on_the_applications_of_array_page() {
-	    	ArrayTestData = ExcelReader.getDataForSheet("ArrayData");
-
-			//arraypage.clickApplicationsOfArray();
-		    
-		   // arraypage.clickTryHere();
+	    	ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
 
 		}
 		 
-    			// TODO Auto-genera
-
 		@When("user executes {string} from {string} sheet")
 		public void user_executes_from_sheet(String TestCaseName, String ArrayData) {
 			 arraypage.clickApplicationsOfArray();
@@ -272,46 +189,7 @@ import utilities.ExcelReader;
 		        arraypage.enterCodeInEditor(valid);
 		        arraypage.clickRunButton();
 		    	arraypage.getOutput();
-		    			// TODO Auto-generated method stub
-		    	
-		    		  
-		    			
-
-		    	   
-		    	
-		    	   
-		    	
-
-		}	
-
-		    	   // String Code = ExcelReader.getCellData(, rowNumber, 0);
-		    	    //String Result = ExcelReader.getCellData("TestCaseName", rowNumber, 1);
-
-		    	    //arraypage.enterCodeInEditor(Code);
-
-		    	   // String actualResult = arrayPage.getOutput();
-
-		    	   // Assert.assertEquals(expectedResult, actualResult);
-		    	
-
-			//List<Map<String, String>> testdata =
-		           // ExcelReader.getDataForSheet("ArrayData");
-		    	//StringCode = ArrayTestData;
-
-           // Row headerRow = ArrayData.getRow[0];
-			//String Code = ArrayData.get("Code");
-	       // arraypage.enterCodeInEditor(Code);
-	       // arraypage.clickRunButton();
-
-		   /* for (Map<String, String> row : ArrayTestData) {
-
-		       // String code = row.get("Code");
-		        
- 		        //arraypage.clickTryHere();
-		        //arraypage.enterCodeInEditor(code); 
-		       // arraypage.clickRunButton(); */
-		    
-		
+		}
 
 		@Then("user should see expected result")
 		public void user_should_see_expected_result() {

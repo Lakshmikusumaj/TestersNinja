@@ -18,20 +18,18 @@ import org.openqa.selenium.WebDriver;
         public class ArrPage {
 
 
-       public ArrPage(WebDriver driver) {
-      this.driver = driver;
-}
+          public ArrPage(WebDriver driver) {
+                   this.driver = driver;
+          }
 
  private By getStartedBtn = By.xpath("//button[text()='Get Started']");
-	     //private By array=By.xpath("//a[@href='array']");
 		 By array=By.xpath("//a[contains(@class,'btn-primary') and normalize-space()='Get Started']");
-	private	 By getStartesArr=By.xpath("//a[@href='array' and normalize-space()='Get Started']");
+private	 By getStartesArr=By.xpath("//a[@href='array' and normalize-space()='Get Started']");
 		    By arraysInPython = By.xpath("//a[contains(@href,'arrays-in-python')]");
 		    By arraysUsingList = By.xpath("//a[contains(@href,'arrays-using-list')]");
 		    By basicOperations = By.xpath("//a[text()='Basic Operations in Lists']");
 		    By applicationsOfArray = By.xpath("//a[text()='Applications of Array']");
 		    By tryHere =ById.xpath("//a[@href='/tryEditor']");
-		   // By tryHere = By.xpath("//a[text()='Try here>>>']");
 		    By practiceQuestions = By.xpath("//a[text()='Practice Questions']");
 		    By searchArray = By.linkText("Search the Array");
 		    By maxConsecutiveOnes = By.linkText("Max Consecutive Ones");
@@ -47,86 +45,55 @@ import org.openqa.selenium.WebDriver;
 		    
 		    WebDriver driver;
 			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			 //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	  
+			 
+ 
 		    
-		   /*public void clickGetStarted() {
-	           driver.findElement("getStartedBtn").click();//This is comes to page object 
- }*/
-		    
-    public void clickGetStartesArr() {
-     driver.findElement(getStartesArr).click();
-		//driver.findElement(getStartedBtn).click();
+            public void clickGetStartesArr() {
+              driver.findElement(getStartesArr).click();
+		
            }
-		   // public void clickarray() {
-		    	//driver.findElement(getStartesArr).click();
-		    //}
+		   
     
 		    public void clickArraysInPython() {
-		    	//driver.findElement(By.linkText("Array"));
-		    driver.findElement(arraysInPython ).click();
+		      driver.findElement(arraysInPython ).click();
 		
-		        //driver.findElement(By.xpath("//a[contains(@href,'arrays-in-python')]")).click();
-
-		        //driver.findElement(By.linkText("Arrays in Python")).click();
 		    }
 
 		    public void clickArraysUsingList() {
 		        driver.findElement(arraysUsingList).click();
-			    //WebElement Aulist=driver.findElement(By.xpath("//a[@href='arrays-using-list']"));Aulist.click();
-		    	//wait.until(ExpectedConditions.elementToBeClickable(arraysUsingList)).click();
-		    	
+			    
 		    }
 
 		    public void clickBasicOperationsInLists() {
 		        driver.findElement(basicOperations).click();
 
-		        //driver.findElement(By.linkText("Basic Operations in Lists")).click();
 		    }
 
 		    public void clickApplicationsOfArray() {
 			     driver.findElement(applicationsOfArray).click();
 
-		       // driver.findElement(By.linkText("Applications of Array")).click();
 		    }
 
 		    public void clickTryHere() {
-		        //driver.findElement(By.linkText("Try Here>>>")).click();
-			    //driver.findElement(By.xpath("//a[text()='Try here>>>']")).click();
-			    //By applicationsOfArray = By.xpath("//a[text()='Applications of Array']");
-			     driver.findElement(applicationsOfArray).click();
-
-			    WebElement element= driver.findElement(tryHere);
-			   // JavascriptExecutor js = (JavascriptExecutor) driver;
-			    //js.executeScript("arguments[0].scrollIntoView(true);", element);
-			    element.click();
-			   // WebElement txt= driver.findElement(editor);
-		        //txt.clear();
-		       // txt.sendKeys("print(0)");
-		        //driver.findElement(B
-
+		        
+			   driver.findElement(applicationsOfArray).click();
+			   WebElement element= driver.findElement(tryHere);
+			   element.click();
 
 		    }
 		    
 
 		    public void clickPracticeQuestions() {
-		        //driver.findElement(By.linkText("Practice Questions")).click();
-			     //driver.findElement(By.xpath("//a[text()='Applications of Array']")).click();
+		        
 			     driver.findElement(arraysInPython ).click();
-			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			     driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
 
 		    } 
 
 		    public void clickSearchTheArray() {
 			     driver.findElement(arraysInPython ).click();
-				    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
-
-
-				//driver.findElement(ById.xpath("//a[@href='/question/1']")).click();
-
-		    	driver.findElement(searchTheArray).click();
-		        //driver.findElement(By.linkText("Search the Array")).click();
+				 driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+                 driver.findElement(searchTheArray).click();
 		    }
 
 		    public void clickMaxConsecutiveOnes() {
@@ -151,21 +118,13 @@ import org.openqa.selenium.WebDriver;
 		    public void enterCodeInEditor(String Code) {
 			    driver.findElement(applicationsOfArray).click();
 			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
-		        //driver.findElement(By.linkText("Squares of a Sorted Array")).click();
 
 			    WebElement txt= driver.findElement(editor);
-		        //txt.clear();
 		        txt.sendKeys(Code);
-		        //driver.findElement(By.xpath("//form[@id='answer_form']/div/div/div/textarea")).sendKeys("print 'I am an Array in Python'");
-		       // WebElement text = driver.findElement(
-					//    By.xpath("//div[contains(@class,'CodeMirror')]//textarea")
-					//);
-					//text.sendKeys(code); 
-			   // driver.findElement(By.xpath("//button[text()='Run']")).click();
+		        
 		    }
 
 		    public void clickRunButton() {
-		        //driver.findElement(By.id("runButton")).click();
 		    	driver.findElement(By.xpath("//button[text()='Run']")).click();
 		    }
 

@@ -36,11 +36,7 @@ Feature: User navigates Array module
     When user clicks on Try Here button
     Then user is navigated to the Try Editor page
 
-    #Examples:
-     # | code            | result |
-      #| print('hello')  | output |
-      #| print(hello)    | error  |
-      #| djfvbnds        | error  |
+    
 
   # PRACTICE QUESTIONS
   Scenario: User navigates to Arrays in Python Practice Questions

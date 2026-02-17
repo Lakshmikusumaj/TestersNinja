@@ -47,7 +47,7 @@
     | TestersNinja | Ts230@231    |
    Rule: sign in for all modules  
   
-  #@LaunchHome
+ 
   @ValidLogin 
   
   Scenario Outline: Verify navigation for all topics after login

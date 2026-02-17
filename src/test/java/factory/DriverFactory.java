@@ -2,10 +2,10 @@ package factory;
 
 import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver; 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.edge.*;
 import utilities.ConfigReader;
 
 public class DriverFactory {
@@ -22,7 +22,7 @@ public class DriverFactory {
             String browser = ConfigReader.getProperty("browser");
 
             switch (browser.toLowerCase()) {
-                case "firefox":
+                case "Edge":
                     driver = new FirefoxDriver();
                     break;
 
@@ -41,7 +41,7 @@ public class DriverFactory {
 
     public static void quitDriver() {
         if (driver != null) {
-            driver.quit();
+            //driver.quit();
             driver = null;
         }
     }

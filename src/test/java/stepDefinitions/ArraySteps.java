@@ -1,10 +1,12 @@
 package stepDefinitions;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Map; 
 
 import org.apache.poi.ss.usermodel.Row;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
 import factory.DriverFactory;
@@ -14,17 +16,18 @@ import io.cucumber.java.en.When;
 import pageObjects.ArrPage;
 import utilities.ExcelReader;
 
-	public class ArraySteps {
+	public class ArraySteps { 
+		
 		 ArrPage arraypage;
 		 WebDriver driver = DriverFactory.getDriver();
-		   List<Map<String, String>> ArrayTestData;
-
-		@Given("user clicks on Array from the home page")
+		 List<Map<String, String>> ArrayTestData;
+	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
+ 
+        @Given("user clicks on Array from the home page")
 		public void user_clicks_on_array_from_the_home_page() {
 	        arraypage = new ArrPage(driver);   
-	    
 	    	System.out.println(driver.getTitle());
-	    arraypage.clickGetStartesArr();
+	        arraypage.clickGetStartesArr();
 			String expectedTitle = "Array";
 	        String actualTitle = driver.getTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
@@ -32,8 +35,8 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Arrays in Python button")
 		public void user_clicks_on_arrays_in_python_button() {
-			   arraypage.clickArraysInPython();
-		}
+		    arraypage.clickArraysInPython();
+		} 
 
 		@Then("user is navigated to the Arrays in Python page")
 		public void user_is_navigated_to_the_arrays_in_python_page() {
@@ -86,15 +89,31 @@ import utilities.ExcelReader;
 
 		@Then("user is navigated to the Try Editor page")
 		public void user_is_navigated_to_the_try_editor_page() {
-			
 		    
 		}
 
 		@When("user enters {string} in the Try Editor and clicks Run button")
 		public void user_enters_in_the_try_editor_and_clicks_run_button(String code) {
 	    	
+			
+			 List<Map<String, String>> testData =
+			 ExcelReader.getDataForSheet("ArrayTryEditor");
 
-			List<Map<String, String>> testData =
+			    for (Map<String, String> row : testData) {
+
+			        String Code = row.get("CODE"); 
+			        String expectedResult = row.get("RESULT");
+
+			        arraypage.clickTryHere();
+			        arraypage.enterCodeInEditor(code);   // Use Excel value
+			        arraypage.clickRunButton();
+
+			        String actualResult = arraypage.getOutput();
+			        Assert.assertEquals(actualResult, expectedResult);
+			    }
+			}  
+
+			/*List<Map<String, String>> testData =
 			        ExcelReader.getDataForSheet("ArrayTryEditor");
 
 			for (Map<String, String> row : testData) {
@@ -104,9 +123,9 @@ import utilities.ExcelReader;
 
 			    arraypage.clickTryHere();
 			    arraypage.enterCodeInEditor(code);
-			    arraypage.clickRunButton();
-			}
-		}
+			    arraypage.clickRunButton();*/
+			
+		
 		@Then("user should see {string}")
 		public void user_should_see(String result) {
 			 String output = arraypage.getOutput();
@@ -159,7 +178,7 @@ import utilities.ExcelReader;
 
 		@Then("user is navigated to the Find Numbers with Even Number of Digits editor page")
 		public void user_is_navigated_to_the_find_numbers_with_even_number_of_digits_editor_page() {
-		    
+		     
 		}
 
 		@When("user clicks on Squares of a Sorted Array")
@@ -175,34 +194,46 @@ import utilities.ExcelReader;
 		//------TryEditor--------//
 		@Given("user is on the Applications of Array page")
 		public void user_is_on_the_applications_of_array_page() {
-	    	ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
+	    	//ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
 
 		}
 		 
 		@When("user executes {string} from {string} sheet")
-		public void user_executes_from_sheet(String TestCaseName, String ArrayData) {
-			 arraypage.clickApplicationsOfArray();
+		public void user_executes_from_sheet(String TestCaseName, String Arraydata) {
+			
+			    // Open Try Editor
 			    arraypage.clickTryHere();
-		    	ArrayTestData = ExcelReader.getDataForSheet("ArrayData");
-		    	int rowIndex=0 ;
-		    	String  valid = ArrayTestData.get(rowIndex).get("Valid");
-		        arraypage.enterCodeInEditor(valid);
-		        arraypage.clickRunButton();
-		    	arraypage.getOutput();
-		}
+			    // Read all test cases from Excel sheet
+			    ArrayTestData = ExcelReader.getDataForSheet(Arraydata);
 
+			    for (Map<String, String> row : ArrayTestData) {
+
+			        String testCase = row.get("TestCaseName");
+			        String code = row.get("Code");
+			        String expectedResult = row.get("Results"); 
+			        //arraypage.enterCodeInEditor(code);
+			        //arraypage.clickRunButton();
+
+			        System.out.println("Running test case: " + testCase);
+
+			        // Enter code and run
+			        arraypage.enterCodeInEditor(code);
+			        arraypage.clickRunButton();
+			     // Before fetching output
+			        try {
+			            Alert alert = driver.switchTo().alert();
+			            System.out.println("Alert text: " + alert.getText());
+			            alert.accept(); // or alert.dismiss()
+			        } catch (NoAlertPresentException e) {
+			            // No alert, continue
+			        }
+			    }
+
+		}	        
 		@Then("user should see expected result")
 		public void user_should_see_expected_result() {
-		  
+		   
 		}
-
-
-
-
-		
-	
-
-	
 
 
 }

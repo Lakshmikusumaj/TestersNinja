@@ -5,8 +5,10 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +20,7 @@ import org.openqa.selenium.WebDriver;
         public class ArrPage {
 
 
-          public ArrPage(WebDriver driver) {
+          public ArrPage(WebDriver driver) {  
                    this.driver = driver;
           }
 
@@ -69,7 +71,7 @@ private	 By getStartesArr=By.xpath("//a[@href='array' and normalize-space()='Get
 
 		    }
 
-		    public void clickApplicationsOfArray() {
+		    public void clickApplicationsOfArray() { 
 			     driver.findElement(applicationsOfArray).click();
 
 		    }
@@ -87,7 +89,7 @@ private	 By getStartesArr=By.xpath("//a[@href='array' and normalize-space()='Get
 		        
 			     driver.findElement(arraysInPython ).click();
 			     driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
-
+  
 		    } 
 
 		    public void clickSearchTheArray() {
@@ -116,13 +118,23 @@ private	 By getStartesArr=By.xpath("//a[@href='array' and normalize-space()='Get
 
 		    // ---------------- Try Editor Methods ----------------
 		    public void enterCodeInEditor(String Code) {
-			    driver.findElement(applicationsOfArray).click();
-			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			    
+		    	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-			    WebElement txt= driver.findElement(editor);
-		        txt.sendKeys(Code);
-		        
-		    }
+		    	    // Clear existing code completely
+		    	    js.executeScript(
+		    	        "document.querySelector('.CodeMirror').CodeMirror.setValue('');"
+		    	    );
+
+		    	    // Set new code from Excel
+		    	    js.executeScript(
+		    	        "document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);",
+		    	        Code
+		    	    );
+		    	}
+
+		          
+		    
 
 		    public void clickRunButton() {
 		    	driver.findElement(By.xpath("//button[text()='Run']")).click();

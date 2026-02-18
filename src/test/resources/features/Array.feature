@@ -2,11 +2,11 @@
 
 Feature: User navigates Array module
  
-
+ 
  Background:
     Given user clicks on Array from the home page 
  
-  Rule: user is on navigates Array page
+  Rule: user is on navigates Array page 
 
   # ARRAYS AND ARRAYS IN PYTHON 
   Scenario: User navigates to Arrays in Python
@@ -35,8 +35,7 @@ Feature: User navigates Array module
  Scenario: User navigates to Try Here editor from Applications of Array
     When user clicks on Try Here button
     Then user is navigated to the Try Editor page
-
-    
+ 
 
   # PRACTICE QUESTIONS
   Scenario: User navigates to Arrays in Python Practice Questions
@@ -69,7 +68,11 @@ Feature: User navigates Array module
     Then user is navigated to the Squares of a Sorted Array editor page
 
   # TRY EDITOR VALIDATION
+  
   Scenario: ArrayTryEditor data driven
-  Given user is on the Applications of Array page
-    When user executes "valid" from "ArrayTryEditor" sheet
+  
+    Given user is on the Applications of Array page
+    When user executes "Code" from "Array data" sheet
     Then user should see expected result
+    
+    

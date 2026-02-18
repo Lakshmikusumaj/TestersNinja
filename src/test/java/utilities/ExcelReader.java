@@ -1,4 +1,4 @@
-package utilities;
+ package utilities; 
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -16,8 +16,11 @@ public class ExcelReader {
         List<Map<String, String>> dataList = new ArrayList<>();
 
         try {
-        	String testDataFilePath1 = ConfigReader.getProperty("test_data_file_path1");
-            FileInputStream fis = new FileInputStream(testDataFilePath1);
+        	String testDataFilePath1 = System.getProperty("user.dir") + "/src/test/resources/testdata/ArrayTestData.xlsx";
+        	FileInputStream fis = new FileInputStream(testDataFilePath1);
+
+        	//String testDataFilePath1 = ConfigReader.getProperty("test_data_file_path1");
+           // FileInputStream fis = new FileInputStream(testDataFilePath1);
             Workbook workbook = new XSSFWorkbook(fis);
             Sheet sheet = workbook.getSheet(sheetName);
 

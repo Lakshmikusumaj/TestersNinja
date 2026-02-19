@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",
                 "json:target/cucumber-reports/cucumber.json",
-                "tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter:"
+             //   "tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
         publish = true

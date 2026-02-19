@@ -2,18 +2,25 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 import factory.DriverFactory;
+import utilities.ConfigReader;
 
 public class LoginPage {
 
     WebDriver driver;
+    ConfigReader configReader;
+    
 
     // Constructor
     //public LoginPage(WebDriver driver) {
     public LoginPage() {
     	this.driver = DriverFactory.getDriver();
        // this.driver = driver;
+    	ConfigReader.loadConfig();
     }
 
     // Locators
@@ -29,7 +36,7 @@ public class LoginPage {
 
     /** Open DS Algo portal */
     public void openPortal() {
-        driver.get("https://dsportalapp.herokuapp.com/");
+        driver.get(ConfigReader.getProperty("url"));
     }
 
     /** Click Get Started button on homepage */
@@ -78,4 +85,9 @@ public class LoginPage {
     enterPassword("Sdet@2025");
     clickLogin();
 }
+    public void waitForSuccessfulLogin() {
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.urlContains("home"));
+    }
+
 }

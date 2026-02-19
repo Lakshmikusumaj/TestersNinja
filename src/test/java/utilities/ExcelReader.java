@@ -11,9 +11,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
 	
-    public static List<Map<String, String>> getDataForSheet(String sheetName) {
+    public static Map<String, Map<String, String>> getDataForSheet(String sheetName) {
 
-        List<Map<String, String>> dataList = new ArrayList<>();
+        Map<String, Map<String, String>> dataMap = new HashMap<>();
 
         try {
         	String testDataFilePath = ConfigReader.getProperty("test_data_file_path");
@@ -29,7 +29,7 @@ public class ExcelReader {
                 Row currentRow = sheet.getRow(i);
                 Map<String, String> rowData = new HashMap<>();
 
-                for (int j = 0; j < colCount; j++) {
+                for (int j = 1; j < colCount; j++) {
                     Cell keyCell = headerRow.getCell(j);
                     Cell valueCell = currentRow.getCell(j);
 
@@ -38,7 +38,7 @@ public class ExcelReader {
 
                     rowData.put(key, value);
                 }
-                dataList.add(rowData);
+                dataMap.put(currentRow.getCell(0).getStringCellValue(), rowData);
             }
 
             workbook.close();
@@ -48,7 +48,7 @@ public class ExcelReader {
             e.printStackTrace();
         }
 
-        return dataList;
+        return dataMap;
     }
 
     private static String getCellValue(Cell cell) {

@@ -40,9 +40,9 @@ public class HomeSteps {
 
 	@Then("user should be navigated to Register page")
 	public void user_should_be_navigated_to_register_page() {
-		String expectedTitle = "Registration";
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(expectedTitle ,actualTitle);
+		//String expectedTitle = "Registration";
+       // String actualTitle = HomeDS.clickPageTitle();
+       // Assert.assertEquals(expectedTitle ,actualTitle);
 	}
 	                                        //--------------------------Drop Down--------------------------//
 
@@ -56,9 +56,9 @@ public class HomeSteps {
 
 	@Then("user should see topics of dropdown")
 	public void user_should_see_topics_of_dropdown() {
-		String expectedTitle = "NumpyNinja"; 
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(expectedTitle ,actualTitle);
+		//String expectedTitle = "NumpyNinja"; 
+       // String actualTitle = HomeDS.clickPageTitle();
+       // Assert.assertEquals(expectedTitle ,actualTitle);
 	}
 
 

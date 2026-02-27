@@ -2,47 +2,93 @@ package factory;
 
 import java.time.Duration;
 
-import org.openqa.selenium.WebDriver; 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.edge.*;
+
 import utilities.ConfigReader;
 
-public class DriverFactory {
+public class DriverFactory { 
 
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static final Logger logger = LogManager.getLogger(DriverFactory.class);
 
-    // Prevent object creation
-    private DriverFactory() {}
 
-    public static WebDriver getDriver() {
+    //public static WebDriver getDriver() {
+     //   return driver.get();
+   // }
 
-        if (driver == null) {
+   /* public static void initDriver(String browser) {
+    	if (browser == null) {
+            browser = "chrome";
+        }*/
+public static void initDriver() {
+	
+    String browser = ConfigReader.getProperty("browser");
+	String url =ConfigReader.getProperty("url").toString();
+	logger.info("Running in :"+browser.toLowerCase()+">browsers");
+    switch (browser.toLowerCase()) {
 
-            String browser = ConfigReader.getProperty("browser");
+        case "chrome":
+        	
+            //WebDriverManager.chromedriver().setup();
+            driver.set(new ChromeDriver());
+            logger.info("launching chrome browser");
+            break;
 
-            switch (browser.toLowerCase()) {
-                case "Edge":
-                    driver = new FirefoxDriver();
-                    break;
+        case "edge":
+           // WebDriverManager.edgedriver().setup();
+            driver.set(new EdgeDriver());
+            logger.info("launching edge browser");
+            break;
 
-                case "chrome":
-                default:
-                    driver = new ChromeDriver();
-                    break;
-            }
+        case "firefox":
+           // WebDriverManager.firefoxdriver().setup();
+            driver.set(new FirefoxDriver());
+            break;
 
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        default:
+            throw new RuntimeException("Browser not supported: " + browser);
+    }
+    		
+
+     
+    		//driver.get(url);
+getDriver().get(url);
+getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+    getDriver().manage().window().maximize();
+    getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+}
+       
+       /* else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver.set(new EdgeDriver());
+        }
+       // else if (browser.equalsIgnoreCase("firefox")) {
+         //   WebDriverManager.firefoxdriver().setup();
+         //   driver.set(new FirefoxDriver());
+       // }
+        else {
+            throw new RuntimeException("Browser not supported");
         }
 
-        return driver;
+        // VERY IMPORTANT → only after driver.set()
+        getDriver().manage().window().maximize();
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }*/
+
+    public static WebDriver getDriver() {
+        return driver.get();
     }
 
     public static void quitDriver() {
-        if (driver != null) {
-            //driver.quit();
-            driver = null;
+        if (driver.get() != null) {
+            driver.get().quit();
+            driver.remove();
         }
     }
 }
+   

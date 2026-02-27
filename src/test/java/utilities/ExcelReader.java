@@ -19,8 +19,8 @@ public class ExcelReader {
         	String testDataFilePath1 = System.getProperty("user.dir") + "/src/test/resources/testdata/ArrayTestData.xlsx";
         	FileInputStream fis = new FileInputStream(testDataFilePath1);
 
-        	//String testDataFilePath1 = ConfigReader.getProperty("test_data_file_path1");
-           // FileInputStream fis = new FileInputStream(testDataFilePath1);
+        	//String testDataFilePath12 = ConfigReader.getProperty("test_data_file_path");
+           //FileInputStream fis12 = new FileInputStream(testDataFilePath12);
             Workbook workbook = new XSSFWorkbook(fis);
             Sheet sheet = workbook.getSheet(sheetName);
 

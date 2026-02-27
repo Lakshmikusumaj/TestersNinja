@@ -7,7 +7,7 @@ import factory.DriverFactory;
 
 public class LoginPage {
 
-    WebDriver driver;
+   private  WebDriver driver;
 
     // Constructor
     //public LoginPage(WebDriver driver) {

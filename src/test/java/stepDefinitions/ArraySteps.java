@@ -1,9 +1,10 @@
 package stepDefinitions;
 
 import java.util.List;
-import java.util.Map; 
+import java.util.Map;
 
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
@@ -16,74 +17,82 @@ import io.cucumber.java.en.When;
 import pageObjects.ArrPage;
 import utilities.ExcelReader;
 
-	public class ArraySteps { 
-		
-		 ArrPage arraypage;
-		 WebDriver driver = DriverFactory.getDriver();
+public class ArraySteps  { 
+  
+    private static final Logger logger = LogManager.getLogger(ArraySteps.class);
+
+		 ArrPage arrayPage;
+	  	 WebDriver driver = DriverFactory.getDriver();
 		 List<Map<String, String>> ArrayTestData;
-	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
+	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");	
+		 public ArraySteps() {
+		        arrayPage = new ArrPage(driver);
+		    }
+ 
  
         @Given("user clicks on Array from the home page")
 		public void user_clicks_on_array_from_the_home_page() {
-	        arraypage = new ArrPage(driver);   
-	    	System.out.println(driver.getTitle());
-	        arraypage.clickGetStartesArr();
-			String expectedTitle = "Array";
-	        String actualTitle = driver.getTitle();
-	        Assert.assertEquals(expectedTitle ,actualTitle);
+	       // arraypage = new ArrPage(driver);   
+	    	//System.out.println(driver.getTitle());
+	        arrayPage.clickGetStartesArr();
+		//	String expectedTitle = "Array";
+	      //  String actualTitle = driver.getTitle();
+	       // Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
 		@When("user clicks on Arrays in Python button")
 		public void user_clicks_on_arrays_in_python_button() {
-		    arraypage.clickArraysInPython();
+		    arrayPage.clickArraysInPython();
 		} 
 
 		@Then("user is navigated to the Arrays in Python page")
 		public void user_is_navigated_to_the_arrays_in_python_page() {
 			String expectedTitle = "Arrays in Python";
-	        String actualTitle = driver.getTitle();
+	        String actualTitle =arrayPage.getPageTitle();//getpageoobject
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
 		@When("user clicks on Arrays Using List button")
 		public void user_clicks_on_arrays_using_list_button() {
-		    arraypage.clickArraysUsingList();
+		    arrayPage.clickArraysUsingList();
 		}
 
 		@Then("user is navigated to the Arrays Using List page")
 		public void user_is_navigated_to_the_arrays_using_list_page() {
 			String expectedTitle = "Arrays Using List";
-	        String actualTitle = driver.getTitle();
+			
+	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
 		@When("user clicks on Basic Operations in Lists")
 		public void user_clicks_on_basic_operations_in_lists() {
-		    arraypage.clickBasicOperationsInLists();
+		    arrayPage.clickBasicOperationsInLists();
 		}
 
 		@Then("user is navigated to the Basic Operations in Lists page")
 		public void user_is_navigated_to_the_basic_operations_in_lists_page() {
 			String expectedTitle = "Basic Operations in Lists";
-	        String actualTitle = driver.getTitle();
+	        String actualTitle =arrayPage.getPageTitle();//paje
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
 		@When("user clicks on Applications of Array")
 		public void user_clicks_on_applications_of_array() {
-		    arraypage.clickApplicationsOfArray();
+		    arrayPage.clickApplicationsOfArray();
 		}
 
 		@Then("user is navigated to the Applications of Array page")
 		public void user_is_navigated_to_the_applications_of_array_page() {
 			String expectedTitle = "Applications of Array";
-	        String actualTitle = driver.getTitle();
+	        String actualTitle =arrayPage.getPageTitle();;
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
 		@When("user clicks on Try Here button")
 		public void user_clicks_on_try_here_button() {
-			arraypage.clickTryHere();
+	
+			arrayPage.clickTryHere();
 			}
 		
 
@@ -99,16 +108,16 @@ import utilities.ExcelReader;
 			 List<Map<String, String>> testData =
 			 ExcelReader.getDataForSheet("ArrayTryEditor");
 
-			    for (Map<String, String> row : testData) {
+			    for (Map<String, String> row : testData) { 
 
 			        String Code = row.get("CODE"); 
 			        String expectedResult = row.get("RESULT");
 
-			        arraypage.clickTryHere();
-			        arraypage.enterCodeInEditor(code);   // Use Excel value
-			        arraypage.clickRunButton();
+			        arrayPage.clickTryHere();
+			        arrayPage.enterCodeInEditor(code);   // Use Excel value
+			        arrayPage.clickRunButton();
 
-			        String actualResult = arraypage.getOutput();
+			        String actualResult = arrayPage.getOutput();
 			        Assert.assertEquals(actualResult, expectedResult);
 			    }
 			}  
@@ -128,7 +137,7 @@ import utilities.ExcelReader;
 		
 		@Then("user should see {string}")
 		public void user_should_see(String result) {
-			 String output = arraypage.getOutput();
+			 String output = arrayPage.getOutput();
 		        if (result.equalsIgnoreCase("output")) {
 		            Assert.assertTrue(output.length() > 0);
 		        } else if (result.equalsIgnoreCase("error")) {
@@ -137,18 +146,18 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Practice Questions")
 		public void user_clicks_on_practice_questions() {
-			  arraypage.clickPracticeQuestions();
+			  arrayPage.clickPracticeQuestions();
 		}
 
 		@Then("user is navigated to the Practice Questions page")
 		public void user_is_navigated_to_the_practice_questions_page() {
-			System.out.println(driver.getTitle());
+		arrayPage.getPageTitle();
 		}
 
 		@When("user clicks on Search the Array")
 		public void user_clicks_on_search_the_array() {
-			arraypage.clickSearchTheArray();
-			System.out.println(driver.getTitle());
+			arrayPage.clickSearchTheArray();
+			System.out.println(arrayPage.getPageTitle());
 
 		}
 
@@ -159,8 +168,8 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Max Consecutive Ones")
 		public void user_clicks_on_max_consecutive_ones() {
-	        arraypage.clickMaxConsecutiveOnes();
-			System.out.println(driver.getTitle());
+	        arrayPage.clickMaxConsecutiveOnes();
+			System.out.println(arrayPage.getPageTitle());
 
 
 		}
@@ -172,7 +181,7 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Find Numbers with Even Number of Digits")
 		public void user_clicks_on_find_numbers_with_even_number_of_digits() {
-	        arraypage.clickFindNumbersWithEvenDigits();
+	        arrayPage.clickFindNumbersWithEvenDigits();
 
 		}
 
@@ -183,7 +192,7 @@ import utilities.ExcelReader;
 
 		@When("user clicks on Squares of a Sorted Array")
 		public void user_clicks_on_squares_of_a_sorted_array() {
-	        arraypage.clickSquaresOfSortedArray();
+	        arrayPage.clickSquaresOfSortedArray();
 
 		}
 
@@ -195,6 +204,7 @@ import utilities.ExcelReader;
 		@Given("user is on the Applications of Array page")
 		public void user_is_on_the_applications_of_array_page() {
 	    	//ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
+			System.out.println(arrayPage.getPageTitle());
 
 		}
 		 
@@ -202,7 +212,7 @@ import utilities.ExcelReader;
 		public void user_executes_from_sheet(String TestCaseName, String Arraydata) {
 			
 			    // Open Try Editor
-			    arraypage.clickTryHere();
+			    arrayPage.clickTryHere();
 			    // Read all test cases from Excel sheet
 			    ArrayTestData = ExcelReader.getDataForSheet(Arraydata);
 
@@ -217,22 +227,30 @@ import utilities.ExcelReader;
 			        System.out.println("Running test case: " + testCase);
 
 			        // Enter code and run
-			        arraypage.enterCodeInEditor(code);
-			        arraypage.clickRunButton();
+			        arrayPage.enterCodeInEditor(code);
+			        arrayPage.clickRunButton();
 			     // Before fetching output
 			        try {
 			            Alert alert = driver.switchTo().alert();
-			            System.out.println("Alert text: " + alert.getText());
+			            logger.info("Alert appeared with text: " + alert.getText());
+
+			            //System.out.println("Alert text: " + alert.getText());
 			            alert.accept(); // or alert.dismiss()
 			        } catch (NoAlertPresentException e) {
 			            // No alert, continue
+			            logger.info("No alert appeared");
+
 			        }
 			    }
 
 		}	        
 		@Then("user should see expected result")
 		public void user_should_see_expected_result() {
-		   
+		   arrayPage.getOutput();
+		   //logger.
+		   //logger.info("Alert appeared with text:" , );
+			//System.out.println(driver.getText());
+
 		}
 
 

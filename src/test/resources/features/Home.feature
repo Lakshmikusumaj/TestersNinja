@@ -45,6 +45,7 @@
     | username     | password     |
     | validUser1   | validPass1   | 
     | TestersNinja | Ts230@231    |
+    
    Rule: sign in for all modules  
   
  

@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
                 "stepDefinitions",
                 "hooks"
         },
-        tags = "@Login",
+        tags = "@Stack_Test03",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",

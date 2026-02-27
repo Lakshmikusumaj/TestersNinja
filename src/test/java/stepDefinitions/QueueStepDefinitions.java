@@ -22,7 +22,7 @@ public class QueueStepDefinitions {
     TryEditorPage tryEditorPage = new TryEditorPage(driver);
 
     List<Map<String, String>> loginTestData;
-    List<Map<String, String>> queueTestData;
+    static Map<String, Map<String, String>> queueTestData;
     
     /* ---------- Background ---------- */
 
@@ -78,26 +78,28 @@ public class QueueStepDefinitions {
 
     /* ---------- Queue_Test03 Excel Driven TryEditor ---------- */
 
-    @Given("User is on TryEditor page of Queue module")
-    public void user_is_on_try_editor_queue() {
-    	queueTestData = ExcelReader.getDataForSheet("EditorData");
+    @Given("TryEditor data for Queue module")
+    public void try_editor_data() {
+    	if (queueTestData == null) {
+    		queueTestData = ExcelReader.getEditorData();
+        }
     }
 
-    @When("User enters python code from row {int} and clicks Run in Queue module")
-    public void user_enters_code_from_excel(Integer rowIndex) throws Exception {
+    @When("User enters python code for testcase {string} and clicks Run in Queue module")
+    public void user_enters_python_code_for_testcase(String testCaseName) throws Exception {
 
     	queuePage.clickTopic("Queue Operations");
     	queuePage.clickTryHere();
         
-    	String pythonCode = queueTestData.get(rowIndex).get("PythonCode");
+    	String pythonCode = queueTestData.get(testCaseName).get("PythonCode");
         tryEditorPage.enterCode(pythonCode);
         tryEditorPage.clickRun();
     }
 
-    @Then("User should see the output expected for the row {int} in Queue module")
-    public void user_should_see_expected_output(Integer rowIndex) throws Exception {
+    @Then("User should see the output expected for the testcase {string} in Queue module")
+    public void user_should_see_the_output_expected_for_the_testcase(String testCaseName) throws Exception {
 
-    	 String expectedOutput = queueTestData.get(rowIndex).get("ExpectedOutput");
+    	 String expectedOutput = queueTestData.get(testCaseName).get("ExpectedOutput");
 
          if (expectedOutput.equals("Success")) {
          	String actualOutput = tryEditorPage.getOutput();

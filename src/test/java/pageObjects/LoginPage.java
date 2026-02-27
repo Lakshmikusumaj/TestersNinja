@@ -89,5 +89,14 @@ public class LoginPage {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.urlContains("home"));
     }
+      // Check whether Login button is enabled
+    public boolean isLoginButtonEnabled() {
+        return driver.findElement(loginBtn).isEnabled();
+    }
+
+        //  Check password field masking
+    public String getPasswordFieldType() {
+        return driver.findElement(passwordField).getAttribute("type");
+    }
 
 }

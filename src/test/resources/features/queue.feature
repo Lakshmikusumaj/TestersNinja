@@ -32,13 +32,14 @@ Feature: Validation of Queue module
 
   @Queue_Test03
   Scenario Outline: Verify TryEditor with python code of Queue module
-    Given User is on TryEditor page of Queue module
-    When User enters python code from row <RowIndex> and clicks Run in Queue module
-    Then User should see the output expected for the row <RowIndex> in Queue module
+    Given TryEditor data for Queue module
+    When User enters python code for testcase "<TestCaseName>" and clicks Run in Queue module
+    Then User should see the output expected for the testcase "<TestCaseName>" in Queue module
+    
      Examples:
-      | RowIndex |
-      |0         |
-      |1         |
+      |TestCaseName          |
+      | PythonCode_Valid		 |
+      | PythonCode_Invalid	 |
 
   # @Queue_Test04
   # Scenario: Verify alert handling in try editor page of Queue

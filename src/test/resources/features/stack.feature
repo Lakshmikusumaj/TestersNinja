@@ -6,7 +6,6 @@ Feature: Validation of Stack module
     
   @Stack_Test01
   Scenario Outline: User navigates to different topic pages in Stack module
-    # Given User is on the Stack page
     When User clicks "<TopicsCovered>" link in Stack page
     Then User should be redirected to "<DestinationPage>" stack page
 
@@ -30,14 +29,15 @@ Feature: Validation of Stack module
 
   @Stack_Test03
   Scenario Outline: Verify TryEditor functionality with python code of stack module
-    Given User is on Try Editor page of stack module
-    When User enters python code from row <RowIndex> and clicks Run
-    Then User should see the output expected for the row <RowIndex>
+    Given Try Editor data
+    When User enters python code for testcase "<TestCaseName>" and clicks Run
+    Then User should see the output expected for the testcase "<TestCaseName>"
+    
     Examples:
-      | RowIndex |
-      |0         |
-      |1         |
-
+      |TestCaseName          |
+      | PythonCode_Valid		 |
+      | PythonCode_Invalid	 |
+      
   # @Stack_Test04
   # Scenario: Verify alert handling in try editor page of stack
   #   Given User is on error alert in try editor page of stack

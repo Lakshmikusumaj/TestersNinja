@@ -1,12 +1,13 @@
 package utilities;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
@@ -50,6 +51,14 @@ public class ExcelReader {
 
         return dataMap;
     }
+    
+    public static Map<String, Map<String, String>> getLoginData() {
+    	return getDataForSheet(ConfigReader.getProperty("login_data_sheet_name"));
+    }
+    public static Map<String, Map<String, String>> getEditorData() {
+    	return getDataForSheet(ConfigReader.getProperty("editor_data_sheet_name"));
+    }
+
 
     private static String getCellValue(Cell cell) {
 

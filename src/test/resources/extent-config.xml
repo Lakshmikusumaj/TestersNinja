@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>standard</theme>
+        <documentTitle>DSAlgo Automation Report</documentTitle>
+        <reportName>Cucumber Execution Report</reportName>
+        <encoding>utf-8</encoding>
+        <timestampFormat>dd-MM-yyyy HH:mm:ss</timestampFormat>
+    </configuration>
+</extentreports>

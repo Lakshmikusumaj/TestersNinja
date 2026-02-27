@@ -21,11 +21,11 @@ public class StackStepDefinitions {
     TryEditorPage tryEditorPage = new TryEditorPage(driver);
 
     List<Map<String, String>> loginTestData;
-    List<Map<String, String>> stackTestData;
-
+    static Map<String, Map<String, String>> stackTestData;
+    
     // ---------------- Background ----------------
-    @Given("User is logged in to the  DSAlgo portal and on stack page")
-    public void user_logged_in_and_on_stack_page() {
+    @Given("User is on the stack page")
+    public void user_is_on_the_stack_page() {
 //    	// driver = DriverFactory.getDriver();
 //        // loginPage = new LoginPage(driver);
 //         
@@ -75,25 +75,26 @@ public class StackStepDefinitions {
     }
 
     // ---------------- Stack_Test03 (Excel Driven) ----------------
-    @Given("User is on Try Editor page of stack module")
-    public void user_on_try_editor_page() {
-
-    	stackTestData = ExcelReader.getDataForSheet("EditorData");
+    @Given("Try Editor data")
+    public void try_editor_data() {
+    	if (stackTestData == null) {
+    		stackTestData = ExcelReader.getEditorData();
+        }
     }
 
-    @When("User enters python code from row {int} and clicks Run")
-    public void user_enters_python_code_from_row(int rowIndex) {
+    @When("User enters python code for testcase {string} and clicks Run")
+    public void user_enters_python_for_testcase(String testCaseName) {
     	stackPage.clickTopic("Implementation");
     	stackPage.clickTryHere();
         
-    	String pythonCode = stackTestData.get(rowIndex).get("PythonCode");
+    	String pythonCode = stackTestData.get(testCaseName).get("PythonCode");
         tryEditorPage.enterCode(pythonCode);
         tryEditorPage.clickRun();
     }
 
-    @Then("User should see the output expected for the row {int}")
-    public void user_should_see_expected_output(int rowIndex) {
-        String expectedOutput = stackTestData.get(rowIndex).get("ExpectedOutput");
+    @Then("User should see the output expected for the testcase {string}")
+    public void user_should_see_the_output_expected_for_the_testcase(String testCaseName) {
+        String expectedOutput = stackTestData.get(testCaseName).get("ExpectedOutput");
 
         if (expectedOutput.equals("Success")) {
         	String actualOutput = tryEditorPage.getOutput();
@@ -126,9 +127,6 @@ public class StackStepDefinitions {
     @Given("User is again on the Stack page")
     public void user_again_on_stack_page() {
     	stackPage.clickTopic("Implementation");
-    	stackPage.clickTryHere();
-    	
-        driver.navigate().back();
     }
 
     @When("User clicks Practice Questions button on stack page")

@@ -8,12 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import utilities.ConfigReader;
 
-public class Driverfactory {
+public class DriverFactory {
 
     private static WebDriver driver;
 
     // Prevent object creation
-    private Driverfactory() {}
+    private DriverFactory() {}
 
     public static WebDriver getDriver() {
 
@@ -41,7 +41,7 @@ public class Driverfactory {
 
     public static void quitDriver() {
         if (driver != null) {
-            driver.quit();
+          //  driver.quit();
             driver = null;
         }
     }

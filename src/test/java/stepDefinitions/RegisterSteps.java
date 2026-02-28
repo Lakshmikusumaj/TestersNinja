@@ -1,5 +1,5 @@
 //package stepDefinations;
-package stepdefination;
+package stepDefinitions;
 
 import java.time.Duration;
 
@@ -12,20 +12,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.util.Assert;
 
-import factory.Driverfactory;
+import factory.DriverFactory;
 import io.cucumber.java.en.Given; 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.RegisterPage;
+import pageObjects.RegisterPage;
 
-public class registersteps {
+public class RegisterSteps {
 	
 	WebDriver driver;
 	    RegisterPage registrationPage;
   
 	    @Given("User open DSPortal home page")
 	    public void user_open_dsportal_home_page() {
-	    driver=Driverfactory.getDriver();
+	    driver=DriverFactory.getDriver();
    	registrationPage=new RegisterPage(driver);
 
 	    	registrationPage.getintohomepage();

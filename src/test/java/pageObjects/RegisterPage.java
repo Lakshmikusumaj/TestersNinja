@@ -1,9 +1,9 @@
-package pages;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import factory.Driverfactory;
+import factory.DriverFactory;
 
 public class RegisterPage {
 

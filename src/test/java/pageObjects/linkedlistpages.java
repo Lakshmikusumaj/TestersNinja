@@ -2,8 +2,13 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,14 +23,17 @@ public class linkedlistpages {
 	    }
 //locators
 	    private By getStartedlinkedlist = By.xpath("//a[@href='linked-list']");
-	    private By Introductionlink = By.xpath("//a[@href='introduction']");
+	    private By Introductionlink = By.xpath("//a[text()='Introduction']");
 	    private By CreatingLinkedLIstlink = By.linkText("Creating Linked LIst");
 	    private By TypesofLinkedLIstlink = By.linkText("Types of Linked List");
 	    private By ImplementLinkedListinPythonlink = By.linkText("Implement Linked List in Python");
 	    private By Traversallink = By.linkText("Traversal");
 	    private By Insertionlink = By.linkText("Insertion");
 	    private By Deletionlink = By.linkText("Deletion");
-	    private By PracticeQuestions = By.linkText("Practice Questions");
+	    private By PracticeQ= By.xpath("//a[@href='/linked-list/practice']");
+	    private By run=By.xpath("//button[@onclick='runit()']");
+	    private By here= By.xpath("//a[@href='/tryEditor']");
+	    private By editor = By.xpath("//div[contains(@class,'CodeMirror')]//textarea");
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  
 	    public void clickGetStartedLlinkedlist() {
 	driver.findElement(getStartedlinkedlist).click();
@@ -35,28 +43,65 @@ public void clickTopic(String topic) {
         case "Introduction":
             driver.findElement(Introductionlink).click();
             break;
-        case "CreatingLinkedLIstlink":
+        case "Creating Linked LIst":
             driver.findElement(CreatingLinkedLIstlink).click();
             break;
-        case "TypesofLinkedLIstlink":
+        case "Types of Linked List":
             driver.findElement(TypesofLinkedLIstlink).click();
             break;
-        case "ImplementLinkedListinPythonlink":
+        case "Implement Linked List in Python":
             driver.findElement(ImplementLinkedListinPythonlink).click();
             break;
-        case "Traversallink":
+        case "Traversal":
             driver.findElement(Traversallink).click();
             break;
-        case "Insertionlink":
+        case "Insertion":
             driver.findElement(Insertionlink).click();
             break;
             
-        case "Deletionlink":
+        case "Deletion":
             driver.findElement(Deletionlink).click();
             break;
-        case "PracticeQuestions":
-            driver.findElement(PracticeQuestions).click();
-            break;
-    }}}     
+       
+    }}
+   //0003
+    public void clickPractice() {
+    	driver.findElement(Introductionlink).click();
+    	driver.findElement(PracticeQ).click();
+    
+}
+  //0004
+    public void here(String here1) {
+    	driver.findElement(Introductionlink).click();
+    	System.out.println("The code is --" + here1);
+		//driver.findElement(here).sendKeys(here1);
+    	WebElement txt=driver.findElement(here);
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("arguments[0].scrollIntoView(true);", txt);
+	txt.click();
+	driver.findElement(editor).sendKeys(here1);
+    }
+
+	public void clickRunButton() {
+		driver.findElement(run).click();
+	}
+
+	public String getAlertMessage() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		try {
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			//alert = driver.switchTo().alert();
+			String text = alert.getText();
+			alert.accept();
+			return text;
+		} catch (NoAlertPresentException e) {
+			throw new AssertionError("Expected alert is not present!");
+		}
+	}
+
+
+    
+
+}   
     
 

@@ -32,6 +32,7 @@ public class graphpages {
 	private By output = By.xpath("//*[@id='output']");
 	private By practice = By.xpath("//a[@href='/graph/practice']");
 	
+	
 	// Actions
 
 	public void clickGetStarted() {
@@ -58,7 +59,7 @@ public class graphpages {
 		return title;
 	}
 
-	// 0002
+	// 0001
 	public void clickTryHere() {
 		WebElement tryHere = driver.findElement(tryHereBtn);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -76,7 +77,7 @@ public class graphpages {
 		return driver.findElement(runButton).isDisplayed();
 	}
 
-	// 0003
+	// 0002
 	public void enterCode(String code) {
 		System.out.println("The code is --" + code);
 		driver.findElement(editor).sendKeys(code);
@@ -102,10 +103,12 @@ public class graphpages {
 	public String getOutPutText() {
 		return driver.findElement(output).getText().toString();
 	}
-//0004
+//0003
 public void clickPracticalQuestions() {
 	driver.findElement(graphLink).click();
 	driver.findElement(practice).click();
 }
+
+
 }
 

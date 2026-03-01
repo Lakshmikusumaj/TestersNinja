@@ -56,7 +56,39 @@ public class LinkedSteps {
 	public void user_should_be_redirected_to_try_editor_page_with_run_button_in_the_respective_link_of_linkedlist_module() {
 	    
 	}
+//0003
+	@Given("User is on the Introduction page")
+	public void user_is_on_the_introduction_page() {
+	    
+	}
 
+	@When("User click on Practice Questions")
+	public void user_click_on_practice_questions() {
+	   linkedlistpage.clickPractice();
+	}
+
+	@Then("User should redirected to Practice Questions")
+	public void user_should_redirected_to_practice_questions() {
+	   
+	}
+//0004
+	@Given("User is on the Introduction page in linkedlist")
+	public void user_is_on_the_introduction_page_in_linkedlist() {
+	   
+	}
+
+	@When("User clicks Try Here and enter {string} on respective Introduction page in linkedlinst")
+	public void user_clicks_try_here_and_enter_on_respective_introduction_page_in_linkedlinst(String here1) {
+	 // String here1 =null;
+		linkedlistpage.here(here1);
+	    linkedlistpage.clickRunButton();
+	    
+	}
+
+	@Then("User should be redirected to Try Editor page with Run button in the respective link of linkedlist")
+	public void user_should_be_redirected_to_try_editor_page_with_run_button_in_the_respective_link_of_linkedlist() {
+	   
+	}
 
 
 }

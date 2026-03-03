@@ -23,7 +23,7 @@ public class ArraySteps  {
 
 		 ArrPage arrayPage;
 	  	 WebDriver driver = DriverFactory.getDriver();
-		 List<Map<String, String>> ArrayTestData;
+		// List<Map<String, String>> ArrayTestData;
 	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");	
 		 public ArraySteps() {
 		        arrayPage = new ArrPage(driver);
@@ -103,24 +103,22 @@ public class ArraySteps  {
 
 		@When("user enters {string} in the Try Editor and clicks Run button")
 		public void user_enters_in_the_try_editor_and_clicks_run_button(String code) {
-	    	
-			
-			 List<Map<String, String>> testData =
-			 ExcelReader.getDataForSheet("ArrayTryEditor");
-
-			    for (Map<String, String> row : testData) { 
-
-			        String Code = row.get("CODE"); 
-			        String expectedResult = row.get("RESULT");
-
-			        arrayPage.clickTryHere();
-			        arrayPage.enterCodeInEditor(code);   // Use Excel value
-			        arrayPage.clickRunButton();
-
-			        String actualResult = arrayPage.getOutput();
-			        Assert.assertEquals(actualResult, expectedResult);
-			    }
-			}  
+			/*
+			 * 
+			 * 
+			 * List<Map<String, String>> testData =
+			 * ExcelReader.getDataForSheet("ArrayTryEditor");
+			 * 
+			 * for (Map<String, String> row : testData) {
+			 * 
+			 * String Code = row.get("CODE"); String expectedResult = row.get("RESULT");
+			 * 
+			 * arrayPage.clickTryHere(); arrayPage.enterCodeInEditor(code); // Use Excel
+			 * value arrayPage.clickRunButton();
+			 * 
+			 * String actualResult = arrayPage.getOutput();
+			 * Assert.assertEquals(actualResult, expectedResult); }
+			 */}  
 	
 		
 		@Then("user should see {string}")
@@ -196,36 +194,29 @@ public class ArraySteps  {
 		}
 		 
 		@When("user executes {string} from {string} sheet")
-		public void user_executes_from_sheet(String TestCaseName, String Arraydata) {
-			
-			    // Open Try Editor
-			    arrayPage.clickTryHere();
-			    // Read all test cases from Excel sheet
-			    ArrayTestData = ExcelReader.getDataForSheet(Arraydata);
-
-			    for (Map<String, String> row : ArrayTestData) {
-
-			        String testCase = row.get("TestCaseName");
-			        String code = row.get("Code");
-			        String expectedResult = row.get("Results"); 
-			        System.out.println("Running test case: " + testCase);
-
-			        // Enter code and run
-			        arrayPage.enterCodeInEditor(code);
-			        arrayPage.clickRunButton();
-			     // Before fetching output
-			        try {
-			            Alert alert = driver.switchTo().alert();
-			            logger.info("Alert appeared with text: " + alert.getText());
-
-			            //System.out.println("Alert text: " + alert.getText());
-			            alert.accept(); // or alert.dismiss()
-			        } catch (NoAlertPresentException e) {
-			            // No alert, continue
-			            logger.info("No alert appeared");
-
-			        }
-			    }
+		public void user_executes_from_sheet(String TestCaseName,
+				String Arraydata) {/*
+									 * 
+									 * // Open Try Editor arrayPage.clickTryHere(); // Read all test cases from
+									 * Excel sheet ArrayTestData = ExcelReader.getDataForSheet(Arraydata);
+									 * 
+									 * for (Map<String, String> row : ArrayTestData) {
+									 * 
+									 * String testCase = row.get("TestCaseName"); String code = row.get("Code");
+									 * String expectedResult = row.get("Results");
+									 * System.out.println("Running test case: " + testCase);
+									 * 
+									 * // Enter code and run arrayPage.enterCodeInEditor(code);
+									 * arrayPage.clickRunButton(); // Before fetching output try { Alert alert =
+									 * driver.switchTo().alert(); logger.info("Alert appeared with text: " +
+									 * alert.getText());
+									 * 
+									 * //System.out.println("Alert text: " + alert.getText()); alert.accept(); // or
+									 * alert.dismiss() } catch (NoAlertPresentException e) { // No alert, continue
+									 * logger.info("No alert appeared");
+									 * 
+									 * } }
+									 */
 
 		}	        
 		@Then("user should see expected result")

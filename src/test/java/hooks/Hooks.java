@@ -13,6 +13,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import pageObjects.LoginPage;
 
+
 public class Hooks {
 
 	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
@@ -64,6 +65,7 @@ public class Hooks {
 		// if (DriverFactory.getDriver() != null) {
 		DriverFactory.quitDriver();
 	}
+
 
 }
 

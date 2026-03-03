@@ -20,8 +20,7 @@ public class ArrPage  {
 
           public ArrPage(WebDriver driver) {  
                    this.driver = driver;
-          }
-         // private static final Logger logger = LogManager.getLogger(ArrPage.class);
+          }        
 
     private By getStartedBtn = By.xpath("//button[text()='Get Started']");
     private By array=By.xpath("//a[contains(@class,'btn-primary') and normalize-space()='Get Started']");
@@ -39,6 +38,7 @@ public class ArrPage  {
     private By searchTheArray = By.xpath("//a[text()='Search the array']");
     private By editor=By.xpath("//div[contains(@class,'CodeMirror')]//textarea");
     private	By runButton = By.id("runButton");
+    private By RunButton=By.xpath("//button[text()='Run']");
 	private	By output = By.xpath("//*[@id='output']");
 	       //By editor = By.id("textarea");
            // By editor= By.xpath("//div[@class='CodeMirror-code']");
@@ -84,31 +84,31 @@ public class ArrPage  {
 		    public void clickPracticeQuestions() {
 		        
 			     driver.findElement(arraysInPython ).click();
-			     driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			     driver.findElement(practiceQuestions).click();
   
 		    } 
 
 		    public void clickSearchTheArray() {
 			     driver.findElement(arraysInPython ).click();
-				 driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+				 driver.findElement(practiceQuestions).click();
                  driver.findElement(searchTheArray).click();
 		    }
 
 		    public void clickMaxConsecutiveOnes() {
 		    	driver.findElement(arraysInPython ).click();
-			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			    driver.findElement(practiceQuestions).click();
 		        driver.findElement(By.linkText("Max Consecutive Ones")).click();
 		    }
 
 		    public void clickFindNumbersWithEvenDigits() {
 		    	driver.findElement(arraysInPython ).click();
-			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			    driver.findElement(practiceQuestions).click();
 		        driver.findElement(By.linkText("Find Numbers with Even Number of Digits")).click();
 		    }
 
 		    public void clickSquaresOfSortedArray() {
 		    	driver.findElement(arraysInPython ).click();
-			    driver.findElement(By.xpath("//a[text()='Practice Questions']")).click();
+			    driver.findElement(practiceQuestions).click();
 		        driver.findElement(By.linkText("Squares of a Sorted Array")).click();
 		    }
 
@@ -132,7 +132,7 @@ public class ArrPage  {
 
 		          
 		    public void clickRunButton() {
-		    	driver.findElement(By.xpath("//button[text()='Run']")).click();
+		    	driver.findElement(RunButton).click();
 		    }
 
 		    public String getOutput() {

@@ -27,7 +27,7 @@ public class ArraySteps  {
 	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");	
 		 public ArraySteps() {
 		        arrayPage = new ArrPage(driver);
-		    }
+		    } 
  
  
         @Given("user clicks on Array from the home page")
@@ -85,7 +85,7 @@ public class ArraySteps  {
 		@Then("user is navigated to the Applications of Array page")
 		public void user_is_navigated_to_the_applications_of_array_page() {
 			String expectedTitle = "Applications of Array";
-	        String actualTitle =arrayPage.getPageTitle();;
+	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		}
 
@@ -121,19 +121,7 @@ public class ArraySteps  {
 			        Assert.assertEquals(actualResult, expectedResult);
 			    }
 			}  
-
-			/*List<Map<String, String>> testData =
-			        ExcelReader.getDataForSheet("ArrayTryEditor");
-
-			for (Map<String, String> row : testData) {
-
-			    String code1 = row.get("CODE");
-			    String expectedResult = row.get("RESULT");
-
-			    arraypage.clickTryHere();
-			    arraypage.enterCodeInEditor(code);
-			    arraypage.clickRunButton();*/
-			
+	
 		
 		@Then("user should see {string}")
 		public void user_should_see(String result) {
@@ -170,7 +158,6 @@ public class ArraySteps  {
 		public void user_clicks_on_max_consecutive_ones() {
 	        arrayPage.clickMaxConsecutiveOnes();
 			System.out.println(arrayPage.getPageTitle());
-
 
 		}
 
@@ -221,9 +208,6 @@ public class ArraySteps  {
 			        String testCase = row.get("TestCaseName");
 			        String code = row.get("Code");
 			        String expectedResult = row.get("Results"); 
-			        //arraypage.enterCodeInEditor(code);
-			        //arraypage.clickRunButton();
-
 			        System.out.println("Running test case: " + testCase);
 
 			        // Enter code and run
@@ -246,10 +230,10 @@ public class ArraySteps  {
 		}	        
 		@Then("user should see expected result")
 		public void user_should_see_expected_result() {
+			
 		   arrayPage.getOutput();
-		   //logger.
+		  
 		   //logger.info("Alert appeared with text:" , );
-			//System.out.println(driver.getText());
 
 		}
 

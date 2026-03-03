@@ -2,12 +2,9 @@ package hooks;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-//import java.util.logging.LogManager;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.Reporter;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import factory.DriverFactory;
@@ -18,45 +15,31 @@ import pageObjects.LoginPage;
 
 public class Hooks {
 
-	//private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    private static final Logger logger = LogManager.getLogger(Hooks.class);
-    WebDriver driver;
-	//private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	private static final Logger logger = LogManager.getLogger(Hooks.class);
+	// WebDriver driver;
+	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	 LoginPage loginPage; //= new LoginPage();
+	LoginPage loginPage;
 
 	@Before(order = 0)
-	@Parameters("browser")
-
-	public void setUp() {  
-		
+	public void setUp() {
 		logger.info("========== Test Started ==========");
-		//ConfigReader.loadConfig();
-		//String url =ConfigReader.getProperty("url").toString();
-		//String browser =  ConfigReader.getProperty("browser");
-        //driver = DriverFactory.getDriver();
-
-		DriverFactory.initDriver(); 
-		//String browser =  ConfigReader.getProperty("browser");
-
-		//String browser =  ConfigReader.getProperty("browser");
-       // driver = DriverFactory.getDriver();
-
-		//driver = DriverFactory.getDriver();
-		//driver.manage().window().maximize();
-		//logger.info("the url is" +ConfigReader.getProperty("url"));
-		//driver.get(url);
+		 ITestContext context =
+			        Reporter.getCurrentTestResult().getTestContext();
+		String browser =
+		        (String) context.getAttribute("browserName");
+		DriverFactory.initDriver(browser);
 		logger.info("landed on to the dsalgo portal ");
-
-	    loginPage = new LoginPage();
+		loginPage = new LoginPage();
 
 	}
 
 	@Before(value = "@LaunchHome", order = 1)
 	public void LaunchHome() {
-		//loginPage.openPortal();
+		// loginPage.openPortal();
 		loginPage.clickGetStarted();
-		//loginPage.clickSignIn();
+		// loginPage.clickSignIn();
 		logger.info("landed on to home page: ");
 
 	}
@@ -72,12 +55,16 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		logger.info("===== Test Finished =====");
-       // tearDown();
-		if (scenario.isFailed()) {
-			byte[] screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(screenshot, "image/png", scenario.getName());
-		}
-
+		// tearDown();
+//		if (scenario.isFailed()) {
+//			byte[] screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
+//			scenario.attach(screenshot, "image/png", scenario.getName());
+//		}
+		System.out.println("Driver before quit: " + DriverFactory.getDriver());
+		// if (DriverFactory.getDriver() != null) {
 		DriverFactory.quitDriver();
 	}
+
 }
+
+	

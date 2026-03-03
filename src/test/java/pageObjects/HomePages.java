@@ -23,12 +23,12 @@ public class HomePages {
 	private By LaunchGetstart=By.linkText("Get Started");
 	private By RegisterHm=By.xpath("//a[@href='/register']");
 	private By dropDown=By.xpath("//div[@class='nav-item dropdown show']");
-	private  By DSdropdown=By.xpath("//a[@href='#']");
-			By Arrays=By.linkText("Arrays");
-			By Linked=By.linkText("Linked List");
-			By stackHm=By.linkText("Stack");
-			By QueueHm=By.linkText("Queue");
-			By GraphHm=By.linkText("Graph");
+	private By DSdropdown=By.xpath("//a[@href='#']");
+	private	By Arrays=By.linkText("Arrays");
+	private	By Linked=By.linkText("Linked List");
+    private By stackHm=By.linkText("Stack");
+	private	By QueueHm=By.linkText("Queue");
+	private By GraphHm=By.linkText("Graph");
    private By AlertHm=By.xpath("//div[@role='alert']");
    private By SigninHm=By.linkText("Sign in"); 
    private By usernameField = By.id("id_username");
@@ -36,6 +36,8 @@ public class HomePages {
    private By loginBtn = By.xpath("//input[@value='Login']");
    private By logoutLink = By.xpath("//a[@href='/logout']");
    private  By errorMsg = By.xpath("//div[contains(@class,'alert')]"); 
+   private By Error=By.xpath("/html/body/div[2]");
+   private By SignOut=By.linkText("Sign out");
 		  //Actions action = new Actions(driver);
 		
 
@@ -61,13 +63,10 @@ public class HomePages {
     
     public void clickModule(String moduleName) { 
     	    // Open dropdown first
-    	
-    	   
-    	   wait.until(ExpectedConditions.elementToBeClickable(DSdropdown)).click();
+    	 wait.until(ExpectedConditions.elementToBeClickable(DSdropdown)).click();
     	    // Click module dynamically
-    	    
     	   By module = By.linkText(moduleName);
-           wait.until(ExpectedConditions.elementToBeClickable(module)).click();
+          wait.until(ExpectedConditions.elementToBeClickable(module)).click();
     }
     
    
@@ -92,7 +91,7 @@ public class HomePages {
      
     
     public void clickAlertR() { 	
-       WebElement result = driver.findElement(By.xpath("/html/body/div[2]")); 
+       WebElement result = driver.findElement(Error); 
  	   String text = result.getText();
        System.out.println("Result Message: " + text);
     }
@@ -121,11 +120,17 @@ public class HomePages {
   public void ClickLogoutR() {
     	WebElement logout = wait.until(
     	        ExpectedConditions.visibilityOfElementLocated(
-    	                By.linkText("Sign out")
+    	                SignOut
     	        )
     	);
         logout.click(); 
     	System.out.println("Logout button displayed: " + logout.isDisplayed());
     }
+  
+  public String getPagesTitle() {
+	  
+  	return driver.getTitle();
+  	
+  }
     
 	}

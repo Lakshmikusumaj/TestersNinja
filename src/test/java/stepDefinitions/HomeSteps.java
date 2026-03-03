@@ -19,9 +19,8 @@ import pageObjects.HomePages;
 
 public class HomeSteps { 
 	
-	//WebDriver driver;
 	 WebDriver driver = DriverFactory.getDriver();
-		//Alert alert = driver.switchTo().alert();
+	//Alert alert = driver.switchTo().alert();
 
 	HomePages HomeDS=new HomePages(driver); 
 	
@@ -41,7 +40,7 @@ public class HomeSteps {
 	@Then("user should be navigated to Register page")
 	public void user_should_be_navigated_to_register_page() {
 		//String expectedTitle = "Registration";
-       // String actualTitle = HomeDS.clickPageTitle();
+      // String actualTitle = HomeDS.getPagesTitle();
        // Assert.assertEquals(expectedTitle ,actualTitle);
 	}
 	                                        //--------------------------Drop Down--------------------------//
@@ -57,8 +56,8 @@ public class HomeSteps {
 	@Then("user should see topics of dropdown")
 	public void user_should_see_topics_of_dropdown() {
 		//String expectedTitle = "NumpyNinja"; 
-       // String actualTitle = HomeDS.clickPageTitle();
-       // Assert.assertEquals(expectedTitle ,actualTitle);
+       // String actualTitle = HomeDS.getPagesTitle();
+        //Assert.assertEquals(expectedTitle ,actualTitle); 
 	}
 
 
@@ -103,17 +102,6 @@ public class HomeSteps {
         HomeDS.clickAlertR();
 		
 	}
-
-	//@Then("user should see logout option")
-	//public void user_should_see_logout_option() {
-		 // HomeDS.ClickLoginR();
-	
- 
-      //HomeDS.ClickLogoutR();  
-      
-
-	   
-	//} 
 	//-----------------------------------DATA STRUCTURE DROP DOWN AFTER SIGN IN------------------------------
 
 	@When("user clicks on {string} dropdown after sign in")

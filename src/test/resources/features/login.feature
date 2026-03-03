@@ -42,9 +42,3 @@ Scenario: Verify login response time is within acceptable limit
   When User enters invalid username and invalid password and clicks login button
   Then Error message Invalid Username and Password should be displayed
   
-  
-  
-
-    
-    
-    

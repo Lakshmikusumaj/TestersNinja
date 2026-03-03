@@ -1,3 +1,4 @@
+
 package utilities;
 
 import java.io.FileInputStream;
@@ -12,6 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
 	
+
     public static Map<String, Map<String, String>> getDataForSheet(String sheetName) {
 
         Map<String, Map<String, String>> dataMap = new HashMap<>();
@@ -19,6 +21,7 @@ public class ExcelReader {
         try {
         	String testDataFilePath = ConfigReader.getProperty("test_data_file_path");
             FileInputStream fis = new FileInputStream(testDataFilePath);
+
             Workbook workbook = new XSSFWorkbook(fis);
             Sheet sheet = workbook.getSheet(sheetName);
 
@@ -31,6 +34,7 @@ public class ExcelReader {
                 Map<String, String> rowData = new HashMap<>();
 
                 for (int j = 1; j < colCount; j++) {
+
                     Cell keyCell = headerRow.getCell(j);
                     Cell valueCell = currentRow.getCell(j);
 
@@ -39,7 +43,9 @@ public class ExcelReader {
 
                     rowData.put(key, value);
                 }
+
                 dataMap.put(currentRow.getCell(0).getStringCellValue(), rowData);
+
             }
 
             workbook.close();
@@ -48,6 +54,7 @@ public class ExcelReader {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         return dataMap;
     }
@@ -58,6 +65,7 @@ public class ExcelReader {
     public static Map<String, Map<String, String>> getEditorData() {
     	return getDataForSheet(ConfigReader.getProperty("editor_data_sheet_name"));
     }
+
 
 
     private static String getCellValue(Cell cell) {

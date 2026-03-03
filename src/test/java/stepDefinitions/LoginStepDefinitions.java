@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+
 import java.util.Map;
 
 import org.junit.Assert;
@@ -47,6 +48,7 @@ public class LoginStepDefinitions {
         loginPage.clickLogin();
     }
 
+
     @Then("Login result should be as expected for the testcase {string}")
     public void login_result_should_be_as_expected(String testCaseName) {
         String expectedResult = testData.get(testCaseName).get("ExpectedResult");
@@ -55,6 +57,7 @@ public class LoginStepDefinitions {
         } else {
             Assert.assertTrue(loginPage.isLoginErrorDisplayed());
         }
+
     }
     
     @When("User enters username and password and clicks login button")
@@ -68,6 +71,7 @@ public class LoginStepDefinitions {
     public void user_should_be_successfully_logged_in() {
     	Assert.assertTrue(loginPage.isLoginSuccessful());
     }
+
                      //performance testing//
     
     @When("User enters valid username and password and clicks login button")
@@ -152,6 +156,3 @@ public class LoginStepDefinitions {
     }
 }
     
-
-
-

@@ -21,6 +21,7 @@ public class StackStepDefinitions {
     TryEditorPage tryEditorPage = new TryEditorPage(driver);
 
     List<Map<String, String>> loginTestData;
+
     static Map<String, Map<String, String>> stackTestData;
     
     // ---------------- Background ----------------
@@ -75,6 +76,7 @@ public class StackStepDefinitions {
     }
 
     // ---------------- Stack_Test03 (Excel Driven) ----------------
+
     @Given("Try Editor data")
     public void try_editor_data() {
     	if (stackTestData == null) {
@@ -91,6 +93,7 @@ public class StackStepDefinitions {
         tryEditorPage.enterCode(pythonCode);
         tryEditorPage.clickRun();
     }
+
 
     @Then("User should see the output expected for the testcase {string}")
     public void user_should_see_the_output_expected_for_the_testcase(String testCaseName) {

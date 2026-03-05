@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-04T10:05:06 EST" name="Default suite" finished-at="2026-03-04T10:09:03 EST" duration-ms="236144">
+  <suite started-at="2026-03-05T15:18:16 EST" name="Default suite" finished-at="2026-03-05T15:18:56 EST" duration-ms="40064">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-03-04T10:05:06 EST" name="Default test" finished-at="2026-03-04T10:09:03 EST" duration-ms="236144">
+    <test started-at="2026-03-05T15:18:16 EST" name="Default test" finished-at="2026-03-05T15:18:56 EST" duration-ms="40064">
       <class name="testRunner.TestRunner">
-        <test-method is-config="true" signature="browserSetup(java.lang.String,org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:06 EST" name="browserSetup" finished-at="2026-03-04T10:05:06 EST" duration-ms="41" status="PASS">
+        <test-method is-config="true" signature="browserSetup(java.lang.String,org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:16 EST" name="browserSetup" finished-at="2026-03-05T15:18:16 EST" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -19,201 +19,169 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@78e50fca]]>
+                <![CDATA[org.testng.TestRunner@7cd4a4d7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:06 EST" name="setUpClass" finished-at="2026-03-04T10:05:08 EST" duration-ms="1221" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:16 EST" name="setUpClass" finished-at="2026-03-05T15:18:17 EST" duration-ms="948" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@78e50fca]]>
+                <![CDATA[org.testng.TestRunner@7cd4a4d7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:08 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:05:27 EST" duration-ms="18992" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:52 EST" duration-ms="35060" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to different topic pages in Queue module"]]>
+                <![CDATA["Verify login response time is within acceptable limit"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:27 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:05:41 EST" duration-ms="14477" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:54 EST" duration-ms="37175" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to different topic pages in Queue module"]]>
+                <![CDATA["Validate login functionality using multiple test data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:41 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:05:56 EST" duration-ms="14513" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:54 EST" duration-ms="37314" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to different topic pages in Queue module"]]>
+                <![CDATA["Validate login functionality using multiple test data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:05:56 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:06:10 EST" duration-ms="14501" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:50 EST" duration-ms="33119" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to different topic pages in Queue module"]]>
+                <![CDATA["Verify Login button is enabled when username and password are entered"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:06:10 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:06:30 EST" duration-ms="19577" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:54 EST" duration-ms="36896" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to TryEditor page for Queue topics"]]>
+                <![CDATA["Validate login functionality using multiple test data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:06:30 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:07:24 EST" duration-ms="54586" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:52 EST" duration-ms="35651" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to TryEditor page for Queue topics"]]>
+                <![CDATA["successful login functionality"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:07:24 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:07:41 EST" duration-ms="16626" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:50 EST" duration-ms="33116" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to TryEditor page for Queue topics"]]>
+                <![CDATA["Verify password field is masked"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:07:41 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:07:58 EST" duration-ms="16555" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:54 EST" duration-ms="37660" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to TryEditor page for Queue topics"]]>
+                <![CDATA["Validate login functionality using multiple test data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:07:58 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:08:22 EST" duration-ms="24875" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-05T15:18:52 EST" duration-ms="35061" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify TryEditor with python code of Queue module"]]>
+                <![CDATA["Login with invalid username and invalid password"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Queue module"]]>
+                <![CDATA["Login functionality for DS Algo portal"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:08:23 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:08:46 EST" duration-ms="23648" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify TryEditor with python code of Queue module"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Validation of Queue module"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:08:46 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-04T10:09:01 EST" duration-ms="15133" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify navigation to Practice Questions page"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Validation of Queue module"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@4bff7da0]" started-at="2026-03-04T10:09:01 EST" name="tearDownClass" finished-at="2026-03-04T10:09:03 EST" duration-ms="1192" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@6c45ee6e]" started-at="2026-03-05T15:18:54 EST" name="tearDownClass" finished-at="2026-03-05T15:18:56 EST" duration-ms="1262" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

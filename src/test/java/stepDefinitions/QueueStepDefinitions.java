@@ -28,22 +28,6 @@ public class QueueStepDefinitions {
 
     @Given("User is on the Queue page")
     public void user_is_on_the_queue_page() {
-//    	driver = DriverFactory.getDriver();
-//        loginPage = new LoginPage();
-//        
-//        loginPage.openPortal();
-//        loginPage.clickGetStarted();
-//        loginPage.clickSignIn();
-//        
-//        if (loginTestData == null) {
-//       	 loginTestData = ExcelReader.getDataForSheet("LoginData");
-//        }
-//       
-//        String username = loginTestData.get(0).get("Username");
-//        String password = loginTestData.get(0).get("Password");
-//        loginPage.enterUsername(username);
-//        loginPage.enterPassword(password);
-//        loginPage.clickLogin();
         queuePage.clickQueueGetStarted();
     }
 

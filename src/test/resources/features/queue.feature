@@ -6,7 +6,6 @@ Feature: Validation of Queue module
    
   @Queue_Test01
   Scenario Outline: User navigates to different topic pages in Queue module
-    # Given User is on the Queue page
     When User clicks "<TopicsCovered>" link in Queue page
     Then User should be redirected to "<TopicsCovered>" queue page
 

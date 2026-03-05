@@ -30,6 +30,7 @@ public class LoginStepDefinitions {
     @Given("User is on the Login page")
     public void user_is_on_the_login_page() {
     	loginPage = new LoginPage();
+    	loginPage.clickSignIn();
     }
     
     @Given("Login data")

@@ -3287,3 +3287,593 @@
 2026-03-02 22:22:28 INFO  Hooks - ===== Test Finished =====
 2026-03-02 22:22:29 INFO  Hooks - ===== Test Finished =====
 2026-03-02 22:22:29 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:57:00 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:57:00 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:57:10 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:57:18 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:57:21 INFO  Hooks - landed on to home page: 
+2026-03-03 19:57:32 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:57:32 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:57:32 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:57:37 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:57:38 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:57:40 INFO  Hooks - landed on to home page: 
+2026-03-03 19:57:50 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:57:51 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:57:51 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:57:56 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:57:57 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:57:59 INFO  Hooks - landed on to home page: 
+2026-03-03 19:58:09 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:58:09 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:58:09 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:58:15 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:58:16 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:58:18 INFO  Hooks - landed on to home page: 
+2026-03-03 19:58:28 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:58:28 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:58:28 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:58:33 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:58:34 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:58:36 INFO  Hooks - landed on to home page: 
+2026-03-03 19:58:46 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:58:46 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:58:46 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:58:52 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:58:53 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:58:55 INFO  Hooks - landed on to home page: 
+2026-03-03 19:59:05 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:59:05 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:59:05 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:59:10 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:59:11 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:59:13 INFO  Hooks - landed on to home page: 
+2026-03-03 19:59:24 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:59:24 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:59:24 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:59:29 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:59:30 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:59:32 INFO  Hooks - landed on to home page: 
+2026-03-03 19:59:42 INFO  Hooks - ===== Test Finished =====
+2026-03-03 19:59:42 INFO  Hooks - ========== Test Started ==========
+2026-03-03 19:59:42 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 19:59:48 INFO  DriverFactory - launching chrome browser
+2026-03-03 19:59:49 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 19:59:51 INFO  Hooks - landed on to home page: 
+2026-03-03 20:00:01 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:22:59 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:22:59 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:23:07 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:23:08 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:23:10 INFO  Hooks - landed on to home page: 
+2026-03-03 20:23:11 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (c7cc66fdd6018d07569b306798850d37)
+2026-03-03 20:23:11 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:23:21 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:27:34 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:27:34 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:27:42 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:27:42 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:27:45 INFO  Hooks - landed on to home page: 
+2026-03-03 20:27:45 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (f45b23faa9bbdfd8d37f5bf9be9884c5)
+2026-03-03 20:27:45 INFO  LoginPage - Element === By.xpath: //*[@id='id_username']
+2026-03-03 20:27:56 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:34:53 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:34:53 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:35:01 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:35:02 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:35:04 INFO  Hooks - landed on to home page: 
+2026-03-03 20:35:06 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (60ed5235cc5ea98941a3d50501575aa8)
+2026-03-03 20:35:06 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:35:09 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:35:09 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:35:09 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:35:15 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:35:16 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:35:18 INFO  Hooks - landed on to home page: 
+2026-03-03 20:35:19 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (9879bb53deb11edc7f1466038936f91d)
+2026-03-03 20:35:19 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:35:21 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:35:21 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:35:21 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:35:26 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:35:27 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:35:29 INFO  Hooks - landed on to home page: 
+2026-03-03 20:35:31 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (4573d656ec353ebe69bfb99b25cfdc0d)
+2026-03-03 20:35:31 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:35:33 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:35:33 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:35:33 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:35:38 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:35:39 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:35:41 INFO  Hooks - landed on to home page: 
+2026-03-03 20:35:43 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (8867a133dce3403b8da996643a2de870)
+2026-03-03 20:35:43 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:35:44 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:36:24 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:36:24 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:36:32 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:36:32 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:36:35 INFO  Hooks - landed on to home page: 
+2026-03-03 20:36:37 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (354d537f0e94d8a239e659c72c1b7a73)
+2026-03-03 20:36:37 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:36:40 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:36:40 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:36:40 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:36:45 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:36:46 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:36:48 INFO  Hooks - landed on to home page: 
+2026-03-03 20:36:50 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (1919ed94d789fe5ddf3e1fc983c32825)
+2026-03-03 20:36:50 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:36:51 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:36:51 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:36:51 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:36:57 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:36:58 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:00 INFO  Hooks - landed on to home page: 
+2026-03-03 20:37:01 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (9232659f03a4e2fe962b80d812bcb8f1)
+2026-03-03 20:37:01 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:37:03 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:37:03 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:37:03 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:37:09 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:37:10 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:12 INFO  Hooks - landed on to home page: 
+2026-03-03 20:37:13 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (27ad7fc0defc9638f2560436a5ebbfdc)
+2026-03-03 20:37:13 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:37:15 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:37:15 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:37:15 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:37:20 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:37:21 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:23 INFO  Hooks - landed on to home page: 
+2026-03-03 20:37:25 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (ae58a7070c09b6502a9b0b7bc3f23702)
+2026-03-03 20:37:25 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:37:27 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:37:28 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:37:28 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:37:33 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:37:34 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:36 INFO  Hooks - landed on to home page: 
+2026-03-03 20:37:37 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (83855ee6f89e906ad6ca5b79d67c372a)
+2026-03-03 20:37:37 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:37:40 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:37:40 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:37:40 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:37:45 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:37:46 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:48 INFO  Hooks - landed on to home page: 
+2026-03-03 20:37:50 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (844b79cd6685c1f850fa41c308211cf9)
+2026-03-03 20:37:50 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:37:51 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:37:51 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:37:51 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:37:56 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:37:57 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:37:59 INFO  Hooks - landed on to home page: 
+2026-03-03 20:38:01 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:38:01 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:38:01 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:38:07 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:38:08 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:38:10 INFO  Hooks - landed on to home page: 
+2026-03-03 20:38:11 INFO  LoginPage - Driver === ChromeDriver: chrome on mac (308df5524812a67baaec8a107f1dfcd8)
+2026-03-03 20:38:11 INFO  LoginPage - Element === By.id: id_username
+2026-03-03 20:38:13 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:40:36 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:40:36 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:40:44 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:40:45 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:40:47 INFO  Hooks - landed on to home page: 
+2026-03-03 20:40:51 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:40:53 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:40:53 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:40:53 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:40:58 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:40:59 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:41:01 INFO  Hooks - landed on to home page: 
+2026-03-03 20:41:05 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:41:06 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:41:07 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:41:07 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:41:12 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:41:13 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:41:15 INFO  Hooks - landed on to home page: 
+2026-03-03 20:41:19 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:41:20 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:41:20 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:41:20 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:41:25 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:41:26 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:41:28 INFO  Hooks - landed on to home page: 
+2026-03-03 20:41:32 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:41:37 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:41:37 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:41:37 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:41:43 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:41:44 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:41:46 INFO  Hooks - landed on to home page: 
+2026-03-03 20:41:50 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:41:54 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:41:54 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:41:54 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:41:59 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:42:00 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:42:02 INFO  Hooks - landed on to home page: 
+2026-03-03 20:42:06 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:42:10 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:42:10 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:42:10 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:42:16 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:42:17 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:42:19 INFO  Hooks - landed on to home page: 
+2026-03-03 20:42:22 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:42:35 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:42:35 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:42:35 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:42:41 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:42:41 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:42:44 INFO  Hooks - landed on to home page: 
+2026-03-03 20:42:47 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:42:58 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:42:58 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:42:58 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:43:04 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:43:05 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:43:07 INFO  Hooks - landed on to home page: 
+2026-03-03 20:43:10 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:43:12 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:43:56 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:43:56 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:44:04 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:44:05 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:44:07 INFO  Hooks - landed on to home page: 
+2026-03-03 20:44:11 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:44:12 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:44:12 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:44:12 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:44:18 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:44:18 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:44:20 INFO  Hooks - landed on to home page: 
+2026-03-03 20:44:25 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:44:26 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:44:26 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:44:26 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:44:31 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:44:32 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:44:34 INFO  Hooks - landed on to home page: 
+2026-03-03 20:44:38 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:44:39 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:44:39 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:44:39 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:44:45 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:44:46 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:44:48 INFO  Hooks - landed on to home page: 
+2026-03-03 20:44:51 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:44:53 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:44:53 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:44:53 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:44:58 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:44:59 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:45:01 INFO  Hooks - landed on to home page: 
+2026-03-03 20:45:06 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:45:09 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:45:09 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:45:09 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:45:15 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:45:15 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:45:17 INFO  Hooks - landed on to home page: 
+2026-03-03 20:45:21 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:45:26 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:45:26 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:45:26 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:45:31 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:45:32 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:45:34 INFO  Hooks - landed on to home page: 
+2026-03-03 20:45:38 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:45:41 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:45:41 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:45:41 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:45:47 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:45:47 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:45:49 INFO  Hooks - landed on to home page: 
+2026-03-03 20:45:53 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:45:58 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:45:58 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:45:58 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:46:03 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:46:04 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:46:06 INFO  Hooks - landed on to home page: 
+2026-03-03 20:46:10 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:46:22 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:46:22 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:46:22 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:46:27 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:46:28 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:46:30 INFO  Hooks - landed on to home page: 
+2026-03-03 20:46:34 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:46:45 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:46:45 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:46:45 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:46:51 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:46:52 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:46:54 INFO  Hooks - landed on to home page: 
+2026-03-03 20:46:58 INFO  Hooks - successfull login landed on homepage: 
+2026-03-03 20:47:00 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:53:52 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:53:52 INFO  Hooks - ===== Test Finished =====
+2026-03-03 20:54:56 INFO  Hooks - ========== Test Started ==========
+2026-03-03 20:54:56 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 20:55:05 INFO  DriverFactory - launching chrome browser
+2026-03-03 20:55:05 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 20:55:08 INFO  Hooks - landed on to home page: 
+2026-03-03 20:55:12 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:21 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:24 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:24 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:24 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:24 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:00:28 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:29 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:29 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:29 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:29 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:29 INFO  Hooks - landed on to home page: 
+2026-03-03 21:00:35 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:35 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:38 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:38 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:41 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:00:41 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:35:46 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:35:46 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:35:54 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:36:03 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:36:11 INFO  Hooks - landed on to home page: 
+2026-03-03 21:36:16 INFO  Hooks - ===== Test Finished =====
+2026-03-03 21:39:10 INFO  Hooks - ========== Test Started ==========
+2026-03-03 21:39:10 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-03 21:39:17 INFO  DriverFactory - launching chrome browser
+2026-03-03 21:39:18 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-03 21:39:20 INFO  Hooks - landed on to home page: 
+2026-03-03 21:39:25 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:55:43 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:55:43 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:55:52 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:55:53 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:55:56 INFO  Hooks - landed on to home page: 
+2026-03-04 09:56:01 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:56:01 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:56:01 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:56:07 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:56:08 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:56:10 INFO  Hooks - landed on to home page: 
+2026-03-04 09:56:14 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:56:14 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:56:14 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:56:19 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:56:20 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:56:23 INFO  Hooks - landed on to home page: 
+2026-03-04 09:56:27 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:56:27 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:56:27 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:56:32 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:56:33 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:56:36 INFO  Hooks - landed on to home page: 
+2026-03-04 09:56:39 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:56:39 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:56:39 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:56:45 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:56:46 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:56:48 INFO  Hooks - landed on to home page: 
+2026-03-04 09:56:53 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:56:53 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:56:53 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:56:59 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:57:00 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:57:02 INFO  Hooks - landed on to home page: 
+2026-03-04 09:57:07 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:57:07 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:57:07 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:57:13 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:57:13 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:57:16 INFO  Hooks - landed on to home page: 
+2026-03-04 09:57:19 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:57:19 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:57:19 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:57:24 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:57:25 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:57:28 INFO  Hooks - landed on to home page: 
+2026-03-04 09:57:30 INFO  Hooks - ===== Test Finished =====
+2026-03-04 09:57:30 INFO  Hooks - ========== Test Started ==========
+2026-03-04 09:57:30 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 09:57:36 INFO  DriverFactory - launching chrome browser
+2026-03-04 09:57:37 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 09:57:39 INFO  Hooks - landed on to home page: 
+2026-03-04 09:57:43 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:00:29 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:00:29 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:00:38 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:00:38 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:00:41 INFO  Hooks - landed on to home page: 
+2026-03-04 10:00:48 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:01:04 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:01:04 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:01:04 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:01:10 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:01:10 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:01:13 INFO  Hooks - landed on to home page: 
+2026-03-04 10:01:20 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:01:24 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:01:24 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:01:24 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:01:30 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:01:30 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:01:34 INFO  Hooks - landed on to home page: 
+2026-03-04 10:01:38 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:01:40 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:01:40 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:01:40 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:01:46 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:01:46 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:01:49 INFO  Hooks - landed on to home page: 
+2026-03-04 10:01:53 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:01:58 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:01:58 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:01:58 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:02:04 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:02:04 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:02:07 INFO  Hooks - landed on to home page: 
+2026-03-04 10:02:11 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:02:16 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:02:16 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:02:16 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:02:22 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:02:22 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:02:25 INFO  Hooks - landed on to home page: 
+2026-03-04 10:02:29 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:02:35 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:02:35 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:02:35 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:02:41 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:02:42 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:02:44 INFO  Hooks - landed on to home page: 
+2026-03-04 10:02:49 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:03:02 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:03:02 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:03:02 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:03:08 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:03:09 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:03:11 INFO  Hooks - landed on to home page: 
+2026-03-04 10:03:15 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:03:28 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:03:28 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:03:28 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:03:34 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:03:35 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:03:38 INFO  Hooks - landed on to home page: 
+2026-03-04 10:03:42 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:03:44 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:05:09 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:05:09 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:05:17 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:05:18 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:05:20 INFO  Hooks - landed on to home page: 
+2026-03-04 10:05:25 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:05:27 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:05:27 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:05:27 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:05:32 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:05:33 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:05:36 INFO  Hooks - landed on to home page: 
+2026-03-04 10:05:40 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:05:41 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:05:41 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:05:41 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:05:47 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:05:48 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:05:50 INFO  Hooks - landed on to home page: 
+2026-03-04 10:05:54 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:05:56 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:05:56 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:05:56 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:06:01 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:06:02 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:06:05 INFO  Hooks - landed on to home page: 
+2026-03-04 10:06:09 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:06:10 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:06:10 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:06:10 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:06:16 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:06:17 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:06:19 INFO  Hooks - landed on to home page: 
+2026-03-04 10:06:26 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:06:30 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:06:30 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:06:30 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:07:14 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:07:15 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:07:17 INFO  Hooks - landed on to home page: 
+2026-03-04 10:07:21 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:07:24 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:07:24 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:07:24 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:07:30 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:07:31 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:07:33 INFO  Hooks - landed on to home page: 
+2026-03-04 10:07:37 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:07:41 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:07:41 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:07:41 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:07:47 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:07:47 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:07:49 INFO  Hooks - landed on to home page: 
+2026-03-04 10:07:53 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:07:58 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:07:58 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:07:58 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:08:03 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:08:04 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:08:06 INFO  Hooks - landed on to home page: 
+2026-03-04 10:08:10 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:08:22 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:08:23 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:08:23 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:08:28 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:08:29 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:08:31 INFO  Hooks - landed on to home page: 
+2026-03-04 10:08:35 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:08:46 INFO  Hooks - ===== Test Finished =====
+2026-03-04 10:08:46 INFO  Hooks - ========== Test Started ==========
+2026-03-04 10:08:46 INFO  DriverFactory - Running in :chrome>browsers
+2026-03-04 10:08:52 INFO  DriverFactory - launching chrome browser
+2026-03-04 10:08:53 INFO  Hooks - landed on to the dsalgo portal 
+2026-03-04 10:08:55 INFO  Hooks - landed on to home page: 
+2026-03-04 10:08:59 INFO  Hooks - successfull login landed on homepage: 
+2026-03-04 10:09:01 INFO  Hooks - ===== Test Finished =====

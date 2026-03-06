@@ -22,14 +22,11 @@ public class LoginStepDefinitions {
     static Map<String, Map<String, String>> testData;
     LoginPage loginPage;
 
-//    @Given("User launches the browser and navigates to the login page")
-//    public void user_launches_the_browser_and_navigates_to_the_login_page() {
-//    	
-//    }
 
     @Given("User is on the Login page")
     public void user_is_on_the_login_page() {
     	loginPage = new LoginPage();
+    	loginPage.clickSignIn();
     }
     
     @Given("Login data")

@@ -15,7 +15,6 @@ public class LoginPage {
     WebDriver driver;
     ConfigReader configReader;
     
-
     // Constructor
     //public LoginPage(WebDriver driver) {
     public LoginPage() {

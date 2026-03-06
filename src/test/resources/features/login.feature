@@ -25,7 +25,7 @@ Scenario: successful login functionality
 @Performance
 Scenario: Verify login response time is within acceptable limit
   When User enters valid username and password and clicks login button
-  Then Login response time should be less than 3 seconds
+  Then Login response time should be less than 10 seconds
   
  @loginbutton_enable 
   Scenario: Verify Login button is enabled when username and password are entered

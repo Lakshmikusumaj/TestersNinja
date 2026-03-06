@@ -1,4 +1,4 @@
-@LaunchHome 
+@LaunchHome  @Home 
   Feature: Verify Topics Covered on DS Portal Home Page 
 
   Background:

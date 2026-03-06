@@ -18,6 +18,7 @@
 	</properties>
 
 
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 		<dependency>
@@ -52,14 +53,17 @@
 		</dependency> -->
 
 
-		<!--
-		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api 
+
+   
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api 
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.13.0-M2</version>
       <scope>test</scope>
     </dependency>-->
+
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
@@ -132,6 +136,12 @@
 			<artifactId>allure-cucumber7-jvm</artifactId>
 			<version>2.29.1</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.33.0</version>
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
 		<dependency>
@@ -150,6 +160,13 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.5</version>
 		</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+	<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>5.9.2</version>
+	</dependency>
 	</dependencies>
 
 	<build>
@@ -177,4 +194,6 @@
 
 		</plugins>
 	</build>
+
 </project>
+

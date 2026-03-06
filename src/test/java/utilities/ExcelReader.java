@@ -1,26 +1,27 @@
- package utilities; 
+
+package utilities;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
 	
-    public static List<Map<String, String>> getDataForSheet(String sheetName) {
 
-        List<Map<String, String>> dataList = new ArrayList<>();
+    public static Map<String, Map<String, String>> getDataForSheet(String sheetName) {
+
+        Map<String, Map<String, String>> dataMap = new HashMap<>();
 
         try {
-        	String testDataFilePath1 = System.getProperty("user.dir") + "/src/test/resources/testdata/ArrayTestData.xlsx";
-        	FileInputStream fis = new FileInputStream(testDataFilePath1);
+        	String testDataFilePath = ConfigReader.getProperty("test_data_file_path");
+            FileInputStream fis = new FileInputStream(testDataFilePath);
 
-        	//String testDataFilePath12 = ConfigReader.getProperty("test_data_file_path");
-           //FileInputStream fis12 = new FileInputStream(testDataFilePath12);
             Workbook workbook = new XSSFWorkbook(fis);
             Sheet sheet = workbook.getSheet(sheetName);
 
@@ -32,7 +33,8 @@ public class ExcelReader {
                 Row currentRow = sheet.getRow(i);
                 Map<String, String> rowData = new HashMap<>();
 
-                for (int j = 0; j < colCount; j++) {
+                for (int j = 1; j < colCount; j++) {
+
                     Cell keyCell = headerRow.getCell(j);
                     Cell valueCell = currentRow.getCell(j);
 
@@ -41,7 +43,9 @@ public class ExcelReader {
 
                     rowData.put(key, value);
                 }
-                dataList.add(rowData);
+
+                dataMap.put(currentRow.getCell(0).getStringCellValue(), rowData);
+
             }
 
             workbook.close();
@@ -51,8 +55,18 @@ public class ExcelReader {
             e.printStackTrace();
         }
 
-        return dataList;
+
+        return dataMap;
     }
+    
+    public static Map<String, Map<String, String>> getLoginData() {
+    	return getDataForSheet(ConfigReader.getProperty("login_data_sheet_name"));
+    }
+    public static Map<String, Map<String, String>> getEditorData() {
+    	return getDataForSheet(ConfigReader.getProperty("editor_data_sheet_name"));
+    }
+
+
 
     private static String getCellValue(Cell cell) {
 

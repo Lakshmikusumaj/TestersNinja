@@ -11,26 +11,17 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.Listeners;
 //import com.aventstack.chaintest.plugins.ChainTestListener;
 
-<<<<<<< HEAD
+
 //@Listeners(ChainTestListener.class)
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepDefinitions",
 		"hooks" }, tags = "@Home", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json" ,
-				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report"
+				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
+				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 				},
 				 monochrome = true, publish = true)
-=======
-@CucumberOptions(
-	features = "src/test/resources/features",
-	glue = { "stepDefinitions", "hooks" },
-	tags = "@Login", 
-	plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
-			"json:target/cucumber-reports/cucumber.json",
-			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, 
-	monochrome = true, 
-	publish = true
-)
->>>>>>> origin/main
+
+
 public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeTest
 	@Parameters("browserName")

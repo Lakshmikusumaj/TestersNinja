@@ -10,10 +10,16 @@ import org.testng.annotations.Parameters;
 import factory.DriverFactory;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.Listeners;
+//import com.aventstack.chaintest.plugins.ChainTestListener;
 
+//@Listeners(ChainTestListener.class)
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepDefinitions",
-		"hooks" }, tags = "@Array", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
-				"json:target/cucumber-reports/cucumber.json" }, monochrome = true, publish = true)
+		"hooks" }, tags = "@Home", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
+				"json:target/cucumber-reports/cucumber.json" ,
+				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report"
+				},
+				 monochrome = true, publish = true)
 public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeTest
 	@Parameters("browserName")

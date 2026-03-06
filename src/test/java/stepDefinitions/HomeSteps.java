@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import factory.DriverFactory; 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.When; 
 import pageObjects.HomePages; 
 
 public class HomeSteps { 
@@ -39,9 +39,9 @@ public class HomeSteps {
 
 	@Then("user should be navigated to Register page")
 	public void user_should_be_navigated_to_register_page() {
-		//String expectedTitle = "Registration";
-      // String actualTitle = HomeDS.getPagesTitle();
-       // Assert.assertEquals(expectedTitle ,actualTitle);
+		String expectedTitle = "Registration";
+      String actualTitle = HomeDS.getPagesTitle();
+        Assert.assertEquals(expectedTitle ,actualTitle);
 	}
 	                                        //--------------------------Drop Down--------------------------//
 
@@ -55,9 +55,9 @@ public class HomeSteps {
 
 	@Then("user should see topics of dropdown")
 	public void user_should_see_topics_of_dropdown() {
-		//String expectedTitle = "NumpyNinja"; 
-       // String actualTitle = HomeDS.getPagesTitle();
-        //Assert.assertEquals(expectedTitle ,actualTitle); 
+		String expectedTitle = "NumpyNinja"; 
+       String actualTitle = HomeDS.getPagesTitle();
+        Assert.assertEquals(expectedTitle ,actualTitle); 
 	}
 
 
@@ -105,7 +105,7 @@ public class HomeSteps {
 	//-----------------------------------DATA STRUCTURE DROP DOWN AFTER SIGN IN------------------------------
 
 	@When("user clicks on {string} dropdown after sign in")
-	public void user_clicks_on_dropdown_after_sign_in(String topic) { 
+	public void user_clicks_on_dropdown_after_sign_in(String topic) {  
         HomeDS.clickModule(topic);
 	
 	    

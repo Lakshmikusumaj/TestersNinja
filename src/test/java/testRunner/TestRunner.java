@@ -19,7 +19,7 @@ import org.testng.annotations.Listeners;
 				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 				},
-				 monochrome = true, publish = true)
+				 monochrome = true, publish = true) 
 
 
 public class TestRunner extends AbstractTestNGCucumberTests {

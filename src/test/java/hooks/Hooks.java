@@ -19,7 +19,7 @@ public class Hooks {
 	// WebDriver driver;
 	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	LoginPage loginPage;
+	LoginPage loginPage; 
 
 	@Before(order = 0)
 	public void setUp() {

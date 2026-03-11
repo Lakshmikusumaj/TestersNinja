@@ -15,14 +15,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrPage;
+import pageObjects.TryEditorPage;
 import utilities.ExcelReader;
 
 public class ArraySteps  { 
   
-    private static final Logger logger = LogManager.getLogger(ArraySteps.class);
+    private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
 
 		 ArrPage arrayPage;
 	  	 WebDriver driver = DriverFactory.getDriver();
+	  	TryEditorPage tryEditorPage = new TryEditorPage(driver);
+
+	   
+
+	    static Map<String, Map<String, String>> ArrayTestData;
 		// List<Map<String, String>> ArrayTestData;
 	    //ArrayTestData = ExcelReader.getDataForSheet("ArrayData");	
 		 public ArraySteps() {
@@ -43,6 +49,7 @@ public class ArraySteps  {
 		@When("user clicks on Arrays in Python button")
 		public void user_clicks_on_arrays_in_python_button() {
 		    arrayPage.clickArraysInPython();
+		    //arrayPage.clickTryHere();
 		} 
 
 		@Then("user is navigated to the Arrays in Python page")
@@ -50,11 +57,13 @@ public class ArraySteps  {
 			String expectedTitle = "Arrays in Python";
 	        String actualTitle =arrayPage.getPageTitle();//getpageoobject
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        arrayPage.clickTryHere();
 		}
 
 		@When("user clicks on Arrays Using List button")
 		public void user_clicks_on_arrays_using_list_button() {
 		    arrayPage.clickArraysUsingList();
+		   // arrayPage.clickTryHere();
 		}
 
 		@Then("user is navigated to the Arrays Using List page")
@@ -63,11 +72,13 @@ public class ArraySteps  {
 			
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        arrayPage.clickTryHere();
 		}
 
 		@When("user clicks on Basic Operations in Lists")
 		public void user_clicks_on_basic_operations_in_lists() {
 		    arrayPage.clickBasicOperationsInLists();
+		   // arrayPage.clickTryHere();
 		}
 
 		@Then("user is navigated to the Basic Operations in Lists page")
@@ -75,11 +86,13 @@ public class ArraySteps  {
 			String expectedTitle = "Basic Operations in Lists";
 	        String actualTitle =arrayPage.getPageTitle();//paje
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        arrayPage.clickTryHere();
 		}
 
 		@When("user clicks on Applications of Array")
 		public void user_clicks_on_applications_of_array() {
 		    arrayPage.clickApplicationsOfArray();
+		    //arrayPage.clickTryHere();
 		}
 
 		@Then("user is navigated to the Applications of Array page")
@@ -87,11 +100,13 @@ public class ArraySteps  {
 			String expectedTitle = "Applications of Array";
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        arrayPage.clickTryHere();
 		}
 
 		@When("user clicks on Try Here button")
 		public void user_clicks_on_try_here_button() {
-	
+		
+			 arrayPage.clickApplicationsOfArray();
 			arrayPage.clickTryHere();
 			}
 		
@@ -121,17 +136,18 @@ public class ArraySteps  {
 			 */}  
 	
 		
-		@Then("user should see {string}")
+		/*@Then("user should see {string}")
 		public void user_should_see(String result) {
 			 String output = arrayPage.getOutput();
 		        if (result.equalsIgnoreCase("output")) {
 		            Assert.assertTrue(output.length() > 0);
 		        } else if (result.equalsIgnoreCase("error")) {
 		            Assert.assertTrue(output.toLowerCase().contains("error"));  }
-		}//---------------END--------------//
+		}//---------------END--------------//*/
 
 		@When("user clicks on Practice Questions")
 		public void user_clicks_on_practice_questions() {
+			logger.info("*********PRACTICE QUESTIONS*********");
 			  arrayPage.clickPracticeQuestions();
 		}
 
@@ -143,7 +159,7 @@ public class ArraySteps  {
 		@When("user clicks on Search the Array")
 		public void user_clicks_on_search_the_array() {
 			arrayPage.clickSearchTheArray();
-			System.out.println(arrayPage.getPageTitle());
+			System.out.println(arrayPage.getPageTitle()); 
 
 		}
 
@@ -186,16 +202,26 @@ public class ArraySteps  {
 		    
 		}
 		//------TryEditor--------//
-		@Given("user is on the Applications of Array page")
-		public void user_is_on_the_applications_of_array_page() {
+		@Given("Array Try Editor data")
+		public void array_try_editor_data() {
 	    	//ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
 			System.out.println(arrayPage.getPageTitle());
+			if (ArrayTestData == null) {
+	    		ArrayTestData = ExcelReader.getEditorData();
+			}
+	        
 
 		}
 		 
-		@When("user executes {string} from {string} sheet")
-		public void user_executes_from_sheet(String TestCaseName,
-				String Arraydata) {/*
+		@When("User enters python code in TryEditor for {string} and clicks Run")
+		public void user_enters_python_code_in_try_editor_for_and_clicks_run(String testCaseName) {
+			arrayPage.clickApplicationsOfArray();
+	    	arrayPage.clickTryHere();
+	        
+	    	String pythonCode = ArrayTestData.get(testCaseName).get("PythonCode");
+	        tryEditorPage.enterCode(pythonCode);
+	        tryEditorPage.clickRun();
+			/*
 									 * 
 									 * // Open Try Editor arrayPage.clickTryHere(); // Read all test cases from
 									 * Excel sheet ArrayTestData = ExcelReader.getDataForSheet(Arraydata);
@@ -219,10 +245,18 @@ public class ArraySteps  {
 									 */
 
 		}	        
-		@Then("user should see expected result")
-		public void user_should_see_expected_result() {
-			
-		   arrayPage.getOutput();
+		@Then("User should see the expected output for {string}")
+		public void user_should_see_the_expected_output_for(String testCaseName) {
+			String expectedOutput = ArrayTestData.get(testCaseName).get("ExpectedOutput");
+
+	        if (expectedOutput.equals("Success")) {
+	        	String actualOutput = tryEditorPage.getOutput();
+	        	Assert.assertEquals(expectedOutput, actualOutput);
+	        } else {
+	        	tryEditorPage.acceptAlert();
+	        	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
+	        }
+		  // arrayPage.getOutput();
 		  
 		   //logger.info("Alert appeared with text:" , );
 

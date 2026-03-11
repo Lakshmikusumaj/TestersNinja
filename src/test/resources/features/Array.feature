@@ -6,35 +6,34 @@ Feature: User navigates Array module
  Background: 
     Given user clicks on Array from the home page 
  
-  Rule: user is on navigates Array page 
-
-  #==================== ARRAYS AND ARRAYS IN PYTHON ========================#
   
+  #==================== ARRAYS AND ARRAYS IN PYTHON ========================#
+  @Atest-01
   Scenario: User navigates to Arrays in Python
    When user clicks on Arrays in Python button
    Then user is navigated to the Arrays in Python page
 
   #+++++++++++++++++++++++++++++++ ARRAYS USING LIST+++++=============++++++#
-  
+  @Array-02
   Scenario: User navigates to Arrays Using List 
     When user clicks on Arrays Using List button
     Then user is navigated to the Arrays Using List page
 
   
   #================================= BASIC OPERATIONS IN LISTS==================#
-  
+  @Array-03
   Scenario: User navigates to Basic Operations in Lists 
     When user clicks on Basic Operations in Lists
     Then user is navigated to the Basic Operations in Lists page
   
   #===================================== APPLICATIONS OF ARRAY==================#
-  
+  @Array-04
   Scenario: User navigates to Applications of Array
     When user clicks on Applications of Array
     Then user is navigated to the Applications of Array page
     
 #----------------------------TRY EDITORS IN THE ARRAY MODULE--------------------#
-
+@Array-05
  Scenario: User navigates to Try Here editor from Applications of Array
     When user clicks on Try Here button
     Then user is navigated to the Try Editor page
@@ -71,11 +70,14 @@ Feature: User navigates Array module
     Then user is navigated to the Squares of a Sorted Array editor page
 
   #++++++++++++++++++++++ TRY EDITOR VALIDATION+++++++++++++++++++++++++++++#
-  
-  Scenario: ArrayTryEditor data driven
-  
-    Given user is on the Applications of Array page
-    When user executes "Code" from "Array data" sheet
-    Then user should see expected result
+  @DataDriven1
+  Scenario Outline: Verify TryEditor functionality with python code of array module
+    Given Array Try Editor data
+    When User enters python code in TryEditor for "<TestCaseName>" and clicks Run
+    Then User should see the expected output for "<TestCaseName>"
+
     
-    
+    Examples:
+      |TestCaseName          |
+      | PythonCode_Valid		 |
+      | PythonCode_Invalid	 |

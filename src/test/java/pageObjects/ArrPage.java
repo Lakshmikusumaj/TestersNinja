@@ -75,8 +75,10 @@ public class ArrPage  {
 
 		    public void clickTryHere() {
 		        
-			   driver.findElement(applicationsOfArray).click();
+			  // driver.findElement(applicationsOfArray).click();
 			   WebElement element= driver.findElement(tryHere);
+			   JavascriptExecutor js = (JavascriptExecutor) driver;
+		    	js.executeScript("arguments[0].scrollIntoView(true);", element);
 			   element.click();
 
 		    }

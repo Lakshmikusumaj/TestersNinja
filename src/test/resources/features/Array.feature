@@ -37,12 +37,13 @@ Feature: User navigates Array module
     When user clicks on Try Here button
     Then user is navigated to the Try Editor page
  
-
+@Array-06
   #------------------------ PRACTICE QUESTIONS----------------------
   
   Scenario: User navigates to Arrays in Python Practice Questions
     When user clicks on Practice Questions
     Then user is navigated to the Practice Questions page
+    
 
   #===================== SEARCH THE ARRAY====================================#
   

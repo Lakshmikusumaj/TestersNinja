@@ -15,14 +15,14 @@ When the user enters username "<username>" password "<password>" and  confirmPas
 Then the user should see a success message
 
 Examples:
-| username  | password     |  confirmpassword |
-| Automa230@ |Test@12345.>| Test@12345.> |
-| testuser2 | Test@12345   |  Test@12         |
+| username  | password      |  confirmpassword   |
+| Automa230@| Test@12345.>! |  Test@12345.>!     |
+| testuser2 | Test@12345    |  Test@12345        |
 
 #Scenario: user registers with valid inputs
 #Given the user is in registration page
 #When the user fills out all registration fields correctly
-#Then the user should see a success message
+#Then the user should see a success message 
 
 #Scenario: User enter weak password
 #Given the user is in registration page
@@ -30,17 +30,17 @@ Examples:
 #Then the system displays password too weak
 
 @testcase-R02
-Scenario Outline: Validate password rules
+Scenario Outline: user gives "<TestcaseName>" Validate password rules
   Given the user is on the registration page
-  When the user enters "<username>" and "<password>" and  confirmPassword "<confirmpassword>"
+  When the user enters "<username>" and "<password>" and confirmPassword "<confirmpassword>"
   Then the system displays "<message>"
 
 Examples:
-|username     | password | confirmpassword | message                    |
-|TestReg      | 12345    | 12345           | Password too weak          |
-|TestReg      |          | 12345           | please fill out this field |
-|             | 57365    |                 | please fill out this field |
-|TestersNinja |476846    |476846           | two password mismatch      |
+|TestcaseName|username     | password | confirmpassword | message                    |
+|TC-R1       |TestReg      | 12345    | 12345           | password_mismatch:The two password fields didn’t match.|           
+|TC-R2       |TestReg      |          | 12345           | please fill out this field |
+|TC-R3       |             | 57365    |                 | please fill out this field |
+|TC-R4       |TestersNinja | 476846   | 46846           | two password mismatch       |
 
 #Scenario: User leave password field empty
 #Given the user is in registration page

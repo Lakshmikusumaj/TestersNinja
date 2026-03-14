@@ -4,6 +4,7 @@ import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 //Log4j2 imports
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.JavascriptExecutor;
@@ -141,6 +142,10 @@ public class ArrPage  {
 		        return driver.findElement(output).getText();
 		    }
 		    public String getPageTitle() {
+		    	Alert alert = driver.switchTo().alert();
+		    	String alertText = alert.getText();
+
+		    	System.out.println(alertText);
 		    	return driver.getTitle();
 		    }
 		}

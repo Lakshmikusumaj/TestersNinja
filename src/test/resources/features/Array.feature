@@ -5,7 +5,6 @@ Feature: User navigates Array module
    
  Background: 
     Given user clicks on Array from the home page 
- 
   
   #==================== ARRAYS AND ARRAYS IN PYTHON ========================#
   @Atest-01
@@ -33,7 +32,7 @@ Feature: User navigates Array module
     Then user is navigated to the Applications of Array page
     
 #----------------------------TRY EDITORS IN THE ARRAY MODULE--------------------#
-@Array-05
+  @Array-05
  Scenario: User navigates to Try Here editor from Applications of Array
     When user clicks on Try Here button
     Then user is navigated to the Try Editor page
@@ -78,6 +77,8 @@ Feature: User navigates Array module
 
     
     Examples:
-      |TestCaseName          |
-      | PythonCode_Valid		 |
-      | PythonCode_Invalid	 |
+      |TestCaseName |
+      | TC-A01		|
+      |	TC-A02      |
+      | TC-A03      |
+      | TC-A04      | 

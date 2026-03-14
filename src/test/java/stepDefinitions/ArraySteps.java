@@ -204,11 +204,11 @@ public class ArraySteps  {
 		//------TryEditor--------//
 		@Given("Array Try Editor data")
 		public void array_try_editor_data() {
-	    	//ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
-			System.out.println(arrayPage.getPageTitle());
-			if (ArrayTestData == null) {
-	    		ArrayTestData = ExcelReader.getEditorData();
-			}
+	    	ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
+			//System.out.println(arrayPage.getPageTitle());
+			//if (ArrayTestData == null) {
+	    		//ArrayTestData = ExcelReader.getArrayData();
+			//}
 	        
 
 		}
@@ -249,7 +249,7 @@ public class ArraySteps  {
 		public void user_should_see_the_expected_output_for(String testCaseName) {
 			String expectedOutput = ArrayTestData.get(testCaseName).get("ExpectedOutput");
 
-	        if (expectedOutput.equals("Success")) {
+	        if (expectedOutput.equals("Output")) {
 	        	String actualOutput = tryEditorPage.getOutput();
 	        	Assert.assertEquals(expectedOutput, actualOutput);
 	        } else {

@@ -14,7 +14,7 @@ import org.testng.annotations.Listeners;
 
 //@Listeners(ChainTestListener.class)
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepDefinitions",
-		"hooks" }, tags = "@Array-05", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
+		"hooks" }, tags ="@testcase-R02", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json" ,
 				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
@@ -45,6 +45,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@Override
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
-		return super.scenarios();
+		return super.scenarios(); 
 	}
 }

@@ -44,7 +44,7 @@ import org.openqa.selenium.By;
 
 		    @Then("the register page should be displayed")
 		    public void the_register_page_should_be_displayed() {
-		        //Assert.assertTrue(registrationPage.isRegistrationPageDisplayed());
+		        Assert.assertTrue(registrationPage.isRegistrationPageDisplayed());
 		    }
 //-------------------------scenario-1----------------------------R01//
 		    @Given("the user is in registration page")
@@ -84,7 +84,7 @@ public void the_user_enters_username_password_and_confirm_password(String userna
 		        
 		    }
 
-		    @When("the user enters {string} and {string} and  confirmPassword {string}")
+		    @When("the user enters {string} and {string} and confirmPassword {string}")
 		    public void the_user_enters_and_and_confirm_password(String username, String password, String confirmpassword) {
 		    	registrationPage.enterUsername(username);
 		        registrationPage.enterPassword(password);
@@ -100,8 +100,8 @@ public void the_user_enters_username_password_and_confirm_password(String userna
 		    	registrationPage.getUsernameValidationMessage();
 		    	//String message = username.getAttribute("validationMessage");
 		    	//System.out.println(message);
-		   // String actualMessage = registrationPage.getPasswordErrorMessage();
-		      //  Assert.assertTrue(actualMessage.contains(message));
+		    //String actualMessage = registrationPage.getPasswordErrorMessage();
+		       // Assert.assertTrue(actualMessage.contains(message));
 		    	//Assert.assertTrue(registrationPage.getPasswordErrorMessage().contains(message));
 		    	
 		    }

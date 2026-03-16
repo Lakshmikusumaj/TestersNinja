@@ -48,6 +48,7 @@ public class HomeSteps {
 	@When("user clicks on {string} dropdown")
 	public void user_clicks_on_dropdown(String topic) {
 		  HomeDS.clickDDArrayBS();
+		 // HomeDS.clickModule(topic);
  
  
 	} //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//

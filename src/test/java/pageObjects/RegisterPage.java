@@ -47,13 +47,21 @@ import factory.DriverFactory;
 		    public void clickRegisterLink() {
 		        driver.findElement(Registerlink).click(); 
 		    }
-	 public void getintohomepage() {
+	        public void getintohomepage() {
 		    // driver.get("https://dsportalapp.herokuapp.com/home"); // replace with real URL
-	 }
+	        }
+	        public boolean isRegistrationPageDisplayed() {
+
+	            System.out.println("Current URL: " + driver.getCurrentUrl());
+	            System.out.println("Page Title: " + driver.getTitle());
+
+	            return driver.getCurrentUrl().contains("register");
+	        }
 	 
-		    public boolean isRegistrationPageDisplayed() {
-		        return driver.getTitle().contains("Register");
-		    }
+		    /*public boolean isRegistrationPageDisplayed() {
+		    	
+		        return driver.getTitle().contains("register");
+		    }*/
 
 		    public void enterUsername(String username) {
 		    	WebElement userField = driver.findElement(usernameField);

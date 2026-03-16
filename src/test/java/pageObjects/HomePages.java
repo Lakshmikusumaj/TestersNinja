@@ -22,7 +22,8 @@ public class HomePages {
 
 	private By LaunchGetstart=By.linkText("Get Started");
 	private By RegisterHm=By.xpath("//a[@href='/register']");
-	private By dropDown=By.xpath("//div[@class='nav-item dropdown show']");
+	private By dropDown1=By.linkText("//div[@class='nav-item dropdown show']");
+	private By dropDown=By.linkText("dropdown-item");
 	private By DSdropdown=By.xpath("//a[@href='#']");
 	private	By Arrays=By.linkText("Arrays");
 	private	By Linked=By.linkText("Linked List");

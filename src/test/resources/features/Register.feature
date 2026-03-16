@@ -16,18 +16,9 @@ Then the user should see a success message
 
 Examples:
 | username  | password      |  confirmpassword   |
-| Automa230@| Test@12345.>! |  Test@12345.>!     |
+| Auto230231| Test@12345>!  |  Test@12345>!      |
 | testuser2 | Test@12345    |  Test@12345        |
 
-#Scenario: user registers with valid inputs
-#Given the user is in registration page
-#When the user fills out all registration fields correctly
-#Then the user should see a success message 
-
-#Scenario: User enter weak password
-#Given the user is in registration page
-#When the user enters 12345 into the passwordfield 
-#Then the system displays password too weak
 
 @testcase-R02
 Scenario Outline: user gives "<TestcaseName>" Validate password rules
@@ -36,13 +27,8 @@ Scenario Outline: user gives "<TestcaseName>" Validate password rules
   Then the system displays "<message>"
 
 Examples:
-|TestcaseName|username     | password | confirmpassword | message                    |
-|TC-R1       |TestReg      | 12345    | 12345           | password_mismatch:The two password fields didn’t match.|           
-|TC-R2       |TestReg      |          | 12345           | please fill out this field |
-|TC-R3       |             | 57365    |                 | please fill out this field |
-|TC-R4       |TestersNinja | 476846   | 46846           | two password mismatch       |
-
-#Scenario: User leave password field empty
-#Given the user is in registration page
-#When the user leaves password field empty  
-#Then the system displays password fied empty
+|TestcaseName   |username     | password | confirmpassword | message                    |
+|Numeric        |TestReg      | 12345    | 12345           | password_mismatch:The two password fields didn’t match.|           
+|EmptyPass      |TestReg      |          | 12345           | please fill out this field |
+|EmptyUser      |             | 57365    |                 | please fill out this field |
+|PassMissmatch  |TestersNinja |Numpy     |    Numpy1       | two password mismatch       |

@@ -13,11 +13,11 @@ import org.testng.annotations.Listeners;
 
 
 
-
+//@Listeners(ChainTestListener.class) 
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
-	tags = "@Login", 
+	tags = "@Home", 
 	plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 			"json:target/cucumber-reports/cucumber.json",
 			"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",

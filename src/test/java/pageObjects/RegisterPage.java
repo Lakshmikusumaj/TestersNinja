@@ -1,8 +1,5 @@
 package pageObjects;
 
-
-
-
 	import java.time.Duration;
 
 import org.junit.Assert;
@@ -32,12 +29,10 @@ import factory.DriverFactory;
 		    private  By errorMsg = By.xpath("//div[contains(@class,'alert')]"); 
 		    private By passwordErrorMessage = By.id("passwordError"); 
 
-		    //WebDriver wait;
 		    private WebDriver driver;
-		 // Alert alert = driver.switchTo().alert();
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-	public RegisterPage(WebDriver driver) { 
+	        public RegisterPage(WebDriver driver) { 
 		    	
 		        this.driver =driver;
 		    }
@@ -67,28 +62,21 @@ import factory.DriverFactory;
 		    	WebElement userField = driver.findElement(usernameField);
 		    	userField.clear();
 		    	userField.sendKeys(username);
-		    	//String message = username.getAttribute("fill out this field");
-
-		        //Assert.assertTrue(message.contains("Please fill out this field"));
 		    	
-		        //driver.findElement(usernameField).clear();
-		        //driver.findElement(usernameField).sendKeys(username);
 		    }
 
 		    public void enterPassword(String password) {
 		    	WebElement passField = driver.findElement(passwordField);
 		    	passField.clear();
 		    	passField.sendKeys(password);
-		       // driver.findElement(passwordField).clear();
-		        //driver.findElement(passwordField).sendKeys(password);
+		       
 		    }
 
 		    public void enterConfirmPassword(String password) {
 		    	WebElement pass1Field = driver.findElement(confirmPasswordField);
 		    	pass1Field.clear();
 		    	pass1Field.sendKeys(password);
-		        //driver.findElement(confirmPasswordField).clear();
-		        //driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
+		        
 		    }
 
 		    public void clickRegisterButton() {
@@ -110,12 +98,7 @@ import factory.DriverFactory;
 		        return alert.getText();
 		    }
 		        public void clickAlertR() { 
-		        	//driver.findElement(By.id("register")).click();
-
-		        	
-		        	//WebElement alert = wait.until(ExpectedConditions.visibilityOfElementLocated(
-		        	   //    (ErrMsg)
-		        	//));
+		       	
 		            WebElement result = driver.findElement(errorMsg); 
 		      	   String text = result.getText();
 		            System.out.println("Result Message: " + text);
@@ -124,9 +107,8 @@ import factory.DriverFactory;
 		       // public String getAlertMessage() {
 		        //	By alertMessage;
 		          //  return wait.until(ExpectedConditions.visibilityOfElementLocated(alertMessage)).getText();
-//		        }
+          // }
 
-		        // Browser Validation Message (Required Field)
 		        public String getValidationMessage(By field) {
 		            WebElement element = driver.findElement(field);
 		            System.out.println(element);
@@ -135,8 +117,7 @@ import factory.DriverFactory;
 
 		        // Specific Field Validation Methods
 		        public String getUsernameValidationMessage() {
-		        	//String message = usernameField.getAttribute("validationMessage");
-			    	//System.out.println(message);
+		        	
 		            return driver.findElement(usernameField).getAttribute("validationMessage");
 		        }
 

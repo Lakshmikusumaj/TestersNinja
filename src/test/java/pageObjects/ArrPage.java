@@ -118,16 +118,11 @@ public class ArrPage  {
 		    // ---------------- Try Editor Methods ----------------
 		    public void enterCodeInEditor(String Code) {
 		        logger.info("Entering code into Try Editor: " + Code);
-		       // JavascriptExecutor js = (JavascriptExecutor) driver;
-			   // js.executeScript("arguments[0].CodeMirror.setValue('');" + Code);//
-
 		    	    JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		    	    // Clear existing code completely
 		    	    js.executeScript(
 		    	        "document.querySelector('.CodeMirror').CodeMirror.setValue('');"
 		    	    );
-
 		    	    // Set new code from Excel
 		    	    js.executeScript(
 		    	        "document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);",

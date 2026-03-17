@@ -3,3 +3,5 @@
 test-output/
 logs/
 *.log
+allure-results/
+allure-results/

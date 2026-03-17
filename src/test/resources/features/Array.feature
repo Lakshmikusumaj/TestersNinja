@@ -1,81 +1,58 @@
 @Array @LaunchHome @ValidLogin
 
-Feature: User navigates Array module
-  
+Feature: User navigates Array module  
    
  Background: 
     Given user clicks on Array from the home page 
+ @Array-01   
+  Scenario Outline: User navigates to Arrays topics list
+   When user clicks on "<Topiclist>" in Arrays page
+   Then user is navigated to "<Topiclist>" page
+
+  Examples:
+  |Topiclist                |
+  |Arrays in Python         |
+  |Arrays Using List        |
+  |Basic Operations in Lists|
+  |Applications of Array    |
+   #------------------------ PRACTICE QUESTIONS----------------------
+@Array-02
+  Scenario Outline: User navigates to Practice Questions in Arrays in Python
+    When user clicks on "<Questions>"
+    Then user is navigated to the "<Destination>" page
+    
+Examples:
+       |Questions                               |Destination |
+       |Search the array                        |Assessment  |
+       |Max Consecutive Ones                    |Assessment  |
+       |Find Numbers with Even Number of Digits |Assessment  |
+       |Squares of a Sorted Array               |Assessment  |  
+      
+       #data driven
+@Array-03
+  #------------------------ PRACTICE QUESTIONS EXCEL DATA DRIVEN----------------------
+ Scenario Outline: User runs array practice questions in Try Editor
+Given user is on "<Questions>" practice question page
+When user enters "<TestCaseName>" in try editor fixes indentation and clicks submit button Run button
+Then user should see ExpectedResult in array tryeditor
+
+
+Examples:
+|Questions             |TestCaseName          |                          
+|Search the array      | Search array         |                          
+|Max Consecutive Ones  | MaxConsecutiveOnes   |                          
+
+ #++++++++++++++++++++++ TRY EDITOR VALIDATION EXCEL DATA+++++++++++++++++++++++++++++#
  
-  Rule: user is on navigates Array page 
-
-  #==================== ARRAYS AND ARRAYS IN PYTHON ========================#
-  
-  Scenario: User navigates to Arrays in Python
-   When user clicks on Arrays in Python button
-   Then user is navigated to the Arrays in Python page
-
-  #+++++++++++++++++++++++++++++++ ARRAYS USING LIST+++++=============++++++#
-  
-  Scenario: User navigates to Arrays Using List 
-    When user clicks on Arrays Using List button
-    Then user is navigated to the Arrays Using List page
-
-  
-  #================================= BASIC OPERATIONS IN LISTS==================#
-  
-  Scenario: User navigates to Basic Operations in Lists 
-    When user clicks on Basic Operations in Lists
-    Then user is navigated to the Basic Operations in Lists page
-  
-  #===================================== APPLICATIONS OF ARRAY==================#
-  
-  Scenario: User navigates to Applications of Array
-    When user clicks on Applications of Array
-    Then user is navigated to the Applications of Array page
+  @Array-04
+  Scenario Outline: Verify TryEditor functionality with python code of array module
+   Given Array Try Editor data
+    When User enters python code in TryEditor for "<TestCaseName>" and clicks Run
+    Then User should see the expected output for "<ExpectedResults>"
     
-#----------------------------TRY EDITORS IN THE ARRAY MODULE--------------------#
-
- Scenario: User navigates to Try Here editor from Applications of Array
-    When user clicks on Try Here button
-    Then user is navigated to the Try Editor page
- 
-
-  #------------------------ PRACTICE QUESTIONS----------------------
-  
-  Scenario: User navigates to Arrays in Python Practice Questions
-    When user clicks on Practice Questions
-    Then user is navigated to the Practice Questions page
-
-  #===================== SEARCH THE ARRAY====================================#
-  
-  Scenario: User navigates to Search the Array question
-    When user clicks on Search the Array
-    Then user is navigated to the Search the Array question page
-
-  #=================================== MAX CONSECUTIVE ONES====================#
-  
-  Scenario: User navigates to Max Consecutive Ones question
-    When user clicks on Max Consecutive Ones
-    Then user is navigated to the Max Consecutive Ones Try Editor page
-
-  #+++++++++++++++++++++++ FIND NUMBERS WITH EVEN NUMBER OF DIGITS+++++++++++++#
-  
-  Scenario: User navigates to Find Numbers with Even Number of Digits question
-    When user clicks on Find Numbers with Even Number of Digits
-    Then user is navigated to the Find Numbers with Even Number of Digits editor page
-
-  #+++++++++++++++++++++++ SQUARES OF A SORTED ARRAY++++++++++++++++++++++++++++#
-  
-  Scenario: User navigates to Squares of a Sorted Array question
-    When user clicks on Squares of a Sorted Array
-    Then user is navigated to the Squares of a Sorted Array editor page
-
-  #++++++++++++++++++++++ TRY EDITOR VALIDATION+++++++++++++++++++++++++++++#
-  
-  Scenario: ArrayTryEditor data driven
-  
-    Given user is on the Applications of Array page
-    When user executes "Code" from "Array data" sheet
-    Then user should see expected result
-    
-    
+    Examples:
+      | TestCaseName        |ExpectedResults|
+      | PrintString         |NumpyNinja     |
+      |	Addition            |7              |
+      | SyntaxError         |Error          |
+      #| Subtraction         |3              |

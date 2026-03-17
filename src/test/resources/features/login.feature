@@ -11,11 +11,11 @@ Feature: Login functionality for DS Algo portal
     Then Login result should be as expected for the testcase "<TestCaseName>"
 
     Examples:
-      | TestCaseName               |
+      | TestCaseName                   |
       | Login_Valid			           |
       | Login_Invalid		           |
-      | Login_Invalid_Username		 |
-      | Login_Invalid_Password		 |
+      | Login_Invalid_Username		   |
+      | Login_Invalid_Password		   |
 
 @signin_valid
 Scenario: successful login functionality

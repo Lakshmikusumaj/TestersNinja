@@ -12,7 +12,8 @@ import org.testng.annotations.Listeners;
 //import com.aventstack.chaintest.plugins.ChainTestListener;
 
 
-//@Listeners(ChainTestListener.class)
+//@Listeners(ChainTestListener.class) 
+
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
@@ -49,6 +50,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@Override
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
-		return super.scenarios();
+		return super.scenarios(); 
 	}
 }

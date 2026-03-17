@@ -4,11 +4,12 @@
   Background:
     Given user is on the DS Portal home page 
      # -------------------- Register Link --------------------# 
-
+@Home-01
   Scenario: Verify Register link navigation 
     When user clicks on "Register" link
     Then user should be navigated to Register page
     #--------------------Data structure----------------------# 
+ @Home-02
    Scenario Outline: Verify navigation for all topics 
   When user clicks on "<Data Structures>" dropdown 
   Then user should see topics of dropdown 

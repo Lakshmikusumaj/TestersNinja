@@ -65,7 +65,13 @@ public class ExcelReader {
     public static Map<String, Map<String, String>> getEditorData() {
     	return getDataForSheet(ConfigReader.getProperty("editor_data_sheet_name"));
     }
+    public static Map<String, Map<String, String>> getArraydataData() {
+    	return getDataForSheet(ConfigReader.getProperty("ArrayData_data_sheet_name"));
+    }
 
+    public static Map<String, Map<String, String>> getArrayTryData() {
+    	return getDataForSheet(ConfigReader.getProperty("ArrayTry_data_sheet_name"));
+    }
 
 
     private static String getCellValue(Cell cell) {

@@ -76,6 +76,7 @@ public class ArraySteps  {
         	String expectedTitle =topicTitle;
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+        	
         }
   //============scenario-2==================
         @When("user clicks on {string}")
@@ -104,17 +105,25 @@ public class ArraySteps  {
 
         @When("user enters {string} in try editor fixes indentation and clicks submit button Run button")
         public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button_run_button(String code) {
-       // arrayPage.clearEdit();
         ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");	
         String pythonCode = ArrayTestData.get(code).get("PythonCode");  
         arrayPage.clearEdit();
 
-    	tryEditorPage.enterCode(pythonCode);  
+    	tryEditorPage.enterCode(pythonCode); 
+    	
+    	tryEditorPage.submit();
     	tryEditorPage.clickRun();
         	   
         }        
-        @Then("user should see ExpectedResult in array tryeditor")
-        public void user_should_see_expected_result_in_array_tryeditor() {
+        @Then("user should see {string} in array tryeditor")
+        public void user_should_see_in_array_tryeditor(String title) {
+        	logger.info("*************RESULTS*********"  +title);
+        	
+        	 String actual = arrayPage.getTryEditorResult();
+
+        	    System.out.println("ACTUAL: " + actual);
+        	    Assert.assertEquals(title, actual);
+        	
         }
 	
 	//===============Scenario4=====================================================//	
@@ -128,9 +137,6 @@ public class ArraySteps  {
 		 
 		@When("User enters python code in TryEditor for {string} and clicks Run")
 		public void user_enters_python_code_in_try_editor_for_and_clicks_run(String testCaseName) {
-			
-	    //arrayPage.clickApplicationsOfArray();
-	   // arrayPage.clickTryHere();
 	        
 	    String pythonCode = ArrayTestData.get(testCaseName).get("PythonCode");
 	    	
@@ -139,11 +145,23 @@ public class ArraySteps  {
 		
 		}     
 		@Then("User should see the expected output for {string}")
-		public void user_should_see_the_expected_output_for(String testCaseName) {
+		public void user_should_see_the_expected_output_for(String getResult) {
 			
-	    logger.info("*************Alert text:**********"  +testCaseName);
-		arrayPage.getOutput(); 
-		
+	    logger.info("*************Alert text:**********"  +getResult);
+		//arrayPage.getOutput(); 
+		try {
+    	    Alert alert = driver.switchTo().alert();
+    	    String alertText = alert.getText();
+    	    System.out.println("Alert text: " + alertText);
+    	    alert.accept();
+
+    	    Assert.assertTrue(alertText.contains(getResult));
+
+    	} catch (NoAlertPresentException e) {
+    	    String actualOutput = arrayPage.getOutput();
+    	    Assert.assertEquals(actualOutput.trim(), getResult);
+    	}
+    		
 		}
 
 

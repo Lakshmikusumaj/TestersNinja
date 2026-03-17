@@ -17,7 +17,7 @@ public class DriverFactory {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static final Logger logger = LogManager.getLogger(DriverFactory.class);
-//	private static ThreadLocal<String> BrowserType;
+   //private static ThreadLocal<String> BrowserType;
 
 	public static void initDriver(String browser) {
 		// Returns browser name from mvn test -DbrowerName=
@@ -45,13 +45,11 @@ public class DriverFactory {
 			break;
 
 		case "edge":
-			// WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());
 			logger.info("launching edge browser");      
 			break;
 
 		case "firefox":
-			// WebDriverManager.firefoxdriver().setup();
 			driver.set(new FirefoxDriver());
 			break;
 
@@ -71,7 +69,7 @@ public class DriverFactory {
 
 	public static void setBrowserName(String browserName) {
 		// Reads browserName from testng.xml file
-//DriverFactory.BrowserType = browserName;
+        //DriverFactory.BrowserType = browserName;
 	}
 
 	public static void quitDriver() {

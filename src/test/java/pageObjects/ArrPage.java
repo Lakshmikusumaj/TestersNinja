@@ -10,17 +10,17 @@ import org.openqa.selenium.By.ById;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ArrPage  {
 
     private static final Logger logger = LogManager.getLogger(ArrPage.class); 
-
-
 
           public ArrPage(WebDriver driver) {  
                    this.driver = driver;
@@ -43,9 +43,9 @@ public class ArrPage  {
     private By editor1=By.xpath("//div[contains(@class,'CodeMirror')]//textarea");
     private	By runButton = By.id("runButton");
     private By RunButton=By.xpath("//button[text()='Run']");
-	private	By output = By.xpath("//*[@id='output']");
+	private	By output = By.xpath("//pre[@id='output']");
     private By codeText = By.xpath("//textarea[@tabindex='0']");
-
+    private By submit=By.xpath("//input[@type='submit']");
 	       //By editor = By.id("textarea");
            // By editor= By.xpath("//div[@class='CodeMirror-code']");
 	         By editor=By.xpath("//form[@id='answer_form']/div/div/div/textarea");  
@@ -77,40 +77,33 @@ public class ArrPage  {
 
 		    }
 
-		    public void clickTryHere() {
-		        
+		    public void clickTryHere() {   
 			  // driver.findElement(applicationsOfArray).click();
 			   WebElement element= driver.findElement(tryHere);
 			   JavascriptExecutor js = (JavascriptExecutor) driver;
 		    	js.executeScript("arguments[0].scrollIntoView(true);", element);
 			   element.click();
-
 		    }
 		    
-		    public void clickPracticeQuestions() {
-		        
+		    public void clickPracticeQuestions() { 
 			     driver.findElement(arraysInPython ).click();
 			     driver.findElement(practiceQuestions).click();
-  
 		    } 
+		    
 		    public void clickQuestion(String question) {
 		        driver.findElement(By.linkText(question)).click();
-		        //driver.findElement(tryHere).click();
 		    }
 		    public void clickSearchTheArray() {
-			     //driver.findElement(arraysInPython ).click();
 				 driver.findElement(practiceQuestions).click();
                  driver.findElement(searchTheArray).click();
 		    }
 
 		    public void clickMaxConsecutiveOnes() {
-		    	//driver.findElement(arraysInPython ).click();
 			    driver.findElement(practiceQuestions).click();
 		        driver.findElement(maxConsecutiveOnes).click();
 		    }
 
 		    public void clickFindNumbersWithEvenDigits() {
-		    	//driver.findElement(arraysInPython ).click();
 			    driver.findElement(practiceQuestions).click();
 		        driver.findElement(evenDigits).click();
 		    }
@@ -152,8 +145,7 @@ public class ArrPage  {
 		    	);
 		    	
 		    }
-		    
-		   
+		    	   
 		    public WebElement getEditor() {
 		        return driver.findElement(editor);
 		    }
@@ -162,12 +154,9 @@ public class ArrPage  {
 		    	driver.findElement(RunButton).click();
 		    }
 
-		    public String getOutput() {
-		    	//return output.getText();
-		    	
-		        
-		    	
-		   String result = "";  
+		 public String getOutput() {
+		    	//return output.getText();	    	
+		    String result = "";  
 		        try {
 		            Alert alert = driver.switchTo().alert();
 		            result = alert.getText();
@@ -182,8 +171,68 @@ public class ArrPage  {
 		        return result;
 		    
 		    }
+		    
+		    
+		    public String getTryEditorResult() {
+		        try {
+		            Alert alert = driver.switchTo().alert();
+		            String alertText = alert.getText();
+		            alert.accept();
+		            return "Error";  // or return alertText if needed
+		        } catch (NoAlertPresentException e) {
+		            return driver.findElement(output).getText();
+		        }
+		    }
+		    
 		    public void submit() {
-		    	driver.findElement(By.xpath("//input[@type='submit']")).click();
+		    	driver.findElement(submit).click();
+		    }
+		    
+		    
+		    public String getResultAfterSubmit() {
+		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		        try {
+		            // Wait for alert (error case)
+		            wait.until(ExpectedConditions.alertIsPresent());
+		            Alert alert = driver.switchTo().alert();
+		            String alertText = alert.getText();
+		            alert.accept();
+		            return "Error";  // or return alertText
+		        } 
+		        catch (TimeoutException e) {
+		            // No alert → get output from page
+		            WebElement output = wait.until(
+		                ExpectedConditions.visibilityOfElementLocated(By.id("output"))
+		            );
+		            return output.getText().trim();
+		        }
+		    }
+		    
+		    public String getResultAfterRun() {
+		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		        // Click Run button
+		        driver.findElement(By.xpath("//button[text()='Run']")).click();
+
+		        try {
+		            // Wait for alert (error case)
+		            wait.until(ExpectedConditions.alertIsPresent());
+		            Alert alert = driver.switchTo().alert();
+		            String text = alert.getText();
+		            alert.accept();
+		            return "Error";
+		        } 
+		        catch (TimeoutException e) {
+		            // Wait for output to be visible AND updated
+		            WebElement output = wait.until(
+		                ExpectedConditions.visibilityOfElementLocated(By.id("output"))
+		            );
+
+		            // Extra wait to ensure text is loaded
+		            wait.until(driver -> !output.getText().trim().isEmpty());
+
+		            return output.getText().trim();
+		        }
 		    }
 		    
 		    	public String getPageTitle() {
@@ -199,8 +248,10 @@ public class ArrPage  {
 			    				// action.sendKeys(Keys.BACK_SPACE).perform();
 			    			// else 
 			    				 action.sendKeys(Keys.DELETE).perform();
-			    			 } } }	
-		    
+			    				
+			    		 }
+			    	 }
+		    	}  	 
 		
 }
 

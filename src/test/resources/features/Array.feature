@@ -34,13 +34,13 @@ Examples:
  Scenario Outline: User runs array practice questions in Try Editor
 Given user is on "<Questions>" practice question page
 When user enters "<TestCaseName>" in try editor fixes indentation and clicks submit button Run button
-Then user should see ExpectedResult in array tryeditor
+Then user should see "<ExpectedResult>" in array tryeditor
 
 
 Examples:
-|Questions             |TestCaseName          |                          
-|Search the array      | Search array         |                          
-|Max Consecutive Ones  | MaxConsecutiveOnes   |                          
+|Questions             |TestCaseName          |  ExpectedResult|                        
+|Search the array      | Search array         |     True             |        
+|Max Consecutive Ones  | MaxConsecutiveOnes   |    Error               |       
 
  #++++++++++++++++++++++ TRY EDITOR VALIDATION EXCEL DATA+++++++++++++++++++++++++++++#
  

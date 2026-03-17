@@ -115,8 +115,10 @@ public class HomeSteps {
 	    
 	}
 	@Then("user should be navigated to {string} page")
-	public void user_should_be_navigated_to_page(String topic) {
-	  
+	public void user_should_be_navigated_to_page(String topicTitle) {
+		String expectedTitle =topicTitle;
+        String actualTitle =HomeDS.getPagesTitle();
+        Assert.assertEquals(expectedTitle ,actualTitle);
 
 	}
 

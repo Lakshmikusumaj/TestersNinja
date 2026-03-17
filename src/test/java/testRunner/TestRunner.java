@@ -14,11 +14,11 @@ import org.testng.annotations.Listeners;
 
 //@Listeners(ChainTestListener.class)
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepDefinitions",
-		"hooks" }, tags ="@Array-03", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
+		"hooks" }, tags ="@Array", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json" ,
 				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
-				},
+				}, 
 				 monochrome = true, publish = true) 
 
 

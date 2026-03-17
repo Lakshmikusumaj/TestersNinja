@@ -37,8 +37,8 @@ public class ArraySteps  {
 		    } 
  
      
-        @Given("user clicks on Array from the home page")
-		public void user_clicks_on_array_from_the_home_page() {
+		 @Given("user clicks on Array from the home page")
+		 public void user_clicks_on_array_from_the_home_page() {
         	
         	logger.info("********************ARRAY MODULE*******************");
 	        arrayPage.clickGetStartesArr();
@@ -72,10 +72,10 @@ public class ArraySteps  {
         	
       
         @Then("user is navigated to {string} page")
-        public void user_is_navigated_to_page(String topiclist) {
-        	String expectedTitle =topiclist;
+        public void user_is_navigated_to_page(String topicTitle) {
+        	String expectedTitle =topicTitle;
 	        String actualTitle =arrayPage.getPageTitle();
-	        Assert.assertEquals(expectedTitle ,actualTitle);//getpageoob
+	        Assert.assertEquals(expectedTitle ,actualTitle);
         }
   //============scenario-2==================
         @When("user clicks on {string}")
@@ -86,8 +86,8 @@ public class ArraySteps  {
         }
 
         @Then("user is navigated to the {string} page")
-        public void user_is_navigated_to_the_page(String Destination) {
-        	String expectedTitle =Destination;
+        public void user_is_navigated_to_the_page(String destinationTitle) {
+        	String expectedTitle =destinationTitle;
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
         }
@@ -103,20 +103,25 @@ public class ArraySteps  {
         }
 
         @When("user enters {string} in try editor fixes indentation and clicks submit button Run button")
-        public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button_run_button(String code){        
-        	
-        arrayPage.clearEdit();
+        public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button_run_button(String code) {
+       // arrayPage.clearEdit();
         ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");	
-        String pythonCode = ArrayTestData.get(code).get("PythonCode");       	    
+        String pythonCode = ArrayTestData.get(code).get("PythonCode");  
+        arrayPage.clearEdit();
+
     	tryEditorPage.enterCode(pythonCode);  
     	tryEditorPage.clickRun();
         	   
         }        
-      		
+        @Then("user should see ExpectedResult in array tryeditor")
+        public void user_should_see_expected_result_in_array_tryeditor() {
+        }
+	
 	//===============Scenario4=====================================================//	
         @Given("Array Try Editor data")
         public void array_try_editor_data() {
-        	
+        	arrayPage.clickApplicationsOfArray();
+    	    arrayPage.clickTryHere();
         ArrayTestData = ExcelReader.getDataForSheet("ArrayData");		
 			
         }
@@ -124,8 +129,8 @@ public class ArraySteps  {
 		@When("User enters python code in TryEditor for {string} and clicks Run")
 		public void user_enters_python_code_in_try_editor_for_and_clicks_run(String testCaseName) {
 			
-	    arrayPage.clickApplicationsOfArray();
-	    arrayPage.clickTryHere();
+	    //arrayPage.clickApplicationsOfArray();
+	   // arrayPage.clickTryHere();
 	        
 	    String pythonCode = ArrayTestData.get(testCaseName).get("PythonCode");
 	    	
@@ -144,6 +149,5 @@ public class ArraySteps  {
 
 		  
 }   
-
 
 

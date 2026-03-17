@@ -106,19 +106,19 @@ public class ArrPage  {
 		    public void clickMaxConsecutiveOnes() {
 		    	//driver.findElement(arraysInPython ).click();
 			    driver.findElement(practiceQuestions).click();
-		        driver.findElement(By.linkText("Max Consecutive Ones")).click();
+		        driver.findElement(maxConsecutiveOnes).click();
 		    }
 
 		    public void clickFindNumbersWithEvenDigits() {
 		    	//driver.findElement(arraysInPython ).click();
 			    driver.findElement(practiceQuestions).click();
-		        driver.findElement(By.linkText("Find Numbers with Even Number of Digits")).click();
+		        driver.findElement(evenDigits).click();
 		    }
 
 		    public void clickSquaresOfSortedArray() {
 		    	//driver.findElement(arraysInPython ).click();
 			    driver.findElement(practiceQuestions).click();
-		        driver.findElement(By.linkText("Squares of a Sorted Array")).click();
+		        driver.findElement(sortedSquares).click();
 		    }
 		    
 		    
@@ -163,8 +163,11 @@ public class ArrPage  {
 		    }
 
 		    public String getOutput() {
+		    	//return output.getText();
 		    	
-		    	String result = "";  
+		        
+		    	
+		   String result = "";  
 		        try {
 		            Alert alert = driver.switchTo().alert();
 		            result = alert.getText();
@@ -179,11 +182,15 @@ public class ArrPage  {
 		        return result;
 		    
 		    }
+		    public void submit() {
+		    	driver.findElement(By.xpath("//input[@type='submit']")).click();
+		    }
 		    
 		    	public String getPageTitle() {
 		    	    return driver.getTitle();   // get the page title
 		    	}
 		    	public static void TextIndentation(WebDriver driver, WebElement pythonElement, int row, int space,boolean flag) { 
+		    		
 			    	Actions action = new Actions(driver); // Keys cmdCtrl = Platform.getCurrent().is(Platform.MAC) ? Keys.COMMAND : Keys.CONTROL; 
 			    	 for(int i=1;i<=row;i++) {
 			    		 action.sendKeys(Keys.ARROW_UP).keyUp(Keys.SHIFT).perform();
@@ -191,7 +198,8 @@ public class ArrPage  {
 			    			 if(i==1 && flag)
 			    				// action.sendKeys(Keys.BACK_SPACE).perform();
 			    			// else 
-			    				 action.sendKeys(Keys.DELETE).perform(); } } }	
+			    				 action.sendKeys(Keys.DELETE).perform();
+			    			 } } }	
 		    
 		
 }

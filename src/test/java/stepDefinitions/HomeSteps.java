@@ -3,6 +3,8 @@ package stepDefinitions;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -18,7 +20,7 @@ import io.cucumber.java.en.When;
 import pageObjects.HomePages; 
 
 public class HomeSteps { 
-	
+	 private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
 	 WebDriver driver = DriverFactory.getDriver();
 	//Alert alert = driver.switchTo().alert();
 
@@ -33,6 +35,7 @@ public class HomeSteps {
                                                //----------------------------Register Link---------------------//
 	@When("user clicks on {string} link")
 	public void user_clicks_on_link(String string) {
+		logger.info("*********Registerlink********");
 		HomeDS.clickRegisterR();
 	    
 	}

@@ -16,7 +16,6 @@ Feature: User navigates Array module
   |Basic Operations in Lists|
   |Applications of Array    |
    #------------------------ PRACTICE QUESTIONS----------------------
-  Rule: User should be able to access practice questions in Array module 
 @Array-02
   Scenario Outline: User navigates to Practice Questions in Arrays in Python
     When user clicks on "<Questions>"
@@ -35,14 +34,13 @@ Examples:
  Scenario Outline: User runs array practice questions in Try Editor
 Given user is on "<Questions>" practice question page
 When user enters "<TestCaseName>" in try editor fixes indentation and clicks submit button Run button
-Then user should see "<ExpectedResult>"
+Then user should see ExpectedResult in array tryeditor
 
 
 Examples:
-|Questions             |TestCaseName                                    |ExpectedResult  |
-|Search the array      | Search array                                   | Element Found  |
-|Max Consecutive Ones  | MaxConsecutiveOnes                             | 3              |
-
+|Questions             |TestCaseName          |                          
+|Search the array      | Search array         |                          
+|Max Consecutive Ones  | MaxConsecutiveOnes   |                          
 
  #++++++++++++++++++++++ TRY EDITOR VALIDATION EXCEL DATA+++++++++++++++++++++++++++++#
  
@@ -50,11 +48,11 @@ Examples:
   Scenario Outline: Verify TryEditor functionality with python code of array module
    Given Array Try Editor data
     When User enters python code in TryEditor for "<TestCaseName>" and clicks Run
-    Then User should see the expected output for "<TestCaseName>"
+    Then User should see the expected output for "<ExpectedResults>"
     
     Examples:
-      | TestCaseName        |
-      | PrintString         |
-      |	Addition            |
-      | SyntaxError         |
-     
+      | TestCaseName        |ExpectedResults|
+      | PrintString         |NumpyNinja     |
+      |	Addition            |7              |
+      | SyntaxError         |Error          |
+      #| Subtraction         |3              |

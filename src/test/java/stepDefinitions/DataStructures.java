@@ -64,14 +64,14 @@ public void user_clicks_try_here_gives_the_and_clicks_run_button(String Code) {
 //public void user_enters_print_in_the_editor(String Code) {
 	DSintro.enterCode(Code);
 	DSintro.clickRunButton();
-	//DSintro.enterCode("print(\"Numpy\")");
+	
 }
 
 
 
 @Then("User should see {string}")
 public void user_should_see(String Results) {
-	//DSintro.getOutput();
+	
 	DSintro.getResult();
 }
 

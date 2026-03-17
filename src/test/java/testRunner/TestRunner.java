@@ -12,10 +12,11 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
-	tags = "@Login or @Stack or @Queue", 
+	tags = "@Login", 
 	plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 			"json:target/cucumber-reports/cucumber.json",
-			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, 
+			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+			"tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter:"}, 
 	monochrome = true, 
 	publish = true
 )

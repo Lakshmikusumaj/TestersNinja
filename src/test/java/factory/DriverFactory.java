@@ -21,7 +21,7 @@ public class DriverFactory {
 
 	public static void initDriver(String browser) {
 		// Returns browser name from mvn test -DbrowerName=
-		String systemBrowser = System.getProperty("browserName");
+		// String systemBrowser = System.getProperty("browserName");
 
 		// String browser = (systemBrowser != null && !systemBrowser.isBlank()) ?
 		// systemBrowser

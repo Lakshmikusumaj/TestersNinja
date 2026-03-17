@@ -13,14 +13,18 @@ import org.testng.annotations.Listeners;
 
 
 //@Listeners(ChainTestListener.class)
-@CucumberOptions(features = "src/test/resources/features", glue = { "stepDefinitions",
-		"hooks" }, tags = "@Home", plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
-				"json:target/cucumber-reports/cucumber.json" ,
-				"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
-				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
-				},
-				 monochrome = true, publish = true) 
-
+@CucumberOptions(
+	features = "src/test/resources/features",
+	glue = { "stepDefinitions", "hooks" },
+	tags = "@Login", 
+	plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
+			"json:target/cucumber-reports/cucumber.json",
+			"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
+			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+			"tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter:"}, 
+	monochrome = true, 
+	publish = true
+)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeTest

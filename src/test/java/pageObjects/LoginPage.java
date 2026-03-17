@@ -6,14 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
+import java.util.Map;
 
 import factory.DriverFactory;
 import utilities.ConfigReader;
+import utilities.ExcelReader;
 
 public class LoginPage {
 
     WebDriver driver;
     ConfigReader configReader;
+    static Map<String, Map<String, String>> testData;
     
     // Constructor
     //public LoginPage(WebDriver driver) {
@@ -80,15 +83,22 @@ public class LoginPage {
     public boolean isLoginErrorDisplayed() {
         return driver.findElements(errorMsg).size() > 0;
     }
+    
     public void successfulLogin() {
-    enterUsername("Test_01");
-    enterPassword("Sdet@2025");
-    clickLogin();
-}
+    	if (testData == null) {
+            testData = ExcelReader.getLoginData();
+        }
+    	Map<String, String> validCreds = testData.get("Login_Valid");
+	    enterUsername(validCreds.get("Username"));
+	    enterPassword(validCreds.get("Password"));
+	    clickLogin();
+    }
+    
     public void waitForSuccessfulLogin() {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.urlContains("home"));
     }
+    
       // Check whether Login button is enabled
     public boolean isLoginButtonEnabled() {
         return driver.findElement(loginBtn).isEnabled();

@@ -98,8 +98,8 @@ public class LoginStepDefinitions {
 
     @When("User enters username and password")
     public void user_enters_username_and_password() {
-        loginPage.enterUsername("Test_01");
-        loginPage.enterPassword("Sdet@2025");
+        loginPage.enterUsername("Testuser");
+        loginPage.enterPassword("testpassword");
     }
 
     @Then("Login button should be enabled")

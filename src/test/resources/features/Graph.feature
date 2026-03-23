@@ -28,14 +28,14 @@ Feature: Validation graph home page
   @Graph_0003
   Scenario Outline: User Excute valid code 
   Given User try editor page of graph 
-  When User enters "<TestCode>" and clciks on the run button
-  Then user should see "<ExpectedResult>"
+  When User enters "<TestCaseName>" and clciks on the run button
+  Then user should see "<ExpectedResults>"
    
     Examples:
-    | TestCode          | ExpectedResult |
-    | print('hello')    | hello          |
-    | print('hello)     | Error          |
-    | print(1+2)        | 3              |
+      | TestCaseName        |ExpectedResults|
+      | PrintString         |NumpyNinja     |
+      |	Addition            |7              |
+      | SyntaxError         |Error          |
    
    @Graph_0004
    Scenario Outline: User Navigate to practice Questions from Graph page

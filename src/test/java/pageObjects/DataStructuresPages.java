@@ -2,7 +2,8 @@ package pageObjects;
 
 import java.time.Duration;
 import org.openqa.selenium.NoAlertPresentException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,10 +13,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import stepDefinitions.HomeSteps;
+
 public class DataStructuresPages {
 	
 	 WebDriver driver;
 	 WebDriverWait wait;
+	 private static final Logger logger = LogManager.getLogger(DataStructuresPages.class); 
+
 	 
 	 public DataStructuresPages(WebDriver driver) { 
 	      this.driver = driver;
@@ -78,13 +83,13 @@ public class DataStructuresPages {
 	    try {
 	        Alert alert = driver.switchTo().alert();
 	        String alertText = alert.getText();
-	        System.out.println("Alert Text: " + alertText);  // print
+	        logger.info("Alert Text: " + alertText);  // print
 	        alert.accept();
 	        return alertText;
 
 	    } catch (NoAlertPresentException e) {
 	    	String outputText = driver.findElement(output).getText();  // get text
-	        System.out.println("Output Text: " + outputText);          // print text
+	    	 logger.info("Output Text: " + outputText);          // print text
 	        return outputText;
 	       
 	    }
@@ -96,12 +101,12 @@ public class DataStructuresPages {
 	        try {
 	            Alert alert = driver.switchTo().alert();
 	            result = alert.getText();
-	            System.out.println("*******Alert Text******: " + result);
+	            logger.info("*******Alert Text******: " + result);
 	            alert.accept();
 	        } catch (NoAlertPresentException e) {
 	           
 	            result = driver.findElement(output).getText();  
-	            System.out.println("******Editor Output*****: " + result);
+	            logger.info("******Editor Output*****: " + result);
 	        }
 
 	        return result;

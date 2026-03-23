@@ -3,7 +3,9 @@ package pageObjects;
 
 
 
-	import org.openqa.selenium.Alert;
+	import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.JavascriptExecutor;
 	import org.openqa.selenium.NoAlertPresentException;
@@ -19,6 +21,8 @@ package pageObjects;
 	public class graphpages {
 
 		WebDriver driver;
+	    private static final Logger logger = LogManager.getLogger(graphpages.class); 
+
 
 		public graphpages(WebDriver driver) {
 			this.driver = driver;
@@ -48,11 +52,11 @@ package pageObjects;
 			switch (topic) {
 			case "Graph":
 				driver.findElement(graphLink).click();
-				System.out.println("The topic is --" + topic);
+				logger.info("The topic is --" + topic);
 				break;
 			case "Graph Representations":
 				driver.findElement(graphrePresentations).click();
-				System.out.println("The topic is --" + topic);
+				logger.info("The topic is --" + topic);
 				break;
 			}
 		}
@@ -82,7 +86,7 @@ package pageObjects;
 
 		// 0002
 		public void enterCode(String code) {
-			System.out.println("The code is --" + code);
+			logger.info("The code is --" + code);
 			driver.findElement(editor).sendKeys(code);
 		}
 
@@ -102,7 +106,24 @@ package pageObjects;
 				throw new AssertionError("Expected alert is not present!");
 			}
 		}
+		public String getOutput() {
+	    	//return output.getText();	    	
+	    String result = "";  
+	        try {
+	            Alert alert = driver.switchTo().alert();
+	            result = alert.getText();
+	            logger.info("Alert Text: " + result);
+	            alert.accept();
+	        } catch (NoAlertPresentException e) {
+	           
+	            result = driver.findElement(output).getText();  
+	           logger.info("Editor Output: " + result);
+	        }
 
+	        return result;
+	    
+	    }
+	    
 		public String getOutPutText() {
 			return driver.findElement(output).getText().toString();
 		}

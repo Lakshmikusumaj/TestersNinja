@@ -54,8 +54,7 @@ public class HomeSteps {
 		 // HomeDS.clickModule(topic);
  
  
-	} //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//
-
+	} 
 
 	@Then("user should see topics of dropdown")
 	public void user_should_see_topics_of_dropdown() {
@@ -115,8 +114,10 @@ public class HomeSteps {
 	    
 	}
 	@Then("user should be navigated to {string} page")
-	public void user_should_be_navigated_to_page(String topic) {
-	  
+	public void user_should_be_navigated_to_page(String topicTitle) {
+		String expectedTitle =topicTitle;
+        String actualTitle =HomeDS.getPagesTitle();
+        Assert.assertEquals(expectedTitle ,actualTitle);
 
 	}
 

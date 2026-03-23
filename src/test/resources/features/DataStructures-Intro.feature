@@ -12,23 +12,19 @@ Background:
     Then User should be redirected to "<Page>"
 
     Examples:
-      | Topic                        | Page                          |
-      #| Data Structures-Introduction | Data Structures Introduction  |  
-      | Time Complexity              | Time Complexity page          |
-      | Practice Questions           | Practice Questions page       |
+      | Topic                        | Page                     |
+      | Time Complexity              | Time Complexity          |
+      | Practice Questions           | Practice Questions       |
       
       
- @DS-2     
+@DS-2     
   Scenario Outline: User runs "<TestcaseName>" in Try Editor
     Given User is on "<Page>" page
-    When User clicks Try here gives the "<Code>" and clicks Run button
-   # And User enters "<Code>" in the editor
-    #And User clicks Run button
-    Then User should see "<Result>"
+    When User clicks Try here gives the "<TestCaseName>" and clicks Run button
+    Then User should see "<ExpectedResult>"
 
     Examples:
-    | TestcaseName | Page                           | Code                         | Result          |
-    |  TC-01       | Time Complexity                | print('Numpy')               | Numpy           | 
-    |  TC-02       | Time Complexity                | print('Time Complexity')     | Time Complexity |
-    |  TC-03       | Time Complexity                | print('nump                  |  Error          |
-
+      | TestCaseName        |ExpectedResult |
+      | PrintString         |NumpyNinja     |
+      |	Addition            |7              |
+      | SyntaxError         |Error          |

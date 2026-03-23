@@ -149,7 +149,6 @@ public class ArraySteps  {
 		public void user_should_see_the_expected_output_for(String getResult) {
 			
 	    logger.info("*************Alert text:**********"  +getResult);
-		//arrayPage.getOutput(); 
 		try {
     	    Alert alert = driver.switchTo().alert();
     	    String alertText = alert.getText();

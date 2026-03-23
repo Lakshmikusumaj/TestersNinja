@@ -2,6 +2,12 @@ package stepDefinitions;
 
 
 
+import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -10,13 +16,20 @@ import io.cucumber.java.en.Given;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.TryEditorPage;
 import pageObjects.graphpages;
+import utilities.ExcelReader;
 
 public class GrpahsSteps {
 
+    private static final Logger logger = LogManager.getLogger(GrpahsSteps.class); 
 
 		WebDriver driver = DriverFactory.getDriver();
 		graphpages graphpage = new graphpages(driver);
+	    static Map<String, Map<String, String>> GraphTestData;
+	  	 TryEditorPage tryEditorPage = new TryEditorPage(driver);
+
+
 
 		//====================================== Graph_0001
 		@Given("User is logged in to the DSAlgo portal and on graph page")
@@ -33,7 +46,7 @@ public class GrpahsSteps {
 		@Then("user should be redirected to {string} graph page")
 		public void user_should_be_redirected_to_graph_page(String destinationPage) {
 			String actualTitle = graphpage.getPageTitle();
-			System.out.println("Actual Title is " + actualTitle + " Excpected Title is -" + destinationPage);
+			logger.info("Actual Title is " + actualTitle + " Excpected Title is -" + destinationPage);
 			Assert.assertTrue(actualTitle.contains(destinationPage), "Actual title doesnt match with expected page title");
 		}
 //=================================================Graph_0002
@@ -55,39 +68,50 @@ public class GrpahsSteps {
 	//=============================================Graph_0003
 		@Given("User try editor page of graph")
 		public void user_try_editor_page_of_graph() {
-			System.out.println("Usert is on tryeditor page");
+			logger.info("******User is on tryeditor page******");
 			graphpage.navigateToTryHere();
+	        GraphTestData = ExcelReader.getDataForSheet("ArrayData");		
+
 
 		}
 
 		@When("User enters {string} and clciks on the run button")
-		public void user_enters_and_clciks_on_the_run_button(String code) {
-			graphpage.enterCode(code);
-			graphpage.clickRunButton();
+		public void user_enters_and_clciks_on_the_run_button(String testCaseName) {
+			String pythonCode = GraphTestData.get(testCaseName).get("PythonCode");
+	    	
+		    tryEditorPage.enterCode(pythonCode);
+		    tryEditorPage.clickRun();
 		}
 
 		@Then("user should see {string}")
 		public void user_should_see(String expectedResult) {
-			System.out.println("Usert is on expected result is -:" + graphpage.getOutPutText());
-			String actualResult;
-			if (expectedResult == "Error") {
-				actualResult = graphpage.getAlertMessage();
-				Assert.assertEquals("actualResult", "SyntaxError: bad input on line 1");
-			} else {
-				actualResult = graphpage.getOutPutText();
-				Assert.assertEquals(actualResult, expectedResult);
-			}}
+			logger.info("*************Alert text:**********"  +expectedResult);
+			//arrayPage.getOutput(); 
+			try {
+	    	    Alert alert = driver.switchTo().alert();
+	    	    String alertText = alert.getText();
+	    	  logger.info("******Alert text:******* " + alertText);
+	    	    alert.accept();
 
+	    	    Assert.assertTrue(alertText.contains(expectedResult));
+
+	    	} catch (NoAlertPresentException e) {
+	    	    String actualOutput = graphpage.getOutput();
+	    	    Assert.assertEquals(actualOutput.trim(), expectedResult);
+	    	}
+		}
 	//===============================================Graph_0004
 
 	@Given("the user is on the Graph page")
 	public void the_user_is_on_the_graph_page() {
-	    
+	    graphpage.clickPracticalQuestions();
+
 	}
 
 	@When("the user clicks on the {string} link")
-	public void the_user_clicks_on_the_link(String string) {
-	    graphpage.clickPracticalQuestions();
+	public void the_user_clicks_on_the_link(String testCaseName) {
+		
+		
 	    
 	}
 

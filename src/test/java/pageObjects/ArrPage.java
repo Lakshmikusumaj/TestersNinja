@@ -155,12 +155,12 @@ public class ArrPage  {
 		        try {
 		            Alert alert = driver.switchTo().alert();
 		            result = alert.getText();
-		            System.out.println("Alert Text: " + result);
+		            logger.info("Alert Text: " + result);
 		            alert.accept();
 		        } catch (NoAlertPresentException e) {
 		           
 		            result = driver.findElement(output).getText();  
-		            System.out.println("Editor Output: " + result);
+		            logger.info("Editor Output: " + result);
 		        }
 
 		        return result;
@@ -196,10 +196,10 @@ public class ArrPage  {
 		        } 
 		        catch (TimeoutException e) {
 		            // No alert → get output from page
-		            WebElement output = wait.until(
-		                ExpectedConditions.visibilityOfElementLocated(By.id("output"))
+		            WebElement output2 = wait.until(
+		                ExpectedConditions.visibilityOfElementLocated(output)
 		            );
-		            return output.getText().trim();
+		            return output2.getText().trim();
 		        }
 		    }
 		    
@@ -207,7 +207,7 @@ public class ArrPage  {
 		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		        // Click Run button
-		        driver.findElement(By.xpath("//button[text()='Run']")).click();
+		        driver.findElement(RunButton).click();
 
 		        try {
 		            // Wait for alert (error case)
@@ -219,14 +219,14 @@ public class ArrPage  {
 		        } 
 		        catch (TimeoutException e) {
 		            // Wait for output to be visible AND updated
-		            WebElement output = wait.until(
-		                ExpectedConditions.visibilityOfElementLocated(By.id("output"))
+		            WebElement output1 = wait.until(
+		                ExpectedConditions.visibilityOfElementLocated(output)
 		            );
 
 		            // Extra wait to ensure text is loaded
-		            wait.until(driver -> !output.getText().trim().isEmpty());
+		            wait.until(driver -> !output1.getText().trim().isEmpty());
 
-		            return output.getText().trim();
+		            return output1.getText().trim();
 		        }
 		    }
 		    

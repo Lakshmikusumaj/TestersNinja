@@ -28,7 +28,7 @@ import factory.DriverFactory;
 		    private By ErrMsg=By.xpath("//div[@role='alert']");
 		    private  By errorMsg = By.xpath("//div[contains(@class,'alert')]"); 
 		    private By passwordErrorMessage = By.id("passwordError"); 
-
+            private By loginTxt=By.xpath("//a[text()='Login ']");
 		    private WebDriver driver;
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -127,6 +127,9 @@ import factory.DriverFactory;
 
 		        public String getConfirmPasswordValidationMessage() {
 		            return driver.findElement(confirmPasswordField).getAttribute("validationMessage");
+		        }
+		        public void LoginClick() {
+		        	driver.findElement(loginTxt).click();
 		        }
 		    }
 		   

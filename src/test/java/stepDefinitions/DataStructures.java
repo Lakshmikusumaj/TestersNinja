@@ -51,7 +51,7 @@ public void user_clicks_link(String topic) {
         DSintro.DSClickTimeComplexity();
         break;
     case "Practice Questions":
-        //DSintro.DSClickPracticeQ();
+        DSintro.DSClickPracticeQ();
         break;
     default:
         throw new IllegalArgumentException("Unknown topic: " + topic);
@@ -96,7 +96,7 @@ public void user_should_see(String Title) {
 	try {
 	    Alert alert = driver.switchTo().alert();
 	    String alertText = alert.getText();
-	    System.out.println("Alert text: " + alertText);
+	   logger.info("****Alert text:**** " + alertText);
 	    alert.accept();
 
 	    Assert.assertTrue(alertText.contains(Title));

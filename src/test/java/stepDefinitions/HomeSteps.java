@@ -20,7 +20,7 @@ import io.cucumber.java.en.When;
 import pageObjects.HomePages; 
 
 public class HomeSteps { 
-	 private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
+	 private static final Logger logger = LogManager.getLogger(HomeSteps.class); 
 	 WebDriver driver = DriverFactory.getDriver();
 	//Alert alert = driver.switchTo().alert();
 
@@ -28,7 +28,8 @@ public class HomeSteps {
 	
 	@Given("user is on the DS Portal home page")
 	public void user_is_on_the_ds_portal_home_page() { 
-	//HomeDS.clickLaunchStartR();  
+	//HomeDS.clickLaunchStartR(); 
+		logger.info("********HOME PAGE************");
 	    
 		 
 	}
@@ -50,6 +51,7 @@ public class HomeSteps {
 
 	@When("user clicks on {string} dropdown")
 	public void user_clicks_on_dropdown(String topic) {
+		logger.info("**********DROP DOWN*********");
 		  HomeDS.clickDDArrayBS();
 		 // HomeDS.clickModule(topic);
  
@@ -70,7 +72,7 @@ public class HomeSteps {
 	public void user_clicks_on_the_array(String string) {
 		
 	  HomeDS.clickDDArrayBS();
-	  HomeDS.clickArrayR();
+	  HomeDS.clickArrayR(); 
 	}
 	/*@When("user clicks on {string}")
 	public void user_clicks_on(String module) {
@@ -79,7 +81,9 @@ public class HomeSteps {
 
 
 	@Then("user should see {string} message")
-	public void user_should_see_message(String string) {	
+	public void user_should_see_message(String topicTitle) {
+		
+
 	  HomeDS.clickAlertR();	
 	}   
 	                                 //------------------------SIGN IN LINK---------------------------------

@@ -32,3 +32,16 @@ Examples:
 |EmptyPass      |TestReg      |          | 12345           | please fill out this field |
 |EmptyUser      |             | 57365    |                 | please fill out this field |
 |PassMissmatch  |TestersNinja |Numpy     |    Numpy1       | two password mismatch       |
+
+@testcase-R03
+Scenario Outline: Validate login link on Register page multiple test data
+    Given Login data on Registerpage
+    When Enters username and password on Registerpage "<TestCaseName>" and clicks login button
+    Then Login results should be as expected for the testcasename "<TestCaseName>"
+
+    Examples:
+      | TestCaseName                   |
+      | Login_Valid			           |
+      | Login_Invalid		           |
+      | Login_Invalid_Username		   |
+      | Login_Invalid_Password		   |

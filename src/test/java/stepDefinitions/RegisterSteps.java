@@ -24,7 +24,7 @@ import org.openqa.selenium.By;
 		
 		WebDriver driver;
 		    RegisterPage registrationPage;
-		    private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
+		    private static final Logger logger = LogManager.getLogger(RegisterSteps.class); 
 		    public RegisterSteps() {
 		        driver = DriverFactory.getDriver();
 		        registrationPage = new RegisterPage(driver); 
@@ -38,7 +38,6 @@ import org.openqa.selenium.By;
 
 		    @When("the user clicks on Register button link")
 		    public void the_user_clicks_on_register_button_link() {
-	 //       RegistrationPage = new RegisterPage(driver);
 		       registrationPage.clickRegisterLink();
 		    }
 
@@ -50,9 +49,9 @@ import org.openqa.selenium.By;
 //-------------------------scenario-1----------------------------R01//
 		    @Given("the user is in registration page")
 		    public void the_user_is_in_registration_page() {
+		    	
 		    	 registrationPage.clickRegisterLink();
-		    //    RegistrationPage = new RegisterPage(driver);
-		        //driver.get("https://dsportal.com/register"); // replace if needed
+		    
 		    }
 		    
 		    
@@ -63,14 +62,15 @@ public void the_user_enters_username_password_and_confirm_password(String userna
 		        registrationPage.enterPassword(password);
 		        registrationPage.enterConfirmPassword(confirmpassword);  
 		        registrationPage.clickRegisterButton(); 
-		        //String message = username.getAttribute("validationMessage");
-
-		        //Assert.assertTrue(message.contains("Please fill out this field"));
+		        
 		    }
 
-		    @Then("the user should see a success message")
-		    public void the_user_should_see_a_sucess_message() {
+@Then("the user should see a {string} message")
+public void the_user_should_see_a_message(String destinationTitle) {
+		    	
+		    	
 		    	registrationPage.clickAlertR();
+		    	
 		    	
 		    }
 //--------------------------scenario-2==============================R02//
@@ -88,19 +88,13 @@ public void the_user_enters_username_password_and_confirm_password(String userna
 		        registrationPage.enterPassword(password);
 		        registrationPage.enterConfirmPassword(confirmpassword);
 		        registrationPage.clickRegisterButton();
-		       // String message = username.getAttribute("validationMessage");
-		    	//System.out.println(message);
+		      
 		    }
 		    @Then("the system displays {string}")
 		    public void the_system_displays(String message) {
 		    	registrationPage.getConfirmPasswordValidationMessage();
 		    	registrationPage.getPasswordValidationMessage();
 		    	registrationPage.getUsernameValidationMessage();
-		    	//String message = username.getAttribute("validationMessage");
-		    	//System.out.println(message);
-		       //String actualMessage = registrationPage.getPasswordErrorMessage();
-		       // Assert.assertTrue(actualMessage.contains(message));
-		    	//Assert.assertTrue(registrationPage.getPasswordErrorMessage().contains(message));
 		    	
 		    }
 

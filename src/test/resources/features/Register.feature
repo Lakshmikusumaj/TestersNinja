@@ -12,7 +12,7 @@ Then the register page should be displayed
 Scenario Outline: User registers with valid inputs
 Given the user is in registration page
 When the user enters username "<username>" password "<password>" and  confirmPassword "<confirmpassword>"
-Then the user should see a success message
+Then the user should see a "<success>" message
 
 Examples:
 | username  | password      |  confirmpassword   |

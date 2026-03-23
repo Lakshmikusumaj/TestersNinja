@@ -54,8 +54,7 @@ public class HomeSteps {
 		 // HomeDS.clickModule(topic);
  
  
-	} //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//
-
+	} 
 
 	@Then("user should see topics of dropdown")
 	public void user_should_see_topics_of_dropdown() {

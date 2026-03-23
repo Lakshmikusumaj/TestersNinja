@@ -6,7 +6,9 @@ package stepDefinitions;
 	import java.util.List;
 	import java.util.Map;
 
-	import org.junit.Assert;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 	import org.openqa.selenium.WebDriver;
 
 	import factory.DriverFactory;
@@ -22,19 +24,21 @@ import pageObjects.LinkedlistPages;
 
 	public class LinkedSteps {
 		
-		//linkedlistpages.clickGetStartedLlinkedlist();
-	//}
+		
+	    private static final Logger logger = LogManager.getLogger(LinkedSteps.class); 
+
 		LoginPage loginPage;
 		WebDriver driver = DriverFactory.getDriver();
 		LinkedlistPages linkedlistpage = new LinkedlistPages(driver);
 	    TryEditorPage tryEditorPage = new TryEditorPage(driver);
 
 	    List<Map<String, String>> loginTestData;
-	   // List<Map<String, String>> linkedlistTestData;
+	    
 	    static Map<String, Map<String, String>> linkedlistTestData;
 		
 		@Given("User is logged in to the portal and on linkedlist page")
 		public void user_is_logged_in_to_the_portal_and_on_linkedlist_page() {
+			logger.info("************LinkedList*************");
 			linkedlistpage.clickGetStartedLlinkedlist();
 		}
 
@@ -45,12 +49,13 @@ import pageObjects.LinkedlistPages;
 		}
 
 		@Then("User should be redirected to {string} linkedlist page")
-		public void user_should_be_redirected_to_linkedlist_page(String destinationPage)  {
-		//	Assert.assertTrue(driver.getTitle().toLowerCase()
-	    //            .contains(destinationPage.toLowerCase()));
+		public void user_should_be_redirected_to_linkedlist_page(String destinationTitle)  {
+			String expectedTitle =destinationTitle;
+	        String actualTitle =linkedlistpage.getPageTitle();
+	        Assert.assertEquals(expectedTitle ,actualTitle);
 			
 		}
-		//002
+		//--------------------------------------------------------------002
 		@Given("User is on {string} page in linkedlist module")
 		public void user_is_on_page_in_linkedlist_module(String string) {
 		   
@@ -62,11 +67,15 @@ import pageObjects.LinkedlistPages;
 			
 			
 		}
-		@Then("User should be redirected to Try Editor page with Run button in the respective link of linkedlist module")
-		public void user_should_be_redirected_to_try_editor_page_with_run_button_in_the_respective_link_of_linkedlist_module() {
-		    
+		@Then("User should be redirected to Try Editor page with {string} button in the respective link of linkedlist module")
+		public void user_should_be_redirected_to_try_editor_page_with_button_in_the_respective_link_of_linkedlist_module(String text) {
+			logger.info(text);
+			
+			/*String expectedTitle =destinationTitle;
+	        String actualTitle =linkedlistpage.getPageTitle();
+	        Assert.assertEquals(expectedTitle ,actualTitle);*/
 		}
-	//0003
+	//-----------------------------------------------------0003
 		@Given("User is on the Introduction page")
 		public void user_is_on_the_introduction_page() {
 		    
@@ -77,14 +86,20 @@ import pageObjects.LinkedlistPages;
 		   linkedlistpage.clickPractice();
 		}
 
-		@Then("User should redirected to Practice Questions")
-		public void user_should_redirected_to_practice_questions() {
-		   
+		@Then("User should redirected to {string}")
+		public void user_should_redirected_to(String Title) {
+			//String Title;
+			String expectedTitle =Title;
+			logger.info("********Title*******" ,Title);
+	        String actualTitle =linkedlistpage.getPageTitle();
+	        Assert.assertEquals(expectedTitle ,actualTitle);
+		   //linkedlistpage.getPageTitle();
 		}
-	//0004
+	//----------------------------------------------------0004
 		@Given("User is on the Introduction page in linkedlist")
 		public void user_is_on_the_introduction_page_in_linkedlist() {
-		   
+		    linkedlistpage.here();
+
 		}
 
 		@When("User clicks Try Here and gives {string} on respective Introduction page in linkedlinst")
@@ -93,7 +108,7 @@ import pageObjects.LinkedlistPages;
 		        linkedlistTestData = ExcelReader.getEditorData();
 		    } 
 
-		    linkedlistpage.here();
+		   // linkedlistpage.here();
 
 		    Map<String,String> row = linkedlistTestData.get(testCaseName);
 

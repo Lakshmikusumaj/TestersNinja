@@ -100,7 +100,8 @@ public class ArraySteps  {
         	
         arrayPage.clickArraysInPython();
         arrayPage.clickPracticeQuestions();
-        arrayPage.clickQuestion(question); 
+        arrayPage.clickQuestion(question);
+        
         }
 
         @When("user enters {string} in try editor fixes indentation and clicks submit button Run button")
@@ -121,7 +122,7 @@ public class ArraySteps  {
         	
         	 String actual = arrayPage.getTryEditorResult();
 
-        	    System.out.println("ACTUAL: " + actual);
+        	    logger.info("ACTUAL: " + actual);
         	    Assert.assertEquals(title, actual);
         	
         }

@@ -231,6 +231,8 @@ public class ArrPage  {
 		    }
 		    
 		    	public String getPageTitle() {
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 		    	    return driver.getTitle();   // get the page title
 		    	}
 		    	public static void TextIndentation(WebDriver driver, WebElement pythonElement, int row, int space,boolean flag) { 

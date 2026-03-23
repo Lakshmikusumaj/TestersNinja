@@ -1,12 +1,13 @@
 package stepDefinitions;
 
 
-import org.openqa.selenium.WebDriver;
 
-import dev.failsafe.internal.util.Assert;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
-//import org.junit.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.graphpages;
@@ -17,7 +18,7 @@ public class GrpahsSteps {
 		WebDriver driver = DriverFactory.getDriver();
 		graphpages graphpage = new graphpages(driver);
 
-		// Graph_0001
+		//====================================== Graph_0001
 		@Given("User is logged in to the DSAlgo portal and on graph page")
 		public void user_is_logged_in_to_the_ds_algo_portal_and_on_graph_page() {
 			graphpage.clickGetStarted();
@@ -32,10 +33,10 @@ public class GrpahsSteps {
 		@Then("user should be redirected to {string} graph page")
 		public void user_should_be_redirected_to_graph_page(String destinationPage) {
 			String actualTitle = graphpage.getPageTitle();
-			//System.out.println("Actual Title is " + actualTitle + " Excpected Title is -" + destinationPage);
-			//Assert.assertTrue(actualTitle.contains(destinationPage), "Actual title doesnt match with expected page title");
+			System.out.println("Actual Title is " + actualTitle + " Excpected Title is -" + destinationPage);
+			Assert.assertTrue(actualTitle.contains(destinationPage), "Actual title doesnt match with expected page title");
 		}
-
+//=================================================Graph_0002
 		@Given("User is on {string} page in Graph module")
 		public void user_is_on_page_in_graph_module(String Module) {
 			graphpage.clickTopic(Module);
@@ -48,10 +49,10 @@ public class GrpahsSteps {
 
 		@Then("User should be redirected to Try Editor page with Run button in the respective link of graph module")
 		public void user_should_be_redirected_to_try_editor_page_with_run_button_in_the_respective_link_of_graph_module() {
-			//Assert.assertTrue(graphpage.isButtonDisplayed(), "Run button is not displayed");
+			Assert.assertTrue(graphpage.isButtonDisplayed(), "Run button is not displayed");
 		}
 
-	//0003
+	//=============================================Graph_0003
 		@Given("User try editor page of graph")
 		public void user_try_editor_page_of_graph() {
 			System.out.println("Usert is on tryeditor page");
@@ -67,7 +68,7 @@ public class GrpahsSteps {
 
 		@Then("user should see {string}")
 		public void user_should_see(String expectedResult) {
-			/*System.out.println("Usert is on expected result is -:" + graphpage.getOutPutText());
+			System.out.println("Usert is on expected result is -:" + graphpage.getOutPutText());
 			String actualResult;
 			if (expectedResult == "Error") {
 				actualResult = graphpage.getAlertMessage();
@@ -75,9 +76,9 @@ public class GrpahsSteps {
 			} else {
 				actualResult = graphpage.getOutPutText();
 				Assert.assertEquals(actualResult, expectedResult);
-			}*/}
+			}}
 
-	//0004
+	//===============================================Graph_0004
 
 	@Given("the user is on the Graph page")
 	public void the_user_is_on_the_graph_page() {
@@ -91,10 +92,11 @@ public class GrpahsSteps {
 	}
 
 	@Then("the user should see the {string}")
-	public void the_user_should_see_the(String string) {
-		//String expectedTitle = "Practice Questions";
-	    //String actualTitle =graphpage.getPageTitle();//getpageoobject
-	    //Assert.assertEquals(expectedTitle ,actualTitle);  
+	public void the_user_should_see_the(String topicTitle) {
+		String expectedTitle =topicTitle;
+        String actualTitle =graphpage.getPageTitle();
+        Assert.assertEquals(expectedTitle ,actualTitle);
+		
 
 	}
 		

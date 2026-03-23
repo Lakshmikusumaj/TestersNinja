@@ -26,9 +26,9 @@ package pageObjects;
 	//locators
 		    private By getStartedlinkedlist = By.xpath("//a[@href='linked-list']");
 		    private By Introductionlink = By.xpath("//a[text()='Introduction']");
-		    private By CreatingLinkedLIstlink = By.xpath("//a[@href=\'creating-linked-list\']");
+		    private By CreatingLinkedLIstlink = By.linkText("Creating Linked LIst");
 		    private By TypesofLinkedLIstlink = By.linkText("Types of Linked List");
-		    private By ImplementLinkedListinPythonlink = By.xpath("//a[@href=\'implement-linked-list-in-python\']");
+		    private By ImplementLinkedListinPythonlink = By.linkText("Implement Linked List in Python");
 		    private By Traversallink = By.linkText("Traversal");
 		    private By Insertionlink = By.linkText("Insertion");
 		    private By Deletionlink = By.linkText("Deletion");
@@ -105,7 +105,9 @@ package pageObjects;
 			}
 		}
 
-
+		public String getPageTitle() {
+	    	return driver.getTitle();
+	    }
 	    
 
 	}   

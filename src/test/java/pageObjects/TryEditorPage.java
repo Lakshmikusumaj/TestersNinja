@@ -45,6 +45,7 @@ public class TryEditorPage {
     public void submit() {
     	driver.findElement(submit).click();
     }
+    
 	public void enterCode(String code) {
 		WebElement element = driver.findElement(codeTextArea);
 		new Actions(driver).keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();

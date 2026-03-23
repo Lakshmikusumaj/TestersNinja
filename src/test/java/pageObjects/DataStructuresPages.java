@@ -46,13 +46,15 @@ public class DataStructuresPages {
 	}
 
 	public void DSClickPracticeQ() {
+		driver.findElement(Timecomplexity).click();
+
 		driver.findElement(practice).click();
 	}
 	public void DSClickTryhere() {
-		WebElement txt2=driver.findElement(TryHere);
+	WebElement txt2=driver.findElement(TryHere);
     	//JavascriptExecutor js = (JavascriptExecutor) driver;
     	//js.executeScript("arguments[0].scrollIntoView(true);", txt2);
-	//txt2.click();
+	    //txt2.click();
 		//driver.findElement(TryHereDS).click();
 	Actions actions = new Actions(driver);
 	actions.moveToElement(txt2).perform();
@@ -61,13 +63,11 @@ public class DataStructuresPages {
 	public void enterCode(String Code) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(editor1));
-		//driver.findElement(editorDS).click();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-    js.executeScript(
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript(
             "document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);",
             Code);
-		//Actions actions = new Actions(driver);
-		//actions.moveToElement).click().perform();
+		
 }
 	public void clickRunButton() {
        driver.findElement(ClickRunBtn).click();
@@ -86,18 +86,28 @@ public class DataStructuresPages {
 	    	String outputText = driver.findElement(output).getText();  // get text
 	        System.out.println("Output Text: " + outputText);          // print text
 	        return outputText;
-	        //System.out.println("Output Text: " + output);  // print
-
-
-	       // return driver.findElement(output).getText();
-	        
+	       
 	    }
 	}
-    public String getOutput() {
+     public String getOutput() {
     	WebElement txt3=driver.findElement(output);
-    	txt3.click();
-        return txt3.getText();
-    }
+    	
+	    String result = "";  
+	        try {
+	            Alert alert = driver.switchTo().alert();
+	            result = alert.getText();
+	            System.out.println("*******Alert Text******: " + result);
+	            alert.accept();
+	        } catch (NoAlertPresentException e) {
+	           
+	            result = driver.findElement(output).getText();  
+	            System.out.println("******Editor Output*****: " + result);
+	        }
+
+	        return result;
+	    
+	    }
+    
     public String getPageTitle() {
     	return driver.getTitle();
     }

@@ -1,6 +1,6 @@
 package testRunner;
 
-import org.testng.ITestContext;
+import org.testng.ITestContext; 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -8,21 +8,23 @@ import org.testng.annotations.Parameters;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
- 
+  
 
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
+
 	tags = "@Login", 
 	plugin = { "pretty", 
 			  "html:target/cucumber-reports/cucumber.html",
+			  "rerun:target/failed_scenarios.txt"  ,
  		 // "json:target/cucumber-reports/cucumber.json",
 			//"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 			  "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 			 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 			 
 			}, 
-	monochrome = true, 
+monochrome = true, 
 	publish = true
 )
 

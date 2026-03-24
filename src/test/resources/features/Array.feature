@@ -57,11 +57,7 @@ Then user clicks run button user should see "<ExpectedResult>"
 Examples:
 |Questions             |TestCaseName          |  ExpectedResult|   
 |Search the array      | Search array         |     True       |     
-|Max Consecutive Ones  | MaxConsecutiveOnes   |     Error       |   
-
-
-
-
+|Max Consecutive Ones  | MaxConsecutiveOnes   |     Error      |   
 
 
  #++++++++++++++++++++++ TRY EDITOR VALIDATION EXCEL DATA+++++++++++++++++++++++++++++#

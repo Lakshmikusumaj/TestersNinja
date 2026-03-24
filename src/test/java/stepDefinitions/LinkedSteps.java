@@ -38,13 +38,14 @@ import pageObjects.LinkedlistPages;
 		
 		@Given("User is logged in to the portal and on linkedlist page")
 		public void user_is_logged_in_to_the_portal_and_on_linkedlist_page() {
+			
 			logger.info("************LinkedList*************");
 			linkedlistpage.clickGetStartedLlinkedlist();
 		}
 
 		@When("User clicks {string} link in linkedlist page")
 		public void user_clicks_link_in_linkedlist_page(String topic) 
-	 {
+	    {
 			linkedlistpage.clickTopic(topic);
 		}
 
@@ -58,11 +59,12 @@ import pageObjects.LinkedlistPages;
 		//--------------------------------------------------------------002
 		@Given("User is on {string} page in linkedlist module")
 		public void user_is_on_page_in_linkedlist_module(String string) {
-		   
+			linkedlistpage.here();
+
 		}
 		@When("User clicks Try Here button on respective topicscovered link")
 		public void user_clicks_try_here_button_on_respective_topicscovered_link() {
-			linkedlistpage.here();
+			//linkedlistpage.here();
 			linkedlistpage.clickRunButton();
 			
 			

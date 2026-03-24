@@ -180,7 +180,7 @@ public class ArraySteps  {
 		try {
     	    Alert alert = driver.switchTo().alert();
     	    String alertText = alert.getText();
-    	    System.out.println("Alert text: " + alertText);
+    	  logger.info("Alert text: " + alertText);
     	    alert.accept();
 
     	    Assert.assertTrue(alertText.contains(getResult));

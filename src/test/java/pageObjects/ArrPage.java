@@ -24,6 +24,7 @@ public class ArrPage  {
 
           public ArrPage(WebDriver driver) {  
                    this.driver = driver;
+                   
           }        
 
     private By getStartedBtn = By.xpath("//button[text()='Get Started']");
@@ -46,9 +47,12 @@ public class ArrPage  {
 	private	By output = By.xpath("//pre[@id='output']");
     private By codeText = By.xpath("//textarea[@tabindex='0']");
     private By submit=By.xpath("//input[@type='submit']");
+    private By editorClear=By.id("editor");
 	       //By editor = By.id("textarea");
            // By editor= By.xpath("//div[@class='CodeMirror-code']");
-	         By editor=By.xpath("//form[@id='answer_form']/div/div/div/textarea");  
+    
+	         By editor=By.xpath("//form[@id='answer_form']/div/div/div/textarea"); 
+	         
 		     WebDriver driver;
 			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    
@@ -93,6 +97,7 @@ public class ArrPage  {
 		    public void clickQuestion(String question) {
 		        driver.findElement(By.linkText(question)).click();
 		    }
+		    
 		    public void clickSearchTheArray() {
 				 driver.findElement(practiceQuestions).click();
                  driver.findElement(searchTheArray).click();
@@ -127,11 +132,11 @@ public class ArrPage  {
 		    	    js.executeScript(
 		    	        "document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);",
 		    	        Code); 
-		    	    
-		    	}
+		    }    
+		    	
 		    public void clearEdit() {
 		    	
-		    	WebElement editor = driver.findElement(By.id("editor"));
+		    	WebElement editor = driver.findElement(editorClear);
 		    	JavascriptExecutor js = (JavascriptExecutor) driver;
 		    	js.executeScript(
 		    	    "var cm = arguments[0].nextSibling.CodeMirror;" +
@@ -149,25 +154,36 @@ public class ArrPage  {
 		    	driver.findElement(RunButton).click();
 		    }
 
-		 public String getOutput() {
+		    public String getOutput() {
 		    	//return output.getText();	    	
-		    String result = "";  
+		     String result = "";  
 		        try {
 		            Alert alert = driver.switchTo().alert();
 		            result = alert.getText();
-		            logger.info("Alert Text: " + result);
+		            logger.info("****Alert Text:***** " + result);
 		            alert.accept();
 		        } catch (NoAlertPresentException e) {
 		           
 		            result = driver.findElement(output).getText();  
-		            logger.info("Editor Output: " + result);
+		            logger.info("******Editor Output:***** " + result);
 		        }
 
 		        return result;
 		    
 		    }
+		    public String Output(){
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		    WebElement output = wait.until(ExpectedConditions.visibilityOfElementLocated(
+		        By.id("output")   // change locator accordingly
+		    ));
+
 		    
-		    
+		    String actual = output.getText();
+		    System.out.println("Actual Output: " + actual);
+		    return driver.getTitle();
+		    }
+		     
 		    public String getTryEditorResult() {
 		        try {
 		            Alert alert = driver.switchTo().alert();
@@ -180,9 +196,15 @@ public class ArrPage  {
 		    }
 		    
 		    public void submit() {
-		    	driver.findElement(submit).click();
+		    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		    	WebElement editor = wait.until(ExpectedConditions.elementToBeClickable(submit));
+		    	editor.click();
 		    }
 		    
+		    public String getMessage1() {
+		        return driver.findElement(output).getText();
+		    }
 		    
 		    public String getResultAfterSubmit() {
 		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -202,6 +224,17 @@ public class ArrPage  {
 		            return output2.getText().trim();
 		        }
 		    }
+		    
+		    public String getAlertMessageIfPresent() {
+		        try {
+		            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		            String text = alert.getText();
+		            alert.accept();
+		            return text;
+		        } catch (Exception e) {
+		            return null;
+		        }}
+		    
 		    
 		    public String getResultAfterRun() {
 		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -230,20 +263,32 @@ public class ArrPage  {
 		        }
 		    }
 		    
-		    	public String getPageTitle() {
+		    
+		    public String getOutputMessage() {
+		    	WebElement txt =driver.findElement(output);
+		       // WebElement output1 = wait.until(
+		        //    ExpectedConditions.visibilityOfElementLocated(output)
+		        //);
+		        return txt.getText();
+		    }
+		    
+		    
+		    public String getPageTitle() {
 			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		    	    return driver.getTitle();   // get the page title
 		    	}
-		    	public static void TextIndentation(WebDriver driver, WebElement pythonElement, int row, int space,boolean flag) { 
+		    	
+		    
+		    public static void TextIndentation(WebDriver driver, WebElement pythonElement, int row, int space,boolean flag) { 
 		    		
 			    	Actions action = new Actions(driver); // Keys cmdCtrl = Platform.getCurrent().is(Platform.MAC) ? Keys.COMMAND : Keys.CONTROL; 
 			    	 for(int i=1;i<=row;i++) {
 			    		 action.sendKeys(Keys.ARROW_UP).keyUp(Keys.SHIFT).perform();
 			    		 for(int j=1;j<=space;j++) { 
 			    			 if(i==1 && flag)
-			    				// action.sendKeys(Keys.BACK_SPACE).perform();
-			    			// else 
+			    				 action.sendKeys(Keys.BACK_SPACE).perform();
+			    			else 
 			    				 action.sendKeys(Keys.DELETE).perform();
 			    				
 			    		 }

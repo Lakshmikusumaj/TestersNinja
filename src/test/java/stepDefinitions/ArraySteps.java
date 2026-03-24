@@ -25,6 +25,7 @@ public class ArraySteps  {
     private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
 
 		 ArrPage arrayPage;
+		// ArrPage arrayPage = new ArrPage();
 	  	 WebDriver driver = DriverFactory.getDriver();
 	  	 TryEditorPage tryEditorPage = new TryEditorPage(driver);
 
@@ -93,7 +94,7 @@ public class ArraySteps  {
 	        Assert.assertEquals(expectedTitle ,actualTitle);
         }
 
-//==================Scenario3//=====================================
+//==========3========Scenario3//=====================================
 
         @Given("user is on {string} practice question page")
         public void user_is_on_practice_question_page(String question) {
@@ -103,29 +104,56 @@ public class ArraySteps  {
         arrayPage.clickQuestion(question);
         
         }
-
-        @When("user enters {string} in try editor fixes indentation and clicks submit button Run button")
-        public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button_run_button(String code) {
+        @When("user enters {string} in try editor fixes indentation and clicks submit button")
+        public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button(String code) {
+        	
         ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");	
         String pythonCode = ArrayTestData.get(code).get("PythonCode");  
         arrayPage.clearEdit();
-
-    	tryEditorPage.enterCode(pythonCode); 
-    	
+    	tryEditorPage.enterCode(pythonCode); 	
     	tryEditorPage.submit();
-    	tryEditorPage.clickRun();
-        	   
-        }        
-        @Then("user should see {string} in array tryeditor")
-        public void user_should_see_in_array_tryeditor(String title) {
-        	logger.info("*************RESULTS*********"  +title);
+    	   
+        }	   
+               
+        @Then("user should see on the Array editor {string}")
+        public void user_should_see_on_the_array_editor(String title) {
         	
-        	 String actual = arrayPage.getTryEditorResult();
+        	logger.info("*************RESULTS*********"  +title);
+        	String actual1=   arrayPage.getResultAfterSubmit();
+        	logger.info("ACTUAL: " + actual1);
+       	    Assert.assertEquals(title, actual1);  
 
-        	    logger.info("ACTUAL: " + actual);
-        	    Assert.assertEquals(title, actual);
+        	}
+        
+//--------4--------------DATA DRIVEN RUN BUTTON---------------------------------//  
+        @Given("user is on Array {string} practice page")
+        public void user_is_on_array_practice_page(String questionTitle) {
+
+        	arrayPage.clickArraysInPython();
+            arrayPage.clickPracticeQuestions();
+            arrayPage.clickQuestion(questionTitle);
+        }
+
+        @When("user enters {string} in try editor fixes indentation and clicks Run button")
+        public void user_enters_in_try_editor_fixes_indentation_and_clicks_run_button(String code) {
+        	ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");	
+            String pythonCode = ArrayTestData.get(code).get("PythonCode");  
+            arrayPage.clearEdit();
+           
+        	tryEditorPage.enterCode(pythonCode); 
+        	tryEditorPage.clickRun();
         	
         }
+
+        @Then("user clicks run button user should see {string}")
+        public void user_clicks_run_button_user_should_see(String message) {
+        	logger.info("*************RESULTS*********"  +message);
+
+    	    String actual1 = arrayPage.getTryEditorResult();
+
+    	    logger.info("ACTUAL: " + actual1);
+    	    Assert.assertEquals(message, actual1);
+        } 
 	
 	//===============Scenario4=====================================================//	
         @Given("Array Try Editor data")

@@ -34,12 +34,13 @@ public class GrpahsSteps {
 		//====================================== Graph_0001
 		@Given("User is logged in to the DSAlgo portal and on graph page")
 		public void user_is_logged_in_to_the_ds_algo_portal_and_on_graph_page() {
+			logger.info("*************GRAPH*****************");
 			graphpage.clickGetStarted();
 		}
 
 		@When("User clicks {string} link in graph page")
 		public void user_clicks_link_in_graph_page(String topic) {
-
+            logger.info("********topicName******",topic);
 			graphpage.clickTopic(topic);
 		}
 
@@ -52,6 +53,7 @@ public class GrpahsSteps {
 //=================================================Graph_0002
 		@Given("User is on {string} page in Graph module")
 		public void user_is_on_page_in_graph_module(String Module) {
+			
 			graphpage.clickTopic(Module);
 		}
 

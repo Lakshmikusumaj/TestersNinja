@@ -23,9 +23,10 @@
   | Tree        |
   | Graph       |
   
+  @home03
   Scenario: Verify user can navigate to Arrays page 
     When user clicks on the array  "Arrays" 
-    Then user should see "Alert" message
+    Then user should see "You are not logged in" message
 
   # -------------------- Sign In Link --------------------   
 
@@ -34,18 +35,19 @@
     Then user should be navigated to Login page
 
   # -------------------- Successful Login -------------------- 
-
+@home04
   Scenario Outline: Verify user can login with valid credential 
     When user clicks on "Sign In" link
     And user enters "<username>" and "<password>"
     And user clicks on Login button
-    Then user should be logged in successfully  
+    Then user should see "<message>" successfully  
     #And user should see logout option  
 
   Examples: 
-    | username     | password     |
-    | validUser1   | validPass1   | 
-    | TestersNinja | Ts230@231    |
+    | username     | password     | message                       |
+    | validUser1   | validPass1   | Invalid Username and Password  |
+    | TestersNinja | Ts230@231    | You are logged in              |
+
     
    Rule: sign in for all modules  
   
@@ -57,8 +59,8 @@
     Then user should be navigated to "<topicPage>" page
 
   Examples:
-    | topic       |topicPage|
-    | Arrays      |Array   |
+    | topic       |topicPage    |
+    | Arrays      |Array        |
     | Linked List |Linked List  |
     | Stack       |Stack        |
     | Queue       |Queue        |

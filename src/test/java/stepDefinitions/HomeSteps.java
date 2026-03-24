@@ -17,7 +17,7 @@ import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When; 
-import pageObjects.HomePages; 
+import pageObjects.HomePages;  
 
 public class HomeSteps { 
 	 private static final Logger logger = LogManager.getLogger(HomeSteps.class); 
@@ -82,9 +82,10 @@ public class HomeSteps {
 
 	@Then("user should see {string} message")
 	public void user_should_see_message(String topicTitle) {
+		logger.info("********topicTitle)********", topicTitle);
+		String actualMessage = HomeDS.getMessage();
+	    Assert.assertEquals(actualMessage, topicTitle);
 		
-
-	  HomeDS.clickAlertR();	
 	}   
 	                                 //------------------------SIGN IN LINK---------------------------------
 
@@ -104,9 +105,14 @@ public class HomeSteps {
 	    HomeDS.ClickLoginR();
 	}
 
-	@Then("user should be logged in successfully")
-	public void user_should_be_logged_in_successfully() {
-        HomeDS.clickAlertR();
+	@Then("user should see {string} successfully")
+	public void user_should_see_successfully(String seeAlert) {
+		logger.info("*********message*********", seeAlert);
+		String actualMessage = HomeDS.getMessage();
+	    Assert.assertEquals(actualMessage, seeAlert);
+        //HomeDS.clickAlertR();
+        
+        
 		
 	}
 	//-----------------------------------DATA STRUCTURE DROP DOWN AFTER SIGN IN------------------------------

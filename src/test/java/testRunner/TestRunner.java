@@ -17,7 +17,7 @@ import org.testng.annotations.Listeners;
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
-	tags = "@DS-Intro",
+	tags = "@Array",
 			
 			
 			

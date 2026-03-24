@@ -147,5 +147,8 @@ public class HomePages {
   	return driver.getTitle();
   	
   }
+  public String getMessage() {
+      return driver.findElement(AlertHm).getText();
+  }
     
 	}

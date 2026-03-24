@@ -20,13 +20,7 @@ public class DriverFactory {
    //private static ThreadLocal<String> BrowserType;
 
 	public static void initDriver(String browser) {
-		// Returns browser name from mvn test -DbrowerName=
-		// String systemBrowser = System.getProperty("browserName");
-
-		// String browser = (systemBrowser != null && !systemBrowser.isBlank()) ?
-		// systemBrowser
-		// : (BrowserType != null && !BrowserType.isBlank()) ? BrowserType
-		// : ConfigReader.getProperty("browser");
+		
 
 		if (browser != null && browser.isBlank()) {
 			browser = ConfigReader.getProperty("browser");

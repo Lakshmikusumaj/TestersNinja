@@ -38,12 +38,7 @@ Feature: Validation of Stack module
       | PythonCode_Valid		 |
       | PythonCode_Invalid	 |
       
-  # @Stack_Test04
-  # Scenario: Verify alert handling in try editor page of stack
-  #   Given User is on error alert in try editor page of stack
-  #   When User accepts the alert on stack page
-  #   Then User should remain on Try Editor page of stack
-
+  
   @Stack_Test05
   Scenario: Verify navigation to Practice Questions page of stack
     Given User is again on the Stack page

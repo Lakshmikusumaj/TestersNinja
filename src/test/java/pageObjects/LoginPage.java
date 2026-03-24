@@ -18,11 +18,10 @@ public class LoginPage {
     ConfigReader configReader;
     static Map<String, Map<String, String>> testData;
     
-    // Constructor
-    //public LoginPage(WebDriver driver) {
+  
     public LoginPage() {
     	this.driver = DriverFactory.getDriver();
-       // this.driver = driver;
+       
     	ConfigReader.loadConfig();
     }
 

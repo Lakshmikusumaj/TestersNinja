@@ -38,9 +38,9 @@ public class Hooks {
 
 	@Before(value = "@LaunchHome", order = 1)
 	public void LaunchHome() {
-		// loginPage.openPortal();
+		
 		loginPage.clickGetStarted();
-		// loginPage.clickSignIn();
+		
 		logger.info("landed on to home page: ");
 
 	}

@@ -88,10 +88,10 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-testng</artifactId>
-			<version>7.31.0</version>
-		</dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.20.1</version>
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -101,33 +101,34 @@
 			<scope>test</scope>
 		</dependency>
 		<!--
+			// use this for extent
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
-		<dependency>
-			<groupId>tech.grasshopper</groupId>
-			<artifactId>extentreports-cucumber7-adapter</artifactId>
-			<version>1.14.0</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>tech.grasshopper</groupId>-->
+<!--			<artifactId>extentreports-cucumber7-adapter</artifactId>-->
+<!--			<version>1.14.0</version>-->
+<!--		</dependency>-->
 
-		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>5.1.2</version>
-		</dependency>
-		
-		<dependency>
-  <groupId>com.aventstack</groupId>
-  <artifactId>chaintest-core</artifactId>
-  <version>1.0.12</version> <!-- or newer -->
-</dependency>
+<!--		 https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!--		<dependency>-->
+<!--			<groupId>com.aventstack</groupId>-->
+<!--			<artifactId>extentreports</artifactId>-->
+<!--			<version>5.1.2</version>-->
+<!--		</dependency>-->
+<!--      // use this for chaintest-->
+<!--		<dependency>-->
+<!--  <groupId>com.aventstack</groupId>-->
+<!--  <artifactId>chaintest-core</artifactId>-->
+<!--  <version>1.0.12</version>  or newer -->
+<!--</dependency>-->
 <!-- ChainTest Core -->
     
     <!-- ChainTest Cucumber -->
-    <dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>chaintest-cucumber-jvm</artifactId>
-        <version>1.0.12</version>
-    </dependency>
+<!--    <dependency>-->
+<!--        <groupId>com.aventstack</groupId>-->
+<!--        <artifactId>chaintest-cucumber-jvm</artifactId>-->
+<!--        <version>1.0.12</version>-->
+<!--    </dependency>-->
 
 		<!--
 		https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->

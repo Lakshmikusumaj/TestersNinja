@@ -2,7 +2,7 @@ package stepDefinitions;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.LoginPage;
@@ -93,25 +93,7 @@ public class QueueStepDefinitions {
          	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
          }
      }
-    /*
-   /* ---------- Alert Handling ---------- 
-
-    @Given("User is on error alert in try editor page of Queue")
-    public void user_is_on_error_alert() {
-        Assert.assertTrue(tryEditorPage.isAlertPresent());
-    }
-
-    @When("User accepts the alert on queue page")
-    public void user_accepts_alert() {
-        tryEditorPage.acceptAlert();
-    }
-
-    @Then("User should remain on TryEditor page of Queue")
-    public void user_remains_on_try_editor_queue() {
-        Assert.assertTrue(DriverFactory.getDriver().getTitle().contains("Assessment"));
-    }
-    */
-    
+   
 
     /* ---------- Practice Questions ---------- */
 

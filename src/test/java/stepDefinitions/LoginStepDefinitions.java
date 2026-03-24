@@ -3,7 +3,7 @@ package stepDefinitions;
 
 import java.util.Map;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Given;
@@ -59,8 +59,6 @@ public class LoginStepDefinitions {
     
     @When("User enters username and password and clicks login button")
     public void user_enters_username_and_password_and_clicks_login_button() {
-    	//loginPage.enterUsername("Test_01");
-       // loginPage.enterPassword("Sdet@2025");
         loginPage.successfulLogin();
     }
 
@@ -88,12 +86,11 @@ public class LoginStepDefinitions {
         System.out.println("Login Response Time: " + responseTime + " seconds");
 
         Assert.assertTrue(
-                "Login response time exceeded acceptable limit!",
                 responseTime <= maxSeconds
         );
     }
     
- // LOGIN BUTTON ENABLE SCENARIO
+             // LOGIN BUTTON ENABLE SCENARIO
     
 
     @When("User enters username and password")
@@ -107,11 +104,11 @@ public class LoginStepDefinitions {
 
         boolean isEnabled = loginPage.isLoginButtonEnabled();
 
-        Assert.assertTrue("Login button is not enabled", isEnabled);
+        Assert.assertTrue(isEnabled);
     }
 
     
-    // PASSWORD MASK SCENARIO
+            // PASSWORD MASK SCENARIO
     
 
     @When("User enters password")
@@ -146,10 +143,7 @@ public class LoginStepDefinitions {
 
         boolean isErrorDisplayed = loginPage.isLoginErrorDisplayed();
 
-        Assert.assertTrue(
-                "Expected error message not displayed",
-                isErrorDisplayed
-        );
+        Assert.assertTrue(isErrorDisplayed);
     }
 }
     

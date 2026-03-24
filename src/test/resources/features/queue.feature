@@ -40,12 +40,7 @@ Feature: Validation of Queue module
       | PythonCode_Valid		 |
       | PythonCode_Invalid	 |
 
-  # @Queue_Test04
-  # Scenario: Verify alert handling in try editor page of Queue
-  #  Given User is on error alert in try editor page of Queue
-  #  When User accepts the alert on queue page
-  #  Then User should remain on TryEditor page of Queue
-
+ 
   @Queue_Test05
   Scenario: Verify navigation to Practice Questions page
     Given User is on any of the queue topic page

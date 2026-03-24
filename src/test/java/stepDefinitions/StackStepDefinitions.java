@@ -2,7 +2,7 @@ package stepDefinitions;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.LoginPage;
@@ -93,23 +93,6 @@ public class StackStepDefinitions {
         }
     }
 
-    /*
-    // ---------------- Stack_Test04 ----------------
-    @Given("User is on error alert in try editor page of stack")
-    public void user_is_on_error_alert() {
-        // Alert is triggered due to invalid python code
-    }
-
-    @When("User accepts the alert on stack page")
-    public void user_accepts_alert() {
-        tryEditorPage.acceptAlert();
-    }
-
-    @Then("User should remain on Try Editor page of stack")
-    public void user_remains_on_try_editor_page() {
-        Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
-    }
-    */
 
     // ---------------- Stack_Test05 ----------------
     @Given("User is again on the Stack page")

@@ -2,6 +2,8 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +12,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import stepDefinitions.HomeSteps;
+
 public class HomePages {
 	WebDriver driver;
 	 WebDriverWait wait;
 	
+	 private static final Logger logger = LogManager.getLogger(HomePages.class); 
 
 	public HomePages(WebDriver driver) { 
 	      this.driver = driver;
@@ -22,7 +27,8 @@ public class HomePages {
 
 	private By LaunchGetstart=By.linkText("Get Started");
 	private By RegisterHm=By.xpath("//a[@href='/register']");
-	private By dropDown=By.xpath("//div[@class='nav-item dropdown show']");
+	private By dropDown1=By.linkText("//div[@class='nav-item dropdown show']");
+	private By dropDown=By.linkText("dropdown-item");
 	private By DSdropdown=By.xpath("//a[@href='#']");
 	private	By Arrays=By.linkText("Arrays");
 	private	By Linked=By.linkText("Linked List");
@@ -61,12 +67,21 @@ public class HomePages {
     }
     
     
-    public void clickModule(String moduleName) { 
+    public void clickModule(String moduleName) {
+    	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
     	    // Open dropdown first
-    	 wait.until(ExpectedConditions.elementToBeClickable(DSdropdown)).click();
-    	    // Click module dynamically
-    	   By module = By.linkText(moduleName);
-          wait.until(ExpectedConditions.elementToBeClickable(module)).click();
+    	   /* driver.findElement(DSdropdown).click();*/
+       	 wait.until(ExpectedConditions.elementToBeClickable(DSdropdown)).click();
+
+    	    // Click module
+    	    By module = By.xpath("//a[normalize-space()='" + moduleName + "']");
+    	    wait.until(ExpectedConditions.elementToBeClickable(module)).click();
+    	
+    	    // Open dropdown first
+    	// wait.until(ExpectedConditions.elementToBeClickable(DSdropdown)).click();
+    	   //By module = By.linkText(moduleName);
+          //wait.until(ExpectedConditions.elementToBeClickable(module)).click();
     }
     
    
@@ -93,7 +108,7 @@ public class HomePages {
     public void clickAlertR() { 	
        WebElement result = driver.findElement(Error); 
  	   String text = result.getText();
-       System.out.println("Result Message: " + text);
+    logger.info("Result Message: " + text); 
     }
     
     
@@ -124,7 +139,7 @@ public class HomePages {
     	        )
     	);
         logout.click(); 
-    	System.out.println("Logout button displayed: " + logout.isDisplayed());
+    	logger.info("Logout button displayed: " + logout.isDisplayed());
     }
   
   public String getPagesTitle() {

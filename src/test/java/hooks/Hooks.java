@@ -2,6 +2,8 @@ package hooks;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.Reporter;
 
@@ -19,7 +21,7 @@ public class Hooks {
 	// WebDriver driver;
 	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	LoginPage loginPage;
+	LoginPage loginPage; 
 
 	@Before(order = 0)
 	public void setUp() {
@@ -54,11 +56,18 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		logger.info("===== Test Finished =====");
-		// tearDown();
-//		if (scenario.isFailed()) {
-//			byte[] screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
-//			scenario.attach(screenshot, "image/png", scenario.getName());
-//		}
+		//public void takeScreenshotOnFailure(Scenario scenario) {
+	       
+		//tearDown();//commeted line here
+		if (scenario.isFailed()) {
+
+	        String fileName = scenario.getName().replaceAll(" ", "_");
+
+	        byte[] screenshot = ((TakesScreenshot) DriverFactory.getDriver())
+	                .getScreenshotAs(OutputType.BYTES);
+
+	        scenario.attach(screenshot, "image/png", fileName);
+	    }
 		System.out.println("Driver before quit: " + DriverFactory.getDriver());
 		// if (DriverFactory.getDriver() != null) {
 		DriverFactory.quitDriver();

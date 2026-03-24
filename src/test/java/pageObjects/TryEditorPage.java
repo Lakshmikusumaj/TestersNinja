@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,8 @@ public class TryEditorPage {
     private By codeTextArea = By.xpath("//textarea[@tabindex='0']");
     private By runButton = By.xpath("//button[text() = 'Run']");
     private By output = By.id("output");
+    private By submit=By.xpath("//input[@type='submit']");
+
 
     public void enterCodeTest(String code) {
         driver.findElement(codeTextArea).clear();
@@ -39,7 +42,10 @@ public class TryEditorPage {
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
-	
+    public void submit() {
+    	driver.findElement(submit).click();
+    }
+    
 	public void enterCode(String code) {
 		WebElement element = driver.findElement(codeTextArea);
 		new Actions(driver).keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
@@ -52,5 +58,8 @@ public class TryEditorPage {
 				element.sendKeys(Keys.RETURN);
 			}
 		}
+	
 	}
+	
+	
 }

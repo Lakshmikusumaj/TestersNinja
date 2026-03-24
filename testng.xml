@@ -5,6 +5,8 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="testRunner.TestRunner"/>
+                        <class name="testRunner.FailedTestRunner"/>  
+
         </classes>
     </test>
 

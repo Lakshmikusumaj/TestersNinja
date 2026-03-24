@@ -36,10 +36,10 @@ public void user_login_and_clicks_the_data_structures_intoduction_module_from_th
 	logger.info("************DATASTRUCTURE-INTRODUCTION************");
 	DSintro.DSClickIntro();
 	
-	
+}
 //---------------------------------------------	scenario1
     
-}
+
 
 @When("User clicks {string} link")
 public void user_clicks_link(String topic) {

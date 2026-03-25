@@ -11,12 +11,12 @@ import io.cucumber.testng.CucumberOptions;
   
 
 @CucumberOptions(
-		dryRun=true,
+		//dryRun=true,
 		
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 
-	tags = "@Home",
+	tags = "@linkedlist_0002",
 			 
 	plugin = { "pretty", 
 			  "html:target/cucumber-reports/cucumber.html",

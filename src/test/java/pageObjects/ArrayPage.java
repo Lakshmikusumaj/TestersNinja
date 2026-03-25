@@ -18,11 +18,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class ArrPage  {
+public class ArrayPage  {
 
-    private static final Logger logger = LogManager.getLogger(ArrPage.class); 
+    private static final Logger logger = LogManager.getLogger(ArrayPage.class); 
 
-          public ArrPage(WebDriver driver) {  
+          public ArrayPage(WebDriver driver) {  
                    this.driver = driver;
                    
           }        

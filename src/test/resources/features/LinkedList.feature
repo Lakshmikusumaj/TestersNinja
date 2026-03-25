@@ -26,7 +26,7 @@ Feature: Validation of linkedlist module
    Scenario: User navigates to TryEditor page for linkedlist topic
      Given User is on "<TopicsCovered>" page in linkedlist module
      When User clicks Try Here button on respective topicscovered link
-     Then User should be redirected to Try Editor page with "Run" button in the respective link of linkedlist module
+     Then User should be redirected to "Assessment" page with Run button in the respective link of linkedlist module
      
      
 @linkedlist_0003

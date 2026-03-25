@@ -69,17 +69,20 @@ import pageObjects.LinkedlistPages;
 			
 			
 		}
-		@Then("User should be redirected to Try Editor page with {string} button in the respective link of linkedlist module")
-		public void user_should_be_redirected_to_try_editor_page_with_button_in_the_respective_link_of_linkedlist_module(String text) {
-			logger.info(text);
+		@Then("User should be redirected to {string} page with Run button in the respective link of linkedlist module")
+		public void user_should_be_redirected_to_page_with_run_button_in_the_respective_link_of_linkedlist_module(String expectedTitle) {
+			logger.info("******expectedTitle*******");
 			
-			/*String expectedTitle =destinationTitle;
+			//String expectedTitle =text;
 	        String actualTitle =linkedlistpage.getPageTitle();
-	        Assert.assertEquals(expectedTitle ,actualTitle);*/
+	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        logger.info("*******ExpectedTitle******* {} ,{}, {}",expectedTitle , "*****actualTitle*****", actualTitle);
+
 		}
 	//-----------------------------------------------------0003
 		@Given("User is on the Introduction page")
 		public void user_is_on_the_introduction_page() {
+			logger.info("***INTRODUCTION PAGE***");
 		    
 		}
 

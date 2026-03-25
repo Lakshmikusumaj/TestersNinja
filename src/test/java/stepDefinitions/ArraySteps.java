@@ -15,7 +15,7 @@ import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.ArrPage;
+import pageObjects.ArrayPage;
 import pageObjects.TryEditorPage;
 import utilities.ExcelReader;
 
@@ -24,7 +24,7 @@ public class ArraySteps  {
   
     private static final Logger logger = LogManager.getLogger(ArraySteps.class); 
 
-		 ArrPage arrayPage;
+		 ArrayPage arrayPage;
 		// ArrPage arrayPage = new ArrPage();
 	  	 WebDriver driver = DriverFactory.getDriver();
 	  	 TryEditorPage tryEditorPage = new TryEditorPage(driver);
@@ -34,7 +34,7 @@ public class ArraySteps  {
 	    static Map<String, Map<String, String>> ArrayTestData;
 		
 		 public ArraySteps() {
-		        arrayPage = new ArrPage(driver);
+		        arrayPage = new ArrayPage(driver);
 		    } 
  
      

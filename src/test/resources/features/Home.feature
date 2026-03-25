@@ -27,7 +27,7 @@
   Scenario: Verify user can navigate to Arrays page 
     When user clicks on the array  "Arrays" 
     Then user should see "You are not logged in" message
-
+@home-03
   # -------------------- Sign In Link --------------------   
 
   Scenario: Verify Sign In link navigation 

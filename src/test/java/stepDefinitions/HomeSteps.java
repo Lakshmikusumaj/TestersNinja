@@ -76,10 +76,7 @@ public class HomeSteps {
 	  HomeDS.clickDDArrayBS();
 	  HomeDS.clickArrayR(); 
 	}
-	/*@When("user clicks on {string}")
-	public void user_clicks_on(String module) {
-	    HomeDS.clickModule(module);
-	}*/
+	
 
 
 	@Then("user should see {string} message")
@@ -96,6 +93,11 @@ public class HomeSteps {
 	@Then("user should be navigated to Login page")
 	public void user_should_be_navigated_to_login_page() {
 		HomeDS.clickSignInlinkR(); 
+		String expectedTitle = "Login";  
+	    String actualTitle = HomeDS.getPagesTitle();  
+	    Assert.assertEquals(actualTitle, expectedTitle);
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", expectedTitle,"******ACTUAL TITLE******",actualTitle);
+
 	}  
 
 	@When("user enters {string} and {string}")
@@ -111,11 +113,12 @@ public class HomeSteps {
 
 	@Then("user should see {string} successfully")
 	public void user_should_see_successfully(String seeAlert) {
-		logger.info("*********message*********  {}", seeAlert);
+		
 		String actualMessage = HomeDS.getMessage();
 	    Assert.assertEquals(actualMessage, seeAlert);
         //HomeDS.clickAlertR();
-        
+		logger.info("*********message*********  {}", seeAlert);
+
         
 		
 	}

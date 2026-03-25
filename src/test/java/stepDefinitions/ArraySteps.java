@@ -88,10 +88,10 @@ public class ArraySteps  {
         }
 
         @Then("user is navigated to the {string} page")
-        public void user_is_navigated_to_the_page(String destinationTitle) {
-        	String expectedTitle =destinationTitle;
+        public void user_is_navigated_to_the_page(String expectedTitle) {
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        logger.info("*******ExpectedTitle*******",expectedTitle + "*****actualTitle*****", actualTitle);
         }
 
 //==========3========Scenario3//=====================================

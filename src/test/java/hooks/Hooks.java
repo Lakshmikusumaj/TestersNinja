@@ -16,9 +16,8 @@ import pageObjects.LoginPage;
 
 public class Hooks {
 
-	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static final Logger logger = LogManager.getLogger(Hooks.class);
-	// WebDriver driver;
+	//  driver;
 	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 	LoginPage loginPage; 
@@ -38,9 +37,9 @@ public class Hooks {
 
 	@Before(value = "@LaunchHome", order = 1)
 	public void LaunchHome() {
-		
+		// loginPage.openPortal();
 		loginPage.clickGetStarted();
-		
+		// loginPage.clickSignIn();
 		logger.info("landed on to home page: ");
 
 	}

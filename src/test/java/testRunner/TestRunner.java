@@ -14,7 +14,8 @@ import io.cucumber.testng.CucumberOptions;
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 
-	tags = "@Login", 
+	tags = "@DS-Intro",
+			 
 	plugin = { "pretty", 
 			  "html:target/cucumber-reports/cucumber.html",
 			  "rerun:target/failed_scenarios.txt"  ,

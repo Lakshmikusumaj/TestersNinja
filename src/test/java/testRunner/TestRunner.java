@@ -11,6 +11,8 @@ import io.cucumber.testng.CucumberOptions;
   
 
 @CucumberOptions(
+		dryRun=true,
+		
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 
@@ -25,6 +27,7 @@ import io.cucumber.testng.CucumberOptions;
 			 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 			 
 			}, 
+			
 monochrome = true, 
 	publish = true
 )

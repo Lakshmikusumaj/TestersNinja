@@ -41,7 +41,7 @@ public class ArraySteps  {
 		 @Given("user clicks on Array from the home page")
 		 public void user_clicks_on_array_from_the_home_page() {
         	
-        	logger.info("********************ARRAY MODULE*******************");
+        	logger.info("**********ARRAY MODULE************");
 	        arrayPage.clickGetStartesArr();
 	        
 		}
@@ -73,10 +73,13 @@ public class ArraySteps  {
         	
       
         @Then("user is navigated to {string} page")
-        public void user_is_navigated_to_page(String topicTitle) {
-        	String expectedTitle =topicTitle;
+        public void user_is_navigated_to_page(String expectedTitle) {
+        	
+        	
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        logger.info("*******ExpectedTitle******* {} ,{}, {}",expectedTitle , "*****actualTitle*****", actualTitle);
+
         	
         }
   //============scenario-2==================
@@ -89,9 +92,10 @@ public class ArraySteps  {
 
         @Then("user is navigated to the {string} page")
         public void user_is_navigated_to_the_page(String expectedTitle) {
+        	
 	        String actualTitle =arrayPage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
-	        logger.info("*******ExpectedTitle*******",expectedTitle + "*****actualTitle*****", actualTitle);
+	        logger.info("*******ExpectedTitle******* {} ,{}, {}",expectedTitle , "*****actualTitle*****", actualTitle);
         }
 
 //==========3========Scenario3//=====================================
@@ -107,21 +111,21 @@ public class ArraySteps  {
         @When("user enters {string} in try editor fixes indentation and clicks submit button")
         public void user_enters_in_try_editor_fixes_indentation_and_clicks_submit_button(String code) {
         	
-        ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");	
+        ArrayTestData = ExcelReader.getDataForSheet("ArrayTry");
         String pythonCode = ArrayTestData.get(code).get("PythonCode");  
+        
         arrayPage.clearEdit();
-    	tryEditorPage.enterCode(pythonCode); 	
+    	tryEditorPage.enterCode(pythonCode); 
     	tryEditorPage.submit();
-    	   
+    	logger.info("*******Code******* {}",pythonCode);    	   
         }	   
                
         @Then("user should see on the Array editor {string}")
         public void user_should_see_on_the_array_editor(String title) {
         	
-        	logger.info("*************RESULTS*********"  +title);
         	String actual1=   arrayPage.getResultAfterSubmit();
-        	logger.info("ACTUAL: " + actual1);
        	    Assert.assertEquals(title, actual1);  
+        	logger.info("*************RESULTS********* {},{},",actual1,title);
 
         	}
         
@@ -147,7 +151,7 @@ public class ArraySteps  {
 
         @Then("user clicks run button user should see {string}")
         public void user_clicks_run_button_user_should_see(String message) {
-        	logger.info("*************RESULTS*********"  +message);
+        	logger.info("*************RESULTS********* {}",message);
 
     	    String actual1 = arrayPage.getTryEditorResult();
 
@@ -176,7 +180,7 @@ public class ArraySteps  {
 		@Then("User should see the expected output for {string}")
 		public void user_should_see_the_expected_output_for(String getResult) {
 			
-	    logger.info("*************Alert text:**********"  +getResult);
+	    logger.info("*************Alert text:**********{}",getResult);
 		try {
     	    Alert alert = driver.switchTo().alert();
     	    String alertText = alert.getText();

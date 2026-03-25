@@ -63,10 +63,12 @@ public class HomeSteps {
 		String expectedTitle = "NumpyNinja"; 
        String actualTitle = HomeDS.getPagesTitle();
         Assert.assertEquals(expectedTitle ,actualTitle); 
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", expectedTitle,"******ACTUAL TITLE******",actualTitle);
+
 	}
 
 
-                                   //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//
+                                   //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//03
 
 	@When("user clicks on the array  {string}")
 	public void user_clicks_on_the_array(String string) {
@@ -82,9 +84,11 @@ public class HomeSteps {
 
 	@Then("user should see {string} message")
 	public void user_should_see_message(String topicTitle) {
-		logger.info("********topicTitle)********", topicTitle);
+		
 		String actualMessage = HomeDS.getMessage();
 	    Assert.assertEquals(actualMessage, topicTitle);
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", topicTitle,"******ACTUAL TITLE******",actualMessage);
+
 		
 	}   
 	                                 //------------------------SIGN IN LINK---------------------------------
@@ -107,7 +111,7 @@ public class HomeSteps {
 
 	@Then("user should see {string} successfully")
 	public void user_should_see_successfully(String seeAlert) {
-		logger.info("*********message*********", seeAlert);
+		logger.info("*********message*********  {}", seeAlert);
 		String actualMessage = HomeDS.getMessage();
 	    Assert.assertEquals(actualMessage, seeAlert);
         //HomeDS.clickAlertR();
@@ -124,10 +128,12 @@ public class HomeSteps {
 	    
 	}
 	@Then("user should be navigated to {string} page")
-	public void user_should_be_navigated_to_page(String topicTitle) {
-		String expectedTitle =topicTitle;
+	public void user_should_be_navigated_to_page(String expectedTitle ) {
+	
         String actualTitle =HomeDS.getPagesTitle();
         Assert.assertEquals(expectedTitle ,actualTitle);
+		logger.info("*********message********* {}", expectedTitle);
+
 
 	}
 

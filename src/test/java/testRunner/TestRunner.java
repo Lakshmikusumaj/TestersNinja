@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 
-	tags = "@DS-Intro",
+	tags = "@Home",
 			 
 	plugin = { "pretty", 
 			  "html:target/cucumber-reports/cucumber.html",

@@ -44,7 +44,7 @@ public class DriverFactory {
 			break;
 
 		case "firefox":
-			driver.set(new FirefoxDriver());
+			driver.set(new FirefoxDriver()); 
 			break;
 
 		default:
@@ -67,10 +67,10 @@ public class DriverFactory {
 	}
 
 	public static void quitDriver() {
-		//if (driver.get() != null) {
-			//driver.get().quit();
-			//driver.remove();
-		//}
+		if (driver.get() != null) {
+			driver.get().quit();
+			driver.remove();
+		}
 	}
 }
 

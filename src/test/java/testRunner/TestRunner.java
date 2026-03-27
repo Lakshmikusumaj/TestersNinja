@@ -1,6 +1,6 @@
 package testRunner;
 
-import org.testng.ITestContext;
+import org.testng.ITestContext; 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -9,8 +9,9 @@ import org.testng.annotations.Parameters;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-
 @CucumberOptions(
+		//dryRun=true,
+		
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 	tags = "@Login", 

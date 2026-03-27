@@ -5,15 +5,16 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.FluentWait;
 	import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-	//import com.aventstack.extentreports.util.Assert;
+//import com.aventstack.extentreports.util.Assert;
 
 	import factory.DriverFactory;
 	import io.cucumber.java.en.Given; 
@@ -51,6 +52,14 @@ import utilities.ExcelReader;
 
 		    @Then("the register page should be displayed")
 		    public void the_register_page_should_be_displayed() {
+		    	/*logger.info("Checking if the registration page is displayed...");
+		        
+		        boolean isDisplayed = registrationPage.isRegistrationPageDisplayed();
+		        logger.info("Registration page displayed: {}", isDisplayed);
+		        
+		        Assert.assertTrue(isDisplayed, "Registration page is not displayed");
+		        
+		        logger.info("Registration page verification completed successfully.");*/
 		    	Assert.assertTrue(registrationPage.isRegistrationPageDisplayed());
 		    }
 		    

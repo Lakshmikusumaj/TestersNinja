@@ -44,7 +44,7 @@ public class DriverFactory {
 			break;
 
 		case "firefox":
-			driver.set(new FirefoxDriver());
+			driver.set(new FirefoxDriver()); 
 			break;
 
 		default:
@@ -73,5 +73,6 @@ public class DriverFactory {
 		}
 	}
 }
+
 
 

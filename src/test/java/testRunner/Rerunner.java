@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "@target/failed_scenarios.txt",   //  failed scenarios
     glue = { "stepDefinitions", "hooks" },
-    tags = "@Home",
+    tags = "@Login",
 
     plugin = {
         "pretty",

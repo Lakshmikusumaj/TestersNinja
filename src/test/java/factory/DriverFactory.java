@@ -16,10 +16,15 @@ import utilities.ConfigReader;
 public class DriverFactory {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	private static ThreadLocal<String> browserType = new ThreadLocal<>();
 	private static final Logger logger = LogManager.getLogger(DriverFactory.class);
+	
+	public static void setBrowser(String browser) {
+		browserType.set(browser);
+	}
    
-	public static void initDriver(String browser) {
-		
+	public static void initDriver() {
+		String browser = browserType.get();
 
 		if (browser != null && browser.isBlank()) {
 			browser = ConfigReader.getProperty("browser");
@@ -70,6 +75,3 @@ public class DriverFactory {
 		}
 	}
 }
-
-
-

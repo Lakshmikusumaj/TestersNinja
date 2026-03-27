@@ -1,5 +1,6 @@
 package hooks;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -22,9 +23,7 @@ public class Hooks {
 	@Before(order = 0)
 	public void setUp() {
 		logger.info("========== Test Started ==========");
-		ITestContext context = Reporter.getCurrentTestResult().getTestContext();
-		String browser = (String) context.getAttribute("browserName");
-		DriverFactory.initDriver(browser);
+		DriverFactory.initDriver(); 
 		logger.info("landed on to the dsalgo portal ");
 		loginPage = new LoginPage();
 	}
@@ -45,6 +44,7 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		logger.info("===== Test Finished =====");
+
 		if (scenario.isFailed()) {
 
 			String fileName = scenario.getName().replaceAll(" ", "_");

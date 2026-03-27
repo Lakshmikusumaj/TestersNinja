@@ -16,11 +16,15 @@ import utilities.ConfigReader;
 public class DriverFactory {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	private static ThreadLocal<String> browserType = new ThreadLocal<>();
 	private static final Logger logger = LogManager.getLogger(DriverFactory.class);
-   //private static ThreadLocal<String> BrowserType;
-
-	public static void initDriver(String browser) {
-		
+	
+	public static void setBrowser(String browser) {
+		browserType.set(browser);
+	}
+   
+	public static void initDriver() {
+		String browser = browserType.get();
 
 		if (browser != null && browser.isBlank()) {
 			browser = ConfigReader.getProperty("browser");
@@ -29,8 +33,7 @@ public class DriverFactory {
 		switch (browser.toLowerCase()) {
 
 		case "chrome":
-
-			// WebDriverManager.chromedriver().setup();
+			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disk-cache-size=0");
 			options.addArguments("--disk-cache-size=0");
@@ -62,8 +65,7 @@ public class DriverFactory {
 	}
 
 	public static void setBrowserName(String browserName) {
-		// Reads browserName from testng.xml file
-        //DriverFactory.BrowserType = browserName;
+		
 	}
 
 	public static void quitDriver() {
@@ -73,6 +75,3 @@ public class DriverFactory {
 		}
 	}
 }
-
-
-

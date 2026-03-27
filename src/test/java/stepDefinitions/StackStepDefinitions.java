@@ -12,6 +12,9 @@ import utilities.ExcelReader;
 
 import java.util.List;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class StackStepDefinitions {
 	LoginPage loginPage;
@@ -19,6 +22,8 @@ public class StackStepDefinitions {
     WebDriver driver = DriverFactory.getDriver();
     StackPage stackPage = new StackPage(driver);
     TryEditorPage tryEditorPage = new TryEditorPage(driver);
+    
+    private static final Logger logger = LogManager.getLogger(StackStepDefinitions.class);
 
     List<Map<String, String>> loginTestData;
 
@@ -40,6 +45,7 @@ public class StackStepDefinitions {
 
     @Then("User should be redirected to {string} stack page")
     public void user_should_be_redirected_to_page(String destinationPage) {
+    	logger.info("user should be redirected to destination page."); 
         Assert.assertTrue(driver.getTitle().toLowerCase()
                 .contains(destinationPage.toLowerCase()));
     }
@@ -57,6 +63,7 @@ public class StackStepDefinitions {
 
     @Then("User should be redirected to Try Editor page with Run button in the respective link of stack module")
     public void user_redirected_to_try_editor() {
+    	logger.info("user should be redirected to try editor page with run button of destination page.");
         Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
     }
 
@@ -86,9 +93,11 @@ public class StackStepDefinitions {
 
         if (expectedOutput.equals("Success")) {
         	String actualOutput = tryEditorPage.getOutput();
+        	logger.info("python code is valid.");
         	Assert.assertEquals(expectedOutput, actualOutput);
         } else {
         	tryEditorPage.acceptAlert();
+        	logger.info("python code is invalid.");
         	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
         }
     }
@@ -107,6 +116,7 @@ public class StackStepDefinitions {
 
     @Then("User should see Practice Questions page of stack")
     public void user_should_see_practice_questions_page() {
+    	logger.info("user is on the practice questions page.");
         Assert.assertTrue(driver.getTitle().contains("Practice"));
     }
 }

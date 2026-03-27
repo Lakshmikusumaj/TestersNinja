@@ -17,8 +17,7 @@ public class DriverFactory {
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static final Logger logger = LogManager.getLogger(DriverFactory.class);
-   //private static ThreadLocal<String> BrowserType;
-
+   
 	public static void initDriver(String browser) {
 		
 
@@ -29,8 +28,7 @@ public class DriverFactory {
 		switch (browser.toLowerCase()) {
 
 		case "chrome":
-
-			// WebDriverManager.chromedriver().setup();
+			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disk-cache-size=0");
 			options.addArguments("--disk-cache-size=0");
@@ -62,8 +60,7 @@ public class DriverFactory {
 	}
 
 	public static void setBrowserName(String browserName) {
-		// Reads browserName from testng.xml file
-        //DriverFactory.BrowserType = browserName;
+		
 	}
 
 	public static void quitDriver() {

@@ -19,7 +19,7 @@ import io.cucumber.testng.CucumberOptions;
  		 // "json:target/cucumber-reports/cucumber.json",
 			//"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 			  "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-			 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+			  "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 			 
 			}, 
 	monochrome = true, 
@@ -36,10 +36,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
 		if (browserName != null && !browserName.isBlank()) {
 			context.setAttribute("browserName", browserName);
-			System.out.println("Browser Name" + browserName);
-
+			System.out.println("Browser for Cross browser " + browserName);
 		}
-	
 		
 	}
 

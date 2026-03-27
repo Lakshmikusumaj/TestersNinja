@@ -9,7 +9,6 @@ Feature: Validation of linkedlist module
     
 @linkedlist_0001
   Scenario Outline: User navigates to different topic pages in linkedlist module
-    # Given User is on the linkedlist page
     When User clicks "<TopicsCovered>" link in linkedlist page
     Then User should be redirected to "<DestinationPage>" linkedlist page
    Examples:
@@ -27,7 +26,7 @@ Feature: Validation of linkedlist module
    Scenario: User navigates to TryEditor page for linkedlist topic
      Given User is on "<TopicsCovered>" page in linkedlist module
      When User clicks Try Here button on respective topicscovered link
-     Then User should be redirected to Try Editor page with "Run" button in the respective link of linkedlist module
+     Then User should be redirected to "Assessment" page with Run button in the respective link of linkedlist module
      
      
 @linkedlist_0003
@@ -43,7 +42,6 @@ Then User should redirected to "Practice Questions"
 Given User is on the Introduction page in linkedlist
 When User clicks Try Here and gives "<TestCaseName>" on respective Introduction page in linkedlinst
 Then User should see the output on the tryeditor page "<TestCaseName>"
-#Then User should be redirected to Try Editor page with Run button in the respective link of linkedlist 
   
     Examples:
       |TestCaseName          |

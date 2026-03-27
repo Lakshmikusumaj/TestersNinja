@@ -11,7 +11,7 @@
 	<name>TestersNinjaProject</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
-
+ 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
@@ -103,12 +103,14 @@
 		<!--
 			// use this for extent
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+
 		
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.14.0</version>
 		</dependency>
+
 
 <!--		 https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
@@ -131,7 +133,7 @@
 <!--        <version>1.0.12</version>-->
 <!--    </dependency>-->
 
-		<!--
+	<!--
 		https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>

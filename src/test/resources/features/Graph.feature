@@ -38,7 +38,7 @@ Feature: Validation graph home page
       | SyntaxError         |Error          |
    
    @Graph_0004
-   Scenario Outline: User Navigate to practice Questions from Graph page
+   Scenario: User Navigate to practice Questions from Graph page
    Given the user is on the Graph page
    When the user clicks on the "Practice Questions" link
    Then the user should see the "Practice Questions" 

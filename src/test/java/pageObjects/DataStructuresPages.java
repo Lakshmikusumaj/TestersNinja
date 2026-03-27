@@ -37,10 +37,41 @@ public class DataStructuresPages {
 	private By editorDS = By.xpath("//div[contains(@class,'CodeMirror')]//textarea");
 	private By ClickRunBtn=By.xpath("//button[@type='button']");
 	private By output = By.xpath("//pre[@id='output']");
+	private By DStitle=By.xpath("//h4[text()='Data Structures-Introduction']");
+	private By DSlogo=By.xpath("//a[@href='/']");
+	private By DSlink=By.xpath("/html/body/div[1]/nav/div/div[2]/ul/a[2]");
+	private By DSdrop1=By.xpath("//a[@href='#']");
+	private By DSbutton=By.xpath("//a[@href='/logout']");
 
 	
 
 	
+	public String isTitleDisplayed() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DStitle)).getText();
+    }
+	
+	public String islogoDisplayed() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DSlogo)).getText();
+    }
+	public String islinkDisplayed() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DSlink)).getText();
+    }
+	public String isbuttonDisplayed() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DSbutton)).getText();
+    }
+	public String isdropdownDisplayed() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(DSdrop1)).getText();
+    }
 	public void DSClickIntro() {
 		driver.findElement(DsIntro).click();
 		
@@ -115,6 +146,9 @@ public class DataStructuresPages {
     
     public String getPageTitle() {
     	return driver.getTitle();
+    }
+    public boolean isTextDisplayed(String text) {
+        return driver.findElement(DStitle).isDisplayed();
     }
 }
 

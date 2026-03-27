@@ -18,7 +18,7 @@ import pageObjects.LoginPage;
 public class Hooks {
 
 	private static final Logger logger = LogManager.getLogger(Hooks.class);
-	
+
 	LoginPage loginPage; 
 
 	@Before(order = 0)

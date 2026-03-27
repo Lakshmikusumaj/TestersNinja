@@ -34,12 +34,13 @@ public class GrpahsSteps {
 		//====================================== Graph_0001
 		@Given("User is logged in to the DSAlgo portal and on graph page")
 		public void user_is_logged_in_to_the_ds_algo_portal_and_on_graph_page() {
+			logger.info("*************GRAPH*****************");
 			graphpage.clickGetStarted();
 		}
 
 		@When("User clicks {string} link in graph page")
 		public void user_clicks_link_in_graph_page(String topic) {
-
+            logger.info("********topicName******",topic);
 			graphpage.clickTopic(topic);
 		}
 
@@ -52,6 +53,7 @@ public class GrpahsSteps {
 //=================================================Graph_0002
 		@Given("User is on {string} page in Graph module")
 		public void user_is_on_page_in_graph_module(String Module) {
+			
 			graphpage.clickTopic(Module);
 		}
 
@@ -68,7 +70,7 @@ public class GrpahsSteps {
 	//=============================================Graph_0003
 		@Given("User try editor page of graph")
 		public void user_try_editor_page_of_graph() {
-			logger.info("******User is on tryeditor page******");
+			logger.info("******EXCEL DATA DRIVEN******");
 			graphpage.navigateToTryHere();
 	        GraphTestData = ExcelReader.getDataForSheet("ArrayData");		
 
@@ -104,22 +106,26 @@ public class GrpahsSteps {
 
 	@Given("the user is on the Graph page")
 	public void the_user_is_on_the_graph_page() {
-	    graphpage.clickPracticalQuestions();
-
+	   
+     logger.info("******PRACTICE QUESTIONS******");
+     
 	}
 
 	@When("the user clicks on the {string} link")
 	public void the_user_clicks_on_the_link(String testCaseName) {
 		
-		
+	    graphpage.clickPracticalQuestions();
+
 	    
 	}
 
 	@Then("the user should see the {string}")
 	public void the_user_should_see_the(String topicTitle) {
+		
 		String expectedTitle =topicTitle;
         String actualTitle =graphpage.getPageTitle();
         Assert.assertEquals(expectedTitle ,actualTitle);
+       
 		
 
 	}

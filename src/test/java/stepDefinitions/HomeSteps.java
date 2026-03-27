@@ -17,7 +17,7 @@ import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When; 
-import pageObjects.HomePages; 
+import pageObjects.HomePages;  
 
 public class HomeSteps { 
 	 private static final Logger logger = LogManager.getLogger(HomeSteps.class); 
@@ -63,10 +63,12 @@ public class HomeSteps {
 		String expectedTitle = "NumpyNinja"; 
        String actualTitle = HomeDS.getPagesTitle();
         Assert.assertEquals(expectedTitle ,actualTitle); 
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", expectedTitle,"******ACTUAL TITLE******",actualTitle);
+
 	}
 
 
-                                   //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//
+                                   //-------------------------DROPDOWN SElECT ARRAY BEFORE SIGN IN--------------------//03
 
 	@When("user clicks on the array  {string}")
 	public void user_clicks_on_the_array(String string) {
@@ -74,23 +76,28 @@ public class HomeSteps {
 	  HomeDS.clickDDArrayBS();
 	  HomeDS.clickArrayR(); 
 	}
-	/*@When("user clicks on {string}")
-	public void user_clicks_on(String module) {
-	    HomeDS.clickModule(module);
-	}*/
+	
 
 
 	@Then("user should see {string} message")
 	public void user_should_see_message(String topicTitle) {
 		
+		String actualMessage = HomeDS.getMessage();
+	    Assert.assertEquals(actualMessage, topicTitle);
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", topicTitle,"******ACTUAL TITLE******",actualMessage);
 
-	  HomeDS.clickAlertR();	
+		
 	}   
 	                                 //------------------------SIGN IN LINK---------------------------------
 
 	@Then("user should be navigated to Login page")
 	public void user_should_be_navigated_to_login_page() {
 		HomeDS.clickSignInlinkR(); 
+		String expectedTitle = "Login";  
+	    String actualTitle = HomeDS.getPagesTitle();  
+	    Assert.assertEquals(actualTitle, expectedTitle);
+		logger.info("*********EXPECTED TITLE********* {} ,{} ,{} ", expectedTitle,"******ACTUAL TITLE******",actualTitle);
+
 	}  
 
 	@When("user enters {string} and {string}")
@@ -104,9 +111,15 @@ public class HomeSteps {
 	    HomeDS.ClickLoginR();
 	}
 
-	@Then("user should be logged in successfully")
-	public void user_should_be_logged_in_successfully() {
-        HomeDS.clickAlertR();
+	@Then("user should see {string} successfully")
+	public void user_should_see_successfully(String seeAlert) {
+		
+		String actualMessage = HomeDS.getMessage();
+	    Assert.assertEquals(actualMessage, seeAlert);
+        //HomeDS.clickAlertR();
+		logger.info("*********message*********  {}", seeAlert);
+
+        
 		
 	}
 	//-----------------------------------DATA STRUCTURE DROP DOWN AFTER SIGN IN------------------------------
@@ -118,10 +131,12 @@ public class HomeSteps {
 	    
 	}
 	@Then("user should be navigated to {string} page")
-	public void user_should_be_navigated_to_page(String topicTitle) {
-		String expectedTitle =topicTitle;
+	public void user_should_be_navigated_to_page(String expectedTitle ) {
+	
         String actualTitle =HomeDS.getPagesTitle();
         Assert.assertEquals(expectedTitle ,actualTitle);
+		logger.info("*********message********* {}", expectedTitle);
+
 
 	}
 

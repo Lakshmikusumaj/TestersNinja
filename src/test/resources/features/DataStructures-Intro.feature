@@ -5,7 +5,7 @@ Feature: User Navigates to the DataStructures-Introduction module
 Background:
   Given User login and clicks the DataStructures-Intoduction module from the home page
   
- @DS-01 
+@DS-01 
   Scenario: Verify page title is displayed
    Then User should see page title "Data Structures-Introduction"
 

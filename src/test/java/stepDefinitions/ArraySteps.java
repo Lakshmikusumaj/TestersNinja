@@ -180,8 +180,7 @@ public class ArraySteps  {
 		@Then("User should see the expected output for {string}")
 		public void user_should_see_the_expected_output_for(String getResult) {
 			
-	    logger.info("*************Alert text:**********{}",getResult);
-		try {
+		try{ 
     	    Alert alert = driver.switchTo().alert();
     	    String alertText = alert.getText();
     	  logger.info("Alert text: " + alertText);
@@ -192,8 +191,11 @@ public class ArraySteps  {
     	} catch (NoAlertPresentException e) {
     	    String actualOutput = arrayPage.getOutput();
     	    Assert.assertEquals(actualOutput.trim(), getResult);
-    	}
-    		
+    	    logger.info("*************Alert text:**********{}",getResult);
+
+    	
+    	
+		}	
 		}
 
 

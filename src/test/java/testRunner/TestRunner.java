@@ -16,13 +16,13 @@ import io.cucumber.testng.CucumberOptions;
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
 
-	tags = "@linkedlist_0002",
+	tags = "@Array",
 			 
 	plugin = { "pretty", 
 			  "html:target/cucumber-reports/cucumber.html",
 			  "rerun:target/failed_scenarios.txt"  ,
- 		 // "json:target/cucumber-reports/cucumber.json",
-			//"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
+ 		  "json:target/cucumber-reports/cucumber.json",
+			"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
 			  "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 			 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 			 

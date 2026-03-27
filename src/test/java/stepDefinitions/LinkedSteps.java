@@ -54,6 +54,8 @@ import pageObjects.LinkedlistPages;
 			String expectedTitle =destinationTitle;
 	        String actualTitle =linkedlistpage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+        	logger.info("******EXPECTEDOUTPUT*******{},{},{},", expectedTitle,"****actualTitle*****",actualTitle);
+
 			
 		}
 		//--------------------------------------------------------------002
@@ -71,7 +73,6 @@ import pageObjects.LinkedlistPages;
 		}
 		@Then("User should be redirected to {string} page with Run button in the respective link of linkedlist module")
 		public void user_should_be_redirected_to_page_with_run_button_in_the_respective_link_of_linkedlist_module(String expectedTitle) {
-			logger.info("******expectedTitle*******");
 			
 			//String expectedTitle =text;
 	        String actualTitle =linkedlistpage.getPageTitle();
@@ -95,10 +96,11 @@ import pageObjects.LinkedlistPages;
 		public void user_should_redirected_to(String Title) {
 			//String Title;
 			String expectedTitle =Title;
-			logger.info("********Title*******" ,Title);
 	        String actualTitle =linkedlistpage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		   //linkedlistpage.getPageTitle();
+			logger.info("********expectedTitle*******{},{},{}",expectedTitle,"******actualTitle*****",actualTitle);
+
 		}
 	//----------------------------------------------------0004
 		@Given("User is on the Introduction page in linkedlist")
@@ -144,13 +146,16 @@ import pageObjects.LinkedlistPages;
 		public void user_should_see_the_output_on_the_tryeditor_page(String testCaseName) {
 			String expectedOutput = linkedlistTestData.get(testCaseName).get("ExpectedOutput");
 
-	        if (expectedOutput.equals("Success")) {
+	       if (expectedOutput.equals("Success")) {
 	        	String actualOutput = tryEditorPage.getOutput();
 	        	Assert.assertEquals(expectedOutput, actualOutput);
+	        	logger.info("******EXPECTEDOUTPUT*******{},{},{},", testCaseName, expectedOutput,actualOutput);
+
 	        } else {
 	        	tryEditorPage.acceptAlert();
 	        	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
 	        }
+			
 		}
 
 

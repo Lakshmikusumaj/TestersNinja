@@ -75,8 +75,8 @@ public void the_user_enters_username_password_and_confirm_password(String userna
 
 @Then("the user should see a {string} message")
 public void the_user_should_see_a_message(String destinationTitle) {
-		    	
-		    	
+	Assert.assertTrue(registrationPage.isRegistrationPageDisplayed());   	
+	logger.info("Registration page verification completed successfully.");	    	
 		    	registrationPage.clickAlertR();
 		    	
 		    	
@@ -103,7 +103,8 @@ public void the_user_should_see_a_message(String destinationTitle) {
 		    	registrationPage.getConfirmPasswordValidationMessage();
 		    	registrationPage.getPasswordValidationMessage();
 		    	registrationPage.getUsernameValidationMessage();
-		    	
+		    	Assert.assertTrue(registrationPage.isRegistrationPageDisplayed());
+		    	logger.info("User Sucessfully Create the Account and Landed on the Register Page.");
 		    }
 //-------------------------Register login multi[le]
 		   
@@ -138,13 +139,8 @@ public void the_user_should_see_a_message(String destinationTitle) {
 		         } else {
 		             Assert.assertTrue(loginPage.isLoginErrorDisplayed());
 		         }
-
-		    }
-
-
-
-		   
-		}
+             logger.info("excel data driven from login data sheet");
+		    }}
 	    
 		   
 	       

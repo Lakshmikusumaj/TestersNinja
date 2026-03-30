@@ -18,15 +18,15 @@ import org.testng.annotations.Listeners;
 @CucumberOptions(
 	features = "src/test/resources/features",
 	glue = { "stepDefinitions", "hooks" },
-	tags = "@DS-Intro",
+	tags = "@Tree_0002",
 			
 			
 			
 	plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
 			"json:target/cucumber-reports/cucumber.json",
 			"com.aventstack.chaintest.plugins.ChainTestCucumberListener:target/chaintest-report",
-			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-		    "tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter",}, 
+			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",},
+		    //"tech.grasshopper.extentreports.cucumber7.adapter.ExtentCucumberAdapter",}, 
 	monochrome = true, 
 	publish = true
 )

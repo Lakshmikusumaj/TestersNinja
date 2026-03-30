@@ -34,13 +34,14 @@ import pageObjects.LinkedlistPages;
 		
 		@Given("User is logged in to the portal and on linkedlist page")
 		public void user_is_logged_in_to_the_portal_and_on_linkedlist_page() {
+			
 			logger.info("************LinkedList*************");
 			linkedlistpage.clickGetStartedLlinkedlist();
 		}
 
 		@When("User clicks {string} link in linkedlist page")
 		public void user_clicks_link_in_linkedlist_page(String topic) 
-	 {
+	    {
 			linkedlistpage.clickTopic(topic);
 		}
 
@@ -49,31 +50,36 @@ import pageObjects.LinkedlistPages;
 			String expectedTitle =destinationTitle;
 	        String actualTitle =linkedlistpage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
+        	logger.info("******EXPECTEDOUTPUT*******{},{},{},", expectedTitle,"****actualTitle*****",actualTitle);
+
 			
 		}
 		//--------------------------------------------------------------002
 		@Given("User is on {string} page in linkedlist module")
 		public void user_is_on_page_in_linkedlist_module(String string) {
-		   
+			linkedlistpage.here();
+
 		}
 		@When("User clicks Try Here button on respective topicscovered link")
 		public void user_clicks_try_here_button_on_respective_topicscovered_link() {
-			linkedlistpage.here();
+			//linkedlistpage.here();
 			linkedlistpage.clickRunButton();
 			
 			
 		}
-		@Then("User should be redirected to Try Editor page with {string} button in the respective link of linkedlist module")
-		public void user_should_be_redirected_to_try_editor_page_with_button_in_the_respective_link_of_linkedlist_module(String text) {
-			logger.info(text);
+		@Then("User should be redirected to {string} page with Run button in the respective link of linkedlist module")
+		public void user_should_be_redirected_to_page_with_run_button_in_the_respective_link_of_linkedlist_module(String expectedTitle) {
 			
-			/*String expectedTitle =destinationTitle;
+			//String expectedTitle =text;
 	        String actualTitle =linkedlistpage.getPageTitle();
-	        Assert.assertEquals(expectedTitle ,actualTitle);*/
+	        Assert.assertEquals(expectedTitle ,actualTitle);
+	        logger.info("*******ExpectedTitle******* {} ,{}, {}",expectedTitle , "*****actualTitle*****", actualTitle);
+
 		}
 	//-----------------------------------------------------0003
 		@Given("User is on the Introduction page")
 		public void user_is_on_the_introduction_page() {
+			logger.info("***INTRODUCTION PAGE***");
 		    
 		}
 
@@ -86,10 +92,11 @@ import pageObjects.LinkedlistPages;
 		public void user_should_redirected_to(String Title) {
 			//String Title;
 			String expectedTitle =Title;
-			logger.info("********Title*******" ,Title);
 	        String actualTitle =linkedlistpage.getPageTitle();
 	        Assert.assertEquals(expectedTitle ,actualTitle);
 		   //linkedlistpage.getPageTitle();
+			logger.info("********expectedTitle*******{},{},{}",expectedTitle,"******actualTitle*****",actualTitle);
+
 		}
 	//----------------------------------------------------0004
 		@Given("User is on the Introduction page in linkedlist")
@@ -135,13 +142,16 @@ import pageObjects.LinkedlistPages;
 		public void user_should_see_the_output_on_the_tryeditor_page(String testCaseName) {
 			String expectedOutput = linkedlistTestData.get(testCaseName).get("ExpectedOutput");
 
-	        if (expectedOutput.equals("Success")) {
+	       if (expectedOutput.equals("Success")) {
 	        	String actualOutput = tryEditorPage.getOutput();
 	        	Assert.assertEquals(expectedOutput, actualOutput);
+	        	logger.info("******EXPECTEDOUTPUT*******{},{},{},", testCaseName, expectedOutput,actualOutput);
+
 	        } else {
 	        	tryEditorPage.acceptAlert();
 	        	Assert.assertTrue(tryEditorPage.isRunButtonDisplayed());
 	        }
+			
 		}
 
 

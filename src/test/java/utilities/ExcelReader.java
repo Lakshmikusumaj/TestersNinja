@@ -31,19 +31,18 @@ public class ExcelReader {
 
             for (int i = 1; i < rowCount; i++) {
                 Row currentRow = sheet.getRow(i);
-                if (currentRow == null) continue;   // Fix1
+                if (currentRow == null) continue;
 
                 Map<String, String> rowData = new HashMap<>();
 
                 for (int j = 1; j < colCount; j++) {
 
                     Cell keyCell = headerRow.getCell(j);
-                    if (keyCell == null) continue;   // FIX 2
+                    if (keyCell == null) continue;
 
-                    String key = keyCell.toString().trim();//fix3
+                    String key = keyCell.toString().trim();
                     Cell valueCell = currentRow.getCell(j);
 
-                    //String key = keyCell.getStringCellValue();
                     String value = getCellValue(valueCell);
 
                     rowData.put(key, value);
@@ -57,9 +56,7 @@ public class ExcelReader {
 
                 String rowKey = firstCell.toString().trim();
 
-                dataMap.put(rowKey, rowData);//
-               // dataMap.put(currentRow.getCell(0).getStringCellValue(), rowData);
-
+                dataMap.put(rowKey, rowData);
             }
 
             workbook.close();
@@ -68,7 +65,6 @@ public class ExcelReader {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         return dataMap;
     }

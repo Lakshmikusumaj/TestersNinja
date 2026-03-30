@@ -7,7 +7,7 @@ Feature: Validation of Queue module
   @Queue_Test01
   Scenario Outline: User navigates to different topic pages in Queue module
     When User clicks "<TopicsCovered>" link in Queue page
-    Then User should be redirected to "<TopicsCovered>" queue page
+    Then User should be redirected to "<TopicsCovered>" queue page 
 
     Examples:
       | TopicsCovered                          |
@@ -37,15 +37,10 @@ Feature: Validation of Queue module
     
      Examples:
       |TestCaseName          |
-      | PythonCode_Valid		 |
+      | PythonCode_Valid	 |
       | PythonCode_Invalid	 |
 
-  # @Queue_Test04
-  # Scenario: Verify alert handling in try editor page of Queue
-  #  Given User is on error alert in try editor page of Queue
-  #  When User accepts the alert on queue page
-  #  Then User should remain on TryEditor page of Queue
-
+ 
   @Queue_Test05
   Scenario: Verify navigation to Practice Questions page
     Given User is on any of the queue topic page

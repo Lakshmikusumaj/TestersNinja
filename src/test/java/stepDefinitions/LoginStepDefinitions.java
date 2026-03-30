@@ -3,7 +3,7 @@ package stepDefinitions;
 
 import java.util.Map;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Given;
@@ -11,12 +11,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.LoginPage;
 import utilities.ExcelReader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class LoginStepDefinitions {
     WebDriver driver;
     long startTime;
     long endTime;
     boolean loginStatus = true;
+    
+    private static final Logger logger = LogManager.getLogger(LoginStepDefinitions.class);
     
     // Excel related
     static Map<String, Map<String, String>> testData;
@@ -50,8 +55,10 @@ public class LoginStepDefinitions {
     public void login_result_should_be_as_expected(String testCaseName) {
         String expectedResult = testData.get(testCaseName).get("ExpectedResult");
         if (expectedResult.equalsIgnoreCase("success")) {
-            Assert.assertTrue(loginPage.isLoginSuccessful());
+        	logger.info("login is successful.");  
+        	Assert.assertTrue(loginPage.isLoginSuccessful());
         } else {
+        	logger.info("login failed."); 
             Assert.assertTrue(loginPage.isLoginErrorDisplayed());
         }
 
@@ -59,13 +66,12 @@ public class LoginStepDefinitions {
     
     @When("User enters username and password and clicks login button")
     public void user_enters_username_and_password_and_clicks_login_button() {
-    	//loginPage.enterUsername("Test_01");
-       // loginPage.enterPassword("Sdet@2025");
         loginPage.successfulLogin();
     }
 
     @Then("User should be successfully logged in")
     public void user_should_be_successfully_logged_in() {
+    	logger.info("login is successful."); 
     	Assert.assertTrue(loginPage.isLoginSuccessful());
     }
 
@@ -85,15 +91,15 @@ public class LoginStepDefinitions {
 
         long responseTime = (endTime - startTime) / 1000;
 
-        System.out.println("Login Response Time: " + responseTime + " seconds");
+        logger.info("Expected time is {} seconds.", maxSeconds); 
+        logger.info("Actual time is {} seconds.", responseTime);
 
         Assert.assertTrue(
-                "Login response time exceeded acceptable limit!",
                 responseTime <= maxSeconds
         );
     }
     
- // LOGIN BUTTON ENABLE SCENARIO
+             // LOGIN BUTTON ENABLE SCENARIO
     
 
     @When("User enters username and password")
@@ -106,12 +112,13 @@ public class LoginStepDefinitions {
     public void login_button_should_be_enabled() {
 
         boolean isEnabled = loginPage.isLoginButtonEnabled();
+        logger.info("login button is enabled."); 
 
-        Assert.assertTrue("Login button is not enabled", isEnabled);
+        Assert.assertTrue(isEnabled);
     }
 
     
-    // PASSWORD MASK SCENARIO
+            // PASSWORD MASK SCENARIO
     
 
     @When("User enters password")
@@ -123,10 +130,9 @@ public class LoginStepDefinitions {
     public void password_should_be_displayed_in_masked_format() {
 
         String fieldType = loginPage.getPasswordFieldType();
+        logger.info("password field is masked."); 
 
-        Assert.assertEquals("Password field is not masked",
-                "password",
-                fieldType);
+        Assert.assertEquals(fieldType, "password", "Password field is not masked");
     }
 
     
@@ -145,11 +151,9 @@ public class LoginStepDefinitions {
     public void error_message_invalid_username_and_password_should_be_displayed() {
 
         boolean isErrorDisplayed = loginPage.isLoginErrorDisplayed();
+        logger.info("login error message displayed."); 
 
-        Assert.assertTrue(
-                "Expected error message not displayed",
-                isErrorDisplayed
-        );
+        Assert.assertTrue(isErrorDisplayed);
     }
 }
     

@@ -50,7 +50,7 @@ Examples:
 #=============================PRACTICE QUESTIONS EXCEL DATA DRIVEN RUN BUTTON========================
 
 @Array-04
-Scenario Outline: user is in the practice questions page
+Scenario Outline: user is in the practice questions page 
 Given user is on Array "<Questions>" practice page
 When user enters "<TestCaseName>" in try editor fixes indentation and clicks Run button 
 Then user clicks run button user should see "<ExpectedResult>"
